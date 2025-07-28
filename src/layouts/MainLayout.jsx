@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/component/Navbar";
 import { Outlet } from "react-router-dom";
 import { HeroSection } from "../components/home-page/HeroSection";
 import { HeroCarousel } from "../components/home-page/HeroCarousel";
@@ -12,6 +11,7 @@ import SpecialWeek from "../components/home-page/SpecialWeek";
 import FeaturedSection from "../components/home-page/FeaturedSection";
 import FeaturedProduct from "../components/home-page/FeaturedProduct";
 import ConditionalComponent from "../pages/ConditionalComponent";
+import Navbar from "../components/navbar/Navbar";
 
 const MainLayout = () => {
   return (

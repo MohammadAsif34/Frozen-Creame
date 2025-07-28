@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../components/component/Navbar";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Footer } from "../components/component/Footer";
+import Navbar from "../components/navbar/Navbar";
 import ConditionalComponent from "../pages/ConditionalComponent";
 
 const SecondLayout = () => {
