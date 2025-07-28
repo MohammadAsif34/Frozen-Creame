@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Classic Chocolate Truffle Cake",
+    "short_desc": "A rich, moist chocolate cake layered with dark chocolate truffle cream.",
+    "allergens": ["Gluten", "Milk", "Eggs", "Soy"],
+    "creme": ["Dark Chocolate Ganache", "Buttercream"],
+    "weight": ["500g", "1kg", "2kg"],
+    "flavour": ["Chocolate"],
+    "dietry_preference": ["Vegetarian"],
+    "rating": 4.7,
+    "reviews": [
+      "Deliciously rich and perfect for chocolate lovers.",
+      "Very moist and balanced sweetness.",
+      "Best birthday cake I've ever had."
+    ],
+    "price": 649,
+    "albums": [
+      "https://example.com/images/choco_truffle_1.jpg",
+      "https://example.com/images/choco_truffle_2.jpg"
+    ],
+    "picture": "https://example.com/images/choco_truffle_main.jpg"
+  },
+  {
+    "name": "Vanilla Bean Delight",
+    "short_desc": "Light and fluffy vanilla sponge with real vanilla bean cream.",
+    "allergens": ["Gluten", "Milk", "Eggs"],
+    "creme": ["Vanilla Bean Buttercream", "Whipped Cream"],
+    "weight": ["500g", "1kg"],
+    "flavour": ["Vanilla"],
+    "dietry_preference": ["Vegetarian"],
+    "rating": 4.5,
+    "reviews": [
+      "Perfect for tea-time snacks.",
+      "Not too sweet, just right.",
+      "Lovely texture and flavor."
+    ],
+    "price": 599,
+    "albums": [
+      "https://example.com/images/vanilla_bean_1.jpg",
+      "https://example.com/images/vanilla_bean_2.jpg"
+    ],
+    "picture": "https://example.com/images/vanilla_bean_main.jpg"
+  },
+  {
+    "name": "Strawberry Fields Cake",
+    "short_desc": "Fresh strawberries layered between soft vanilla sponge and strawberry cream.",
+    "allergens": ["Gluten", "Milk", "Eggs"],
+    "creme": ["Strawberry Cream", "Whipped Cream"],
+    "weight": ["500g", "1kg", "1.5kg"],
+    "flavour": ["Strawberry", "Vanilla"],
+    "dietry_preference": ["Vegetarian"],
+    "rating": 4.6,
+    "reviews": [
+      "Refreshing and fruity!",
+      "Great for summer parties.",
+      "Kids loved it."
+    ],
+    "price": 699,
+    "albums": [
+      "https://example.com/images/strawberry_1.jpg",
+      "https://example.com/images/strawberry_2.jpg"
+    ],
+    "picture": "https://example.com/images/strawberry_main.jpg"
+  },
+  {
+    "name": "Red Velvet Dream",
+    "short_desc": "Classic red velvet sponge with smooth cream cheese frosting.",
+    "allergens": ["Gluten", "Milk", "Eggs"],
+    "creme": ["Cream Cheese", "Vanilla Buttercream"],
+    "weight": ["500g", "1kg"],
+    "flavour": ["Red Velvet"],
+    "dietry_preference": ["Vegetarian"],
+    "rating": 4.8,
+    "reviews": [
+      "Absolutely divine!",
+      "Perfectly moist and rich.",
+      "Loved the frosting."
+    ],
+    "price": 749,
+    "albums": [
+      "https://example.com/images/red_velvet_1.jpg",
+      "https://example.com/images/red_velvet_2.jpg"
+    ],
+    "picture": "https://example.com/images/red_velvet_main.jpg"
+  },
+  {
+    "name": "Black Forest Indulgence",
+    "short_desc": "Chocolate sponge with cherry compote and whipped cream layers.",
+    "allergens": ["Gluten", "Milk", "Eggs", "Alcohol (optional)"],
+    "creme": ["Whipped Cream", "Cherry Filling"],
+    "weight": ["1kg", "1.5kg"],
+    "flavour": ["Chocolate", "Cherry"],
+    "dietry_preference": ["Vegetarian"],
+    "rating": 4.4,
+    "reviews": [
+      "A classic done right!",
+      "Great balance of flavors.",
+      "Could use more cherry layers."
+    ],
+    "price": 799,
+    "albums": [
+      "https://example.com/images/black_forest_1.jpg",
+      "https://example.com/images/black_forest_2.jpg"
+    ],
+    "picture": "https://example.com/images/black_forest_main.jpg"
+  },
+  {
+    "name": "Pineapple Paradise Cake",
+    "short_desc": "Soft vanilla cake filled with pineapple chunks and tropical cream.",
+    "allergens": ["Gluten", "Milk", "Eggs"],
+    "creme": ["Pineapple Cream", "Whipped Cream"],
+    "weight": ["500g", "1kg"],
+    "flavour": ["Pineapple", "Vanilla"],
+    "dietry_preference": ["Vegetarian"],
+    "rating": 4.3,
+    "reviews": [
+      "Light and tropical!",
+      "Perfect for hot weather.",
+      "A refreshing twist."
+    ],
+    "price": 579,
+    "albums": [
+      "https://example.com/images/pineapple_1.jpg",
+      "https://example.com/images/pineapple_2.jpg"
+    ],
+    "picture": "https://example.com/images/pineapple_main.jpg"
+  },
+  {
+    "name": "Coffee Mocha Bliss",
+    "short_desc": "Coffee-infused sponge with mocha cream layers and dusted cocoa.",
+    "allergens": ["Gluten", "Milk", "Eggs"],
+    "creme": ["Mocha Cream", "Coffee Buttercream"],
+    "weight": ["500g", "1kg"],
+    "flavour": ["Coffee", "Chocolate"],
+    "dietry_preference": ["Vegetarian"],
+    "rating": 4.6,
+    "reviews": [
+      "Heaven for coffee lovers.",
+      "Not too bitter, just perfect.",
+      "Great with espresso."
+    ],
+    "price": 699,
+    "albums": [
+      "https://example.com/images/mocha_1.jpg",
+      "https://example.com/images/mocha_2.jpg"
+    ],
+    "picture": "https://example.com/images/mocha_main.jpg"
+  },
+  {
+    "name": "Lemon Zest Cake",
+    "short_desc": "Tangy lemon sponge with citrus cream and lemon curd.",
+    "allergens": ["Gluten", "Milk", "Eggs"],
+    "creme": ["Lemon Cream", "Buttercream"],
+    "weight": ["500g", "1kg"],
+    "flavour": ["Lemon"],
+    "dietry_preference": ["Vegetarian"],
+    "rating": 4.2,
+    "reviews": [
+      "Very zesty and fresh.",
+      "Perfect summer dessert.",
+      "Loved the tartness."
+    ],
+    "price": 559,
+    "albums": [
+      "https://example.com/images/lemon_1.jpg",
+      "https://example.com/images/lemon_2.jpg"
+    ],
+    "picture": "https://example.com/images/lemon_main.jpg"
+  },
+  {
+    "name": "Gluten-Free Chocolate Almond Cake",
+    "short_desc": "Flourless chocolate almond cake with rich ganache, gluten-free delight.",
+    "allergens": ["Milk", "Eggs", "Nuts (Almonds)"],
+    "creme": ["Dark Chocolate Ganache"],
+    "weight": ["400g", "800g"],
+    "flavour": ["Chocolate", "Almond"],
+    "dietry_preference": ["Gluten-Free", "Vegetarian"],
+    "rating": 4.7,
+    "reviews": [
+      "Didn’t miss the flour at all!",
+      "Super dense and chocolatey.",
+      "Great for gluten-free diets."
+    ],
+    "price": 749,
+    "albums": [
+      "https://example.com/images/almond_1.jpg",
+      "https://example.com/images/almond_2.jpg"
+    ],
+    "picture": "https://example.com/images/almond_main.jpg"
+  },
+  {
+    "name": "Vegan Choco-Berry Cake",
+    "short_desc": "Plant-based chocolate sponge with berry compote and dairy-free cream.",
+    "allergens": ["Soy", "Nuts (Cashew)"],
+    "creme": ["Vegan Chocolate Cream", "Berry Compote"],
+    "weight": ["500g", "1kg"],
+    "flavour": ["Chocolate", "Berry"],
+    "dietry_preference": ["Vegan"],
+    "rating": 4.5,
+    "reviews": [
+      "Couldn't believe it’s vegan!",
+      "Moist and flavorful.",
+      "Perfect for plant-based diets."
+    ],
+    "price": 679,
+    "albums": [
+      "https://example.com/images/vegan_berry_1.jpg",
+      "https://example.com/images/vegan_berry_2.jpg"
+    ],
+    "picture": "https://example.com/images/vegan_berry_main.jpg"
+  }
+]

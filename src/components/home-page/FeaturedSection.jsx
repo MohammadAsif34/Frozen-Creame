@@ -23,9 +23,9 @@ const FeaturedSection = () => {
 
           <div className=" text-center">
             <Link to={"/search"}>
-              <span className="inline-block px-8 py-2 bg-gradient-to-l from-rose-400 to-fuchsia-400 text-white font-medium rounded-md hover:rounded-full hover:shadow-lg transition-all duration-500 ease-in-out">
+              <button className="inline-block px-8 py-2 bg-gradient-to-l from-rose-400 to-fuchsia-400 text-white font-medium rounded-md hover:rounded-full hover:shadow-lg transition-all duration-500 ease-in-out">
                 See More
-              </span>
+              </button>
             </Link>
           </div>
         </div>
