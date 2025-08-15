@@ -45,7 +45,8 @@ const ContactUsForm = () => {
 
   return (
     <>
-      <div className="w-full p-8 rounded-xl bg-gradient-to-br from-fuchsia-100 via-red-50 to-rose-100">
+      {/* <div className="w-full p-8 rounded-xl bg-gradient-to-br from-fuchsia-100 via-red-50 to-rose-100"> */}
+      <div className="w-full p-8 rounded-xl bg-white shadow-md">
         <form className="" onSubmit={handleSubmit}>
           <label className="text-gray-500">
             <span>Full Name</span>
@@ -54,30 +55,30 @@ const ContactUsForm = () => {
               name="fullname"
               value={form.fullname}
               onChange={handleChange}
-              className="w-full h-10 mt-1 mb-2 px-4 border-2 rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
+              className="w-full h-10 mt-1 mb-2 px-4 border rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
               placeholder=""
             />
           </label>
-          <div className="flex justify-between gap-x-4 ">
-            <label className="text-gray-500">
+          <div className="flex gap-x-4 ">
+            <label className="w-full text-gray-500">
               <span>Email</span>
               <input
                 type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                className="w-full h-10 mt-1 mb-2 px-4 border-2 rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
+                className="w-full h-10 mt-1 mb-2 px-4 border rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
                 placeholder=""
               />
             </label>
-            <label className="text-gray-500">
+            <label className="w-full text-gray-500">
               <span>Phone</span>
               <input
                 type="tel"
                 name="phone"
                 value={form.phone}
                 onChange={handleChange}
-                className="w-full h-10 mt-1 mb-2 px-4 border-2 rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
+                className="w-full h-10 mt-1 mb-2 px-4 border rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
                 placeholder=""
               />
             </label>
@@ -89,7 +90,7 @@ const ContactUsForm = () => {
               name="subject"
               value={form.subject}
               onChange={handleChange}
-              className="w-full h-10 mt-1 mb-2 px-4 border-2 rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
+              className="w-full h-10 mt-1 mb-2 px-4 border rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
               placeholder=""
             />
           </label>
@@ -100,7 +101,7 @@ const ContactUsForm = () => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              className="w-full h-24 mt-1 mb-2 px-4 border-2 rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
+              className="w-full h-24 mt-1 mb-2 px-4 border rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
               placeholder=""
             />
           </label>
@@ -108,7 +109,7 @@ const ContactUsForm = () => {
             <div></div>
             <button
               type="submit"
-              className="w-32 h-8 mt-1 mb-2 px-4 border-2 rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
+              className="w-32 h-8 mt-1 mb-2 px-4 border rounded-xl focus:outline-0 focus:border-rose-400 transition-all  "
             >
               Submit
             </button>

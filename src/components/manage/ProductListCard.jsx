@@ -43,6 +43,9 @@ const Action = () => {
                 View
               </li>
               <li className="text-start px-3 py-1 cursor-pointer  hover:bg-gray-200 rounded-md">
+                update
+              </li>
+              <li className="text-start px-3 py-1 cursor-pointer  hover:bg-gray-200 rounded-md">
                 Suspend
               </li>
               <li className="text-start px-3 py-1 cursor-pointer  hover:bg-gray-200 rounded-md">

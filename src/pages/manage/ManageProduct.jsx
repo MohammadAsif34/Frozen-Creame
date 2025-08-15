@@ -6,10 +6,10 @@ const ManageProduct = () => {
   const { pathname } = useLocation();
   return (
     <>
-      <div className=" px-[12%] pb-8">
-        <div className=" h-20 flex justify-between items-center border-b border-gray-300">
+      <div className="px-4">
+        <div className=" h-20 flex justify-between items-center ">
           <h1 className="text-4xl text-rose-500 capitalize font-bold ">
-            {pathname.replace("/", "").replace("-", " ")}
+            Manage Products
           </h1>
           <button
             type="button"

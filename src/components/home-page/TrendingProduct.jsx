@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../products/ProductCard";
+import cakeItem from "../../assets/cakeItem.json";
 
 const TrendingProduct = () => {
+  const trendCakeItem = cakeItem.map((cake) => ({ ...cake, featured: true }));
   return (
     <>
       <section className="w-full h-fit px-[10%] max-sm:px-6 pt-6 pb-12 ">
@@ -29,7 +31,12 @@ const TrendingProduct = () => {
 
           {/* products card  */}
           <div className="mx-auto py-6 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-sm:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-6 max-sm:gap-3 justify-center">
-            {[...Array(12)].slice(0, 4).map((item, idx) => (
+            {/* {[...Array(12)].slice(0, 4).map((item, idx) => (
+              <div key={idx} className="mx-auto">
+                <ProductCard item={item} />
+              </div>
+            ))} */}
+            {trendCakeItem?.slice(0, 4).map((item, idx) => (
               <div key={idx} className="mx-auto">
                 <ProductCard item={item} />
               </div>

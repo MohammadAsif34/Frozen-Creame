@@ -54,7 +54,7 @@ export const Footer = () => {
               </h1>
               <ul className="capitalize text-lg max-sm:text-sm my-3 ">
                 <li className="py-1.5 max-sm:py-0.5 text-shadow-purple-500">
-                  <Link>about</Link>
+                  <Link to={'/contact-us'}>about us</Link>
                 </li>
                 <li className="py-1.5 max-sm:py-0.5">
                   <Link>Order</Link>
@@ -63,10 +63,10 @@ export const Footer = () => {
                   <Link>shipping</Link>
                 </li>
                 <li className="py-1.5 max-sm:py-0.5">
-                  <Link>FAQs</Link>
+                  <Link to={"/faqs"}>FAQs</Link>
                 </li>
                 <li className="py-1.5 max-sm:py-0.5">
-                  <Link>Privacy Policy</Link>
+                  <Link to={"/privacy-policy"}>Privacy Policy</Link>
                 </li>
               </ul>
             </div>

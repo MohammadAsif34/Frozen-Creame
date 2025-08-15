@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Footer } from "../components/component/Footer";
-import ConditionalComponent from "../pages/ConditionalComponent";
+import ConditionalComponent from "../pages/top-component/TopComponent";
 import Navbar from "../components/navbar/Navbar";
 
 const MainLayout = () => {
@@ -10,7 +10,7 @@ const MainLayout = () => {
       <ConditionalComponent />
       <main className="w-full min-h-screen flex flex-col">
         {/* Sticky Navbar */}
-        <div className="w-full h-20  bg-rose-400 sticky top-0 left-0 z-40 overflow-hidden">
+        <div className="w-full h-20  bg-rose-400 sticky top-0 left-0 z-30 overflow-hidden">
           <Navbar />
         </div>
 

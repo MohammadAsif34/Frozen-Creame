@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import ProductCard from "../products/ProductCard";
+import cakeItem from "../../assets/cakeItem.json";
 
 const FeaturedSection = () => {
+  const featuredCakeItem = [...cakeItem].sort(() => 0.5 - Math.random);
   return (
     <>
       <section className="w-full h-fit px-[10%] mmax-sm:px-5   ">
@@ -14,7 +16,12 @@ const FeaturedSection = () => {
 
           {/* products card  */}
           <div className="mx-auto py-6 border grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8 justify-center">
-            {[...Array(12)].slice(0, 4).map((item, idx) => (
+            {/* {[...Array(12)].slice(0, 4).map((item, idx) => (
+              <div key={idx}>
+                <ProductCard item={item} />
+              </div>
+            ))} */}
+            {featuredCakeItem?.slice(0, 4).map((item, idx) => (
               <div key={idx}>
                 <ProductCard item={item} />
               </div>
