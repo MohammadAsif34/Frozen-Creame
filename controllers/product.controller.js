@@ -17,9 +17,6 @@ export const createProduct = async (req, res) => {
       });
     }
 
-    // Handle picture upload
-    // let picture_url =
-    //   "https://globalfairness.org/wp-content/uploads/2024/07/default-image.jpg";
     let picture_url =
       "https://kaverisias.com/wp-content/uploads/2018/01/catalog-default-img-1024x1024.gif";
     if (req.file) {
@@ -62,7 +59,9 @@ export const createProduct = async (req, res) => {
 // update cake item porduct
 export const updateProduct = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
+  console.log("product update :: ", id);
+  console.log(req.body);
+
   try {
     const cake = await Cake.findByIdAndUpdate(
       id,
@@ -71,13 +70,13 @@ export const updateProduct = async (req, res) => {
       },
       { new: true }
     );
-    console.log(cake);
     await cake.save();
+    console.log(cake);
 
     res.json({
       code: 200,
       status: "success",
-      message: "New Cake added",
+      message: "Product updated",
     });
   } catch (err) {
     res.json({
@@ -110,8 +109,9 @@ export const allProducts = async (req, res) => {
 //get publish cake
 export const allPublishProducts = async (req, res) => {
   try {
-    // console.log("cake");
-    const cake = await Cake.find({ publish: true });
+    console.log("cake");
+    const cake = await Cake.find({ is_publish: true });
+    console.log(cake);
     res.json({
       code: 200,
       status: "success",
@@ -161,9 +161,10 @@ export const publishProduct = async (req, res) => {
   try {
     const cake = await Cake.findByIdAndUpdate(
       id,
-      { publish: type === "true" },
+      { is_publish: type === "true" },
       { new: true }
     );
+    console.log(cake);
     if (!cake) {
       return res.json({
         code: 200,
