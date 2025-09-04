@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import ProductList from "../../../components/product-list/ProductList";
+import HeaderBack from "../../../components/navbar/HeaderBack";
 // import { useLocation } from "react-router-dom";
 // import ProductList from "../../components/manage/ProductList";
 
@@ -8,11 +10,21 @@ const ManageProduct = () => {
   const navigate = useNavigate();
   return (
     <>
+      <HeaderBack />
       <div className="px-4">
-        <div className=" h-20 flex justify-between items-center ">
+        <div className=" h-16 flex justify-between items-center ">
           <h1 className="text-2xl text-rose-500 capitalize font-bold ">
-            Manage Products
+            Your Products
           </h1>
+          <div className="flex text-xs text-gray-500 gap-x-10">
+            <p>
+              <span>Total Item : 00 </span>
+              {}
+            </p>
+            <p>
+              <span>Published Item : 00</span>
+            </p>
+          </div>
           <button
             type="button"
             onClick={() => navigate("add-product")}
@@ -23,7 +35,9 @@ const ManageProduct = () => {
         </div>
 
         {/* product list */}
-        <div className=" ">{/* <ProductList /> */}</div>
+        <div className=" ">
+          <ProductList />
+        </div>
       </div>
     </>
   );

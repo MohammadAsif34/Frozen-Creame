@@ -1,20 +1,36 @@
-import React from "react";
-// import { enquries, manageItem, sideItem, userItem } from "../dataSets/listData";?
-import { Link, Outlet } from "react-router-dom";
-import DashboardSidebar from "../../components/DashboardSidebar";
+import React, { useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import DashboardSidebar from "../../components/component/DashboardSidebar";
+import useAuth from "../../hooks/useAuth";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
+  // const user = useSelector((s) => s.user);
+  const user = useSelector((s) => s.user);
+  const product = useSelector((s) => s.product);
+
+  const isAuth = useAuth();
+  useEffect(() => {
+    console.log("dashboard user ::", user);
+  }, [user]);
+  useEffect(() => {
+    console.log("dashboard product ::", product);
+  }, [product]);
+
+  if (!isAuth) {
+    // toast.warn("No user logined");
+    return null;
+  }
   return (
-    <>
-      <div className="w-full h-[88vh] px-[12%] max-2xl:px-[5%] max-sm:px-2 py-4 flex max-sm:flex-col max-sm:items-center gap-x-5">
-        {/* <div className="w-full border"></div> */}
-        {/* dashboard navigation  */}
+    <div className="w-full h-[calc(100vh-72px)]  flex overflow-x-hidden overflow-y-hidden">
+      <div className="w-2xs  ">
         <DashboardSidebar />
-        <div className=" flex-1  bg-rose-50 rounded-xl overflow-y-auto">
-          <Outlet />
-        </div>
       </div>
-    </>
+      <div className="flex-1 p-4 bg-gray-50 overflow-y-auto">
+        <Outlet />
+      </div>
+    </div>
   );
 };
 

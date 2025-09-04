@@ -1,77 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const ImageUploadInput = ({
-  label,
-  name,
-  values,
-  onChange,
-  single = false,
-}) => {
-  const [inputValue, setInputValue] = useState("");
+const ImageUploadInput = ({ label, values, onChange }) => {
+  const [preview, setPreview] = useState(values || null);
 
-  const handleAdd = () => {
-    if (inputValue.trim() !== "") {
-      if (single) {
-        onChange(inputValue.trim());
-      } else {
-        onChange([...values, inputValue.trim()]);
-      }
-      setInputValue("");
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setPreview(URL.createObjectURL(file));
+      onChange(file);
     }
   };
 
-  const handleRemove = (index) => {
-    const updated = values.filter((_, i) => i !== index);
-    onChange(updated);
-  };
+  useEffect(() => {
+    if (values && typeof values === "string") {
+      setPreview(values); // if parent sets initial value
+    }
+  }, [values]);
 
   return (
     <div className="mb-4">
       <label className="block text-gray-700 font-semibold mb-2">{label}</label>
-      <div className="p-1 flex gap-2 mb-2 border border-gray-300 rounded-lg group focus-within:ring-2 focus-within:ring-rose-400 focus-within:border-red-400">
+      <div className="w-full border border-gray-300 rounded-lg px-4  outline-0 focus:ring-2 focus:ring-rose-400 focus:border-rose-400">
+        {/* className="p-1 flex items-center gap-2 mb-2 border border-gray-300 rounded-lg group focus-within:ring-2 focus-within:ring-rose-400 focus-within:border-red-400" */}
+        <span className="pl-2 text-rose-400 font-semibold border-r border-gray-300 pr-4 py-2 cursor-defaul">Picture</span>
         <input
-          type="text"
-          name={name}
-          placeholder="Enter image URL"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          className="flex-1 outline-0 px-3"
+          type="file"
+          accept="image/*"
+          onChange={handleFileChange}
+          className="flex-1 outline-0 px-3 py-2 cursor-pointer"
         />
-        <button
-          type="button"
-          onClick={handleAdd}
-          className="px-4 py-1 bg-rose-500 text-white rounded-lg hover:bg-rose-600"
-        >
-          Add
-        </button>
       </div>
-      {!single ? (
-        <div className="flex flex-wrap gap-2">
-          {values.map((val, index) => (
-            <div key={index} className="relative">
-              <img
-                src={val}
-                alt="preview"
-                className="w-20 h-20 rounded-lg object-cover"
-              />
-              <button
-                type="button"
-                onClick={() => handleRemove(index)}
-                className="absolute top-0 right-0 bg-red-500 text-white px-1 rounded"
-              >
-                ×
-              </button>
-            </div>
-          ))}
-        </div>
-      ) : (
-        values && (
+
+      {preview && (
+        <div className="p-5">
           <img
-            src={values}
+            src={preview}
             alt="preview"
-            className="w-40 h-40 rounded-lg object-cover"
+            className="w-full h-72 bg-gray-200 rounded-lg object-center object-contain"
           />
-        )
+          <em className="text-gray-400 block mt-1">
+            {typeof values === "string" ? "Uploaded from URL" : "Preview"}
+          </em>
+        </div>
       )}
     </div>
   );

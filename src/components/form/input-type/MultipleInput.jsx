@@ -10,13 +10,20 @@ const MultipleInput = ({ label, name, values, onChange, placeholder }) => {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleAdd();
+    }
+  };
+
   const handleRemove = (index) => {
     const updated = values.filter((_, i) => i !== index);
     onChange(updated);
   };
 
   return (
-    <div className="mb-4">
+    <div className="">
       <label className="block text-gray-700 font-semibold mb-2">{label}</label>
 
       {/* Input + Add button */}
@@ -26,13 +33,14 @@ const MultipleInput = ({ label, name, values, onChange, placeholder }) => {
           name={name}
           placeholder={placeholder || "Enter value"}
           value={inputValue}
+          onKeyDown={handleKeyDown}
           onChange={(e) => setInputValue(e.target.value)}
           className="flex-1 px-4 py-1 outline-none"
         />
         <button
           type="button"
           onClick={handleAdd}
-          className="px-4 bg-rose-500 text-white rounded-lg hover:bg-rose-600"
+          className="px-4 bg-rose-400 text-white rounded-md hover:bg-rose-600 transition-all cursor-pointer"
         >
           Add
         </button>
@@ -43,13 +51,13 @@ const MultipleInput = ({ label, name, values, onChange, placeholder }) => {
         {values.map((val, index) => (
           <span
             key={index}
-            className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm flex items-center gap-2"
+            className="px-2 py-0.5 bg-neutral-200 text-gray-700 rounded-md text-sm flex items-center gap-2 cursor-default"
           >
             {val}
             <button
               type="button"
               onClick={() => handleRemove(index)}
-              className="text-red-500 font-bold"
+              className="text-red-500 font-bold cursor-pointer"
             >
               ×
             </button>

@@ -1,0 +1,33 @@
+export const defaultCakeForm = {
+  sku: "",
+  name: "",
+  description: "",
+  flavour: "",
+  price: 0,
+  discount: 0,
+  final_price: 0,
+  sold: 0,
+  stock: 0,
+  prepare_time: 0,
+  unit: "",
+  unit_values: "",
+  category: "",
+  sub_category: "",
+
+  features: [],
+  tags: [],
+  ingredients: [],
+  creme: [],
+  allergens: [],
+  nutrition_info: {
+    calories: 0,
+    sugar_g: 0,
+    fat_g: 0,
+    protein_g: 0,
+  },
+
+  is_customizable: false,
+  is_featured: false,
+  is_available: true,
+  is_eggless: false,
+};
