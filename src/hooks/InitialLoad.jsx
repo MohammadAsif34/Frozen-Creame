@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { GetProductsAPI } from "../services/product.services";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setProduct } from "../redux/slice/productSlice";
 
 const InitialLoad = ({ children }) => {
   const dispatch = useDispatch();
+  const products = useSelector((s) => s.product);
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -16,10 +17,11 @@ const InitialLoad = ({ children }) => {
       } catch (error) {
         console.log("initial app load error :: ", error);
       }
+      console.log("Active p : ", products);
     };
     fetchProduct();
   }, []);
-  console.log("initial load");
+
   return <>{children}</>;
 };
 

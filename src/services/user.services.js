@@ -2,7 +2,9 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 export const LoginAPI = async (credential) => {
-  const api = `http://localhost:8800/api/v1/auth/login`;
+  // const api = `http://localhost:8800/api/v1/auth/login`;
+  // const api = `https://frozen-creame-api.onrender.com/api/v1/auth/login`;
+  const api = `${import.meta.env.VITE_BASE_URL}/auth/login`;
   try {
     const res = await axios.post(api, credential, { withCredentials: true });
     console.log(res);

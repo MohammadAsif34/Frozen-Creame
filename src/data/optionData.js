@@ -18,44 +18,48 @@ export const type = [
 export const cake = [
   {
     id: 1,
-    label: "birthday cake",
+    label: "Birthday Cake",
+    value: "birthday cake",
   },
   {
     id: 1,
-    label: "celebration cake",
+    label: "Celebration Cake",
+    value: "celebration cake",
   },
   {
     id: 1,
-    label: "aniversary cake",
+    label: "Aniversary Cake",
+    value: "aniversary cake",
   },
   {
     id: 1,
-    label: "wedding cake",
+    label: "Wedding Cake",
+    value: "wedding cake",
   },
-  {
-    id: 1,
-    label: "photo cake",
-  },
-  {
-    id: 1,
-    label: "eggless cake",
-  },
-  {
-    id: 1,
-    label: "cheese cake",
-  },
-  {
-    id: 1,
-    label: "cup cake",
-  },
-  {
-    id: 1,
-    label: "custom cake",
-  },
-  {
-    id: 1,
-    label: "special cake",
-  },
+  // {
+  //   id: 1,
+  //   label: "photo cake",
+  // },
+  // {
+  //   id: 1,
+  //   label: "eggless cake",
+  // },
+  // {
+  //   id: 1,
+  //   label: "cheese cake",
+  // },
+  // {
+  //   id: 1,
+  //   label: "cup cake",
+  // },
+  // {
+  //   id: 1,
+  //   label: "custom cake",
+  // },
+  // {
+  //   id: 1,
+  //   label: "special cake",
+  // },
 ];
 export const pastries = [
   {
@@ -82,19 +86,23 @@ export const pastries = [
 export const savories = [
   {
     id: 3,
-    label: "puffs & rolls",
+    label: "Puffs & Rolls",
+    value: "puffs & rolls",
   },
   {
     id: 3,
-    label: "sandwichs & burger",
+    label: "Sandwichs & Burger",
+    value: "sandwichs & burger",
   },
   {
     id: 3,
-    label: "snacks & bites",
+    label: "Snacks & Bites",
+    value: "snacks & bites",
   },
   {
     id: 3,
-    label: "special",
+    label: "Special",
+    value: "special",
   },
 ];
 
@@ -114,7 +122,7 @@ export const unit_type = [
     label: "Piece",
     value: "piece",
   },
-  { 
+  {
     id: 4,
     label: "Pound",
     value: "pound",

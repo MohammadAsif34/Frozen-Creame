@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { GetSingleProductsAPI } from "../../services/product.services";
 import HeaderBack from "../navbar/HeaderBack";
+import { toast } from "react-toastify";
 
 const ViewProduct = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const { id } = useParams();
   console.log("id :: ", id);
   const [product, setProduct] = useState(null);
@@ -28,10 +31,15 @@ const ViewProduct = () => {
     );
   }
 
+  const handleEdit = () => {
+    let path = location.pathname.replace("view", "edit");
+    navigate(path);
+  };
+
   return (
     <>
       <HeaderBack />
-      <div className="p-10 bg-white shadow rounded-lg  mx-auto">
+      <div className="p-10 mt-2 bg-white shadow rounded-lg  mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold flex items-center gap-2">
@@ -124,7 +132,7 @@ const ViewProduct = () => {
           <div>
             <h3 className="font-bold mb-2">Tags</h3>
             <ul className="list-disc ml-5 text-gray-700">
-              {product.ingredients.map((item, idx) => (
+              {product.tags.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
             </ul>
@@ -133,7 +141,7 @@ const ViewProduct = () => {
           <div>
             <h3 className="font-bold mb-2">Features</h3>
             <ul className="list-disc ml-5 text-gray-700">
-              {product.ingredients.map((item, idx) => (
+              {product.features.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
             </ul>
@@ -184,10 +192,10 @@ const ViewProduct = () => {
             <span>Customizable:</span>
             <span
               className={` px-2 font-semibold ${
-                product.customizable ? "text-green-500" : "text-red-500"
+                product.is_customizable ? "text-green-500" : "text-red-500"
               }`}
             >
-              {product.customizable ? "Yes" : "No"}
+              {product.is_customizable ? "Yes" : "No"}
             </span>
           </p>
           <p className="mb-2 font-semibold">
@@ -299,10 +307,16 @@ const ViewProduct = () => {
 
       {/* Footer Actions */}
       <div className="flex gap-3 mt-8">
-        <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+        <button
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          onClick={() => handleEdit()}
+        >
           <i className="fas fa-edit mr-2"></i>Edit
         </button>
-        <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+        <button
+          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+          onClick={() => toast.info("not available")}
+        >
           <i className="fas fa-trash mr-2"></i>Delete
         </button>
       </div>

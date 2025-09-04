@@ -23,8 +23,8 @@ const SelectInput = ({
           {placeholder}
         </option>
         {options.map((opt, idx) => (
-          <option key={idx} value={opt.value || opt}>
-            {opt.label || opt}
+          <option key={idx} value={opt.value}>
+            {opt.label}
           </option>
         ))}
       </select>

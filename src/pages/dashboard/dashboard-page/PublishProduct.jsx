@@ -6,16 +6,24 @@ import { GetPublishProductsAPI } from "../../../services/product.services";
 import ProductCard from "../../../components/product-list/ProductCard";
 
 const PublishProduct = () => {
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState([]);
   useEffect(() => {
     const fetchProduct = async () => {
       const res = await GetPublishProductsAPI();
+      console.log("publish product res :: ", res);
       if (res.status === "success") {
         setProduct(res.cake);
       }
     };
     fetchProduct();
   }, []);
+
+  if (product.length <= 0)
+    return (
+      <div className="mt-20">
+        <img src="/no_product.png" alt="" className="w-2xs mx-auto" />
+      </div>
+    );
   return (
     <>
       <HeaderBack />

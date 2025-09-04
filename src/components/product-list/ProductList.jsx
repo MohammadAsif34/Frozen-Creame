@@ -2,35 +2,41 @@ import React, { useEffect, useState } from "react";
 // import products from "../../assets/cakeItem.json";
 import ProductCard from "./ProductCard";
 import { GetProductsAPI } from "../../services/product.services";
+import { useSelector } from "react-redux";
 
 const ProductList = () => {
   const [isAction, setIsAction] = useState("");
-  const [products, setProducts] = useState(null);
+  // const [products, setProducts] = useState(null);
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const res = await GetProductsAPI();
-        console.log(res);
-        if (res.status === "success") {
-          setProducts(res.cake);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchProduct();
-  }, []);
+  // useEffect(() => {
+  //   const fetchProduct = async () => {
+  //     try {
+  //       const res = await GetProductsAPI();
+  //       console.log(res);
+  //       if (res.status === "success") {
+  //         setProducts(res.cake);
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchProduct();
+  // }, []);
 
+  const products = useSelector((s) => s.product);
   if (products?.length <= 0) {
-    return <div>No Product found!</div>;
+    return (
+      <div className="mt-20">
+        <img src="/no_product.png" alt="" className="w-2xs mx-auto" />
+      </div>
+    );
   }
 
   return (
     <div className="">
       <ul>
         {products?.map((product) => (
-          <li className="my-2">
+          <li className="my-2" key={product._id}>
             <ProductCard
               key={product.sku}
               product={product}

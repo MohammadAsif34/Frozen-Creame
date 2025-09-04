@@ -4,7 +4,10 @@ import MultipleInput from "./input-type/MultipleInput";
 import CheckboxInput from "./input-type/CheckboxInput";
 import KeyValueInput from "./input-type/KeyValueInput";
 import ImageUploadInput from "./input-type/ImageUploadInput";
-import { CreateProductAPI } from "../../services/product.services";
+import {
+  CreateProductAPI,
+  // UpdateProductAPI,
+} from "../../services/product.services";
 import { toast } from "react-toastify";
 import { defaultCakeForm } from "../../data/defaultData";
 import SelectInput from "./input-type/SelectInput";
@@ -16,9 +19,13 @@ import {
   unit_type,
 } from "../../data/optionData";
 
-const AddProductForm = () => {
+const ProductForm = ({ product = null, onSave, onCancel }) => {
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState(defaultCakeForm);
+
+  // Initialize formData from product prop or default form
+  const [formData, setFormData] = useState(product || defaultCakeForm);
+
+  // If product has an image, initialize file as well
   const [file, setFile] = useState(null);
 
   const handleChange = (e) => {
@@ -26,8 +33,9 @@ const AddProductForm = () => {
     setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
   };
 
+  // Only auto-generate SKU when adding a new product or when the name changes in add mode
   useEffect(() => {
-    if (formData.name.trim() !== "") {
+    if (!product && formData.name.trim() !== "") {
       const generatedSku =
         "FZ00_" +
         formData.name
@@ -41,26 +49,48 @@ const AddProductForm = () => {
         sku: generatedSku,
       }));
     }
-  }, [formData.name]);
+  }, [formData.name, product]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await CreateProductAPI(formData, file);
-      console.log("create product res :: ", res);
+
+      let res;
+      if (product) {
+        // Edit mode: call update API
+        res = await UpdateProductAPI(formData, file);
+      } else {
+        // Add mode: call create API
+        res = await CreateProductAPI(formData, file);
+      }
+
       if (res.status === "success") {
         toast.success(res.message);
-        setFormData(defaultCakeForm);
+        if (!product) {
+          setFormData(defaultCakeForm);
+          setFile(null);
+        }
+        if (onSave) onSave(res.data);
+      } else {
+        toast.error(res.message || "Something went wrong");
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Error submitting the form");
+      console.error(error);
     } finally {
-      // setFormData()
-      setFile(null);
       setLoading(false);
     }
-    // console.log("Final Product Data:", formData);
+  };
+
+  const handleReset = () => {
+    if (product) {
+      setFormData(product);
+    } else {
+      setFormData(defaultCakeForm);
+      setFile(null);
+    }
+    toast.info("Form reset");
   };
 
   return (
@@ -68,20 +98,19 @@ const AddProductForm = () => {
       onSubmit={handleSubmit}
       className="p-6 bg-white shadow-lg rounded-lg relative"
     >
-      <h2 className="text-2xl font-bold mb-6 text-rose-400">Add New Product</h2>
+      <h2 className="text-2xl font-bold mb-6 text-rose-400">
+        {product ? "Edit Product" : "Add New Product"}
+      </h2>
       <span
         className="px-2 text-blue-500 absolute top-3 right-5 cursor-pointer border-2 border-rose-400 rounded-md"
-        onClick={() => {
-          setFile(null);
-          setFormData(defaultCakeForm);
-          toast.success("Form reset");
-        }}
+        onClick={handleReset}
       >
         reset
       </span>
+
       {/* Single Inputs */}
       <div className="grid grid-cols-[3fr_2fr] gap-4 mb-4">
-        <div className="">
+        <div>
           <div className="w-full grid grid-cols-2 gap-4 ">
             <SingleInput
               label="Product Name"
@@ -93,7 +122,7 @@ const AddProductForm = () => {
               label="Sku"
               name="sku"
               value={formData.sku}
-              //   onChange={handleChange2}
+              readOnly={!!product} // Prevent SKU editing in edit mode
             />
           </div>
           <div className="py-2">
@@ -126,12 +155,6 @@ const AddProductForm = () => {
               value={formData.prepare_time}
               onChange={handleChange}
             />
-            {/* <SingleInput
-              label="Unit"
-              name="unit"
-              value={formData.unit}
-              onChange={handleChange}
-            />*/}
             <SelectInput
               label="Unit"
               name="unit"
@@ -140,21 +163,12 @@ const AddProductForm = () => {
               onChange={handleChange}
               placeholder="Select unit type"
             />
-
             <SingleInput
               label="Unit value"
               name="unit_values"
               value={formData.unit_values}
               onChange={handleChange}
             />
-            {/* <SelectInput
-              label="Unit value"
-              name="unit_values"
-              value={formData.unit_values}
-              options={type}
-              onChange={handleChange}
-              placeholder="select unit value"
-            /> */}
             <SingleInput
               label="Stock"
               name="stock"
@@ -167,14 +181,13 @@ const AddProductForm = () => {
               value={formData.category}
               options={type}
               onChange={handleChange}
-              placeholder="select category"
+              placeholder="Select category"
             />
             <SelectInput
-              // <SingleInput
               label="Sub Category"
               name="sub_category"
               options={
-                formData.category == "cake"
+                formData.category === "cake"
                   ? cake
                   : formData.category === "pastries"
                   ? pastries
@@ -184,7 +197,7 @@ const AddProductForm = () => {
               }
               value={formData.sub_category}
               onChange={handleChange}
-              placeholder="select sub category"
+              placeholder="Select sub category"
             />
           </div>
         </div>
@@ -192,13 +205,10 @@ const AddProductForm = () => {
           <ImageUploadInput label="Picture" values={file} onChange={setFile} />
         </div>
       </div>
-      {/* grid-3  */}
-      {/* <div className="w-full grid grid-cols-3 gap-4 py-4"></div> */}
 
       {/* Multi Inputs */}
-      {/* grid-2  */}
       <div className="grid grid-cols-[2fr_1fr] gap-16 ">
-        <div className="w-full grid grid-cols-2 gap-4  ">
+        <div className="w-full grid grid-cols-2 gap-4">
           <MultipleInput
             label="Tags"
             values={formData.tags}
@@ -274,34 +284,24 @@ const AddProductForm = () => {
         />
       </div>
 
-      <div className="max-xl:flex-col flex gap-x-10">
-        <div className="flex-1"></div>
-      </div>
-      {/* Nutrition Info */}
-      <div className="w-1/2"></div>
-      {/* Images */}
-      {/* <ImageUploadInput
-        label="Album Images"
-        values={formData.album}
-        onChange={(val) => setFormData({ ...formData, album: val })}
-      /> */}
-
       <button
         type="submit"
         className={`mt-6 px-6 py-2 ${
           loading ? "bg-rose-400/50" : "bg-rose-400"
         } text-white rounded-lg hover:bg-rose-600 cursor-pointer`}
+        disabled={loading}
       >
-        Save Product
+        {product ? "Update Product" : "Save Product"}
         <span
-          className={`inline-block  w-5 h-5 ${
+          className={`inline-block w-5 h-5 ${
             loading ? "border-4" : ""
           } border-t-transparent rounded-full translate-1 animate-spin`}
         ></span>
       </button>
       <button
-        type="submit"
-        className="mt-6 ml-4 px-6 py-2 border text-rose-500  rounded-lg hover:bg-rose-400 hover:text-white transition-all cursor-pointer"
+        type="button"
+        onClick={() => onCancel && onCancel()}
+        className="mt-6 ml-4 px-6 py-2 border text-rose-500 rounded-lg hover:bg-rose-400 hover:text-white transition-all cursor-pointer"
       >
         Cancel
       </button>
@@ -309,4 +309,4 @@ const AddProductForm = () => {
   );
 };
 
-export default AddProductForm;
+export default ProductForm;

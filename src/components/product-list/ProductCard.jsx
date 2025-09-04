@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PublishProductsAPI } from "../../services/product.services";
 import { toast } from "react-toastify";
 
 const ProductCard = ({ product, isAction, setIsAction }) => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const handlePublish = async () => {
     // let res;
@@ -80,13 +81,16 @@ const ProductCard = ({ product, isAction, setIsAction }) => {
       </div>
 
       {/* Action */}
-      <div className="w-40 h-fit  my-auto text-sm px-4 flex justify-center flex-wrap gap-4">
-        {/* <button className="flex-1 px-4 py-2 text-rose-400 border rounded-md cursor-pointer hover:bg-rose-200 hover:scale-105 transition duration-500">
-          Suspend
-        </button> */}
-        <div className="relative">
+      <div className="max-w-44 h-fit  my-auto text-sm px-4 flex flex-col justify-center flex-wrap gap-4">
+        <div className="relative flex-1 flex  text-rose-400 border rounded-md overflow-hidden">
           <button
-            className=" flex-1 px-4 py-1 text-rose-400 border rounded-md cursor-pointer hover:bg-rose-200 hover:scale-105 transition duration-500"
+            className="py-1 text-center border-r flex-1  whitespace-nowrap cursor-pointer hover:bg-rose-100 transition duration-500"
+            onClick={() => navigate(`view/cake/${product._id}/`)}
+          >
+            View
+          </button>
+          <button
+            className="flex-1 hover:bg-rose-100  transition duration-5"
             onClick={() => setIsAction(product._id)}
           >
             Action
@@ -117,11 +121,6 @@ const Action = ({ setIsAction, id }) => {
       <OutsideClickHandler onOutsideClick={() => setIsAction(false)}>
         <div className=" border border-gray-300 rounded-lg shadow-lg bg-gray-50 absolute top-8 right-0 z-20">
           <ul className="min-w-20">
-            <Link to={`view/cake/${id}`}>
-              <li className="px-4 py-1 whitespace-nowrap hover:bg-gray-100 cursor-pointer">
-                <i className="bi bi-key pr-2"></i>View
-              </li>
-            </Link>
             <li className="px-4 py-1 whitespace-nowrap hover:bg-gray-100 cursor-pointer">
               <i className="bi bi-key pr-2"></i>Update
             </li>

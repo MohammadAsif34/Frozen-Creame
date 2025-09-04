@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 const DashboardHome = () => {
@@ -100,22 +100,30 @@ const DashboardHome = () => {
 export default DashboardHome;
 
 const ActiveProducts = () => {
-  const products = useSelector((s) => s.product.cake);
+  const products = useSelector((s) => s.product);
+  const [size, setSize] = useState(8);
   console.log("active :: ", products);
+
+  if (products.length <= 0)
+    return (
+      <div className="bg-white shadow rounded-2xl p-6 my-3">
+        <span className="text-red-500 text-2xl px-2">•</span>
+        No Active product
+      </div>
+    );
   return (
     <>
       {/* Active products  */}
       <div className="bg-white shadow rounded-2xl p-6 my-3">
         <h2 className="text-lg font-semibold mb-4">
-          <span className="text-green-500 text-2xl px-2">
-            {/* <i className="bi bi-dot"></i• */}•
-          </span>
+          <span className="text-green-500 text-2xl px-2">•</span>
           Active Products
         </h2>
         <div className="overflow-x-auto rounded-xl overflow-hidden border border-b-transparent border-gray-300">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b  border-gray-300 bg-rose-100">
+                <th className="py-2 px-3">Sl No</th>
                 <th className="py-2 px-3">Product ID</th>
                 <th className="py-2 px-3">Name</th>
                 <th className="py-2 px-3">Stock</th>
@@ -124,9 +132,10 @@ const ActiveProducts = () => {
               </tr>
             </thead>
             <tbody>
-              {products?.map((item) => (
+              {products?.slice(0, size).map((item, idx) => (
                 <>
                   <tr className="border-b border-dotted border-gray-300">
+                    <td className="py-2 px-3">{idx + 1}</td>
                     <td className="py-2 px-3">{item?.sku}</td>
                     <td className="py-2 px-3">{item?.name}</td>
                     <td className="py-2 px-3">{item?.stock}</td>
@@ -143,6 +152,17 @@ const ActiveProducts = () => {
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="pt-2  text-center text-blue-500">
+          <button
+            className="hover:cursor-pointer hover:underline"
+            onClick={() => {
+              if (size == 8) setSize(products.length);
+              else setSize(8);
+            }}
+          >
+            {size == 8 ? "See More" : "See Less"}
+          </button>
         </div>
       </div>
     </>

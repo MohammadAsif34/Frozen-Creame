@@ -5,7 +5,7 @@ const HeaderBack = () => {
     window.history.back();
   };
   return (
-    <div className="w-full ">
+    <div className="w-full pb-2 ">
       <button
         className="text-gray-500 cursor-pointer"
         onClick={() => handleBack()}

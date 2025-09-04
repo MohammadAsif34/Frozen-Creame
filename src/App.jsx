@@ -17,6 +17,7 @@ import PublishProduct from "./pages/dashboard/dashboard-page/PublishProduct";
 import NewProduct from "./components/dashboard/NewProduct";
 import ViewProduct from "./components/dashboard/ViewProduct";
 import DashboardHome from "./pages/dashboard/dashboard-page/DashboardHome";
+import EditProduct from "./components/dashboard/EditProduct";
 
 // Layout wrapper
 const Layout = () => {
@@ -43,20 +44,26 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       {
         path: "dashboard",
-        element: <Dashboard />,
+
+        element: (
+          <InitialLoad>
+            {" "}
+            <Dashboard />
+          </InitialLoad>
+        ),
         children: [
           {
             index: true,
             element: (
-              <InitialLoad>
-                <DashboardHome />
-              </InitialLoad>
+              <DashboardHome />
+              // </InitialLoad>
             ),
           },
           { path: "products", element: <ManageProduct /> },
           { path: "publish-product", element: <PublishProduct /> },
           { path: "products/add-product", element: <NewProduct /> },
           { path: "products/view/cake/:id", element: <ViewProduct /> },
+          { path: "products/edit/cake/:id", element: <EditProduct /> },
           // You don’t need another "dashboard" inside dashboard
         ],
       },
