@@ -14,7 +14,7 @@ const Navbar = () => {
           <div>
             {/* <img src="" alt="" /> */}
             <span className=" font-bold text-white font-serif">
-              Frozen Creame
+              Frozen Kreme
             </span>
           </div>
           <div className="text-white flex items-center gap-4">
