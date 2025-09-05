@@ -77,6 +77,7 @@ export const updateProduct = async (req, res) => {
       code: 200,
       status: "success",
       message: "Product updated",
+      cake,
     });
   } catch (err) {
     res.json({
