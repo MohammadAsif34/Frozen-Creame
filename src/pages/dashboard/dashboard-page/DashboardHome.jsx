@@ -104,7 +104,7 @@ const ActiveProducts = () => {
   const [size, setSize] = useState(8);
   console.log("active :: ", products);
 
-  if (products.length <= 0)
+  if (products?.length <= 0)
     return (
       <div className="bg-white shadow rounded-2xl p-6 my-3">
         <span className="text-red-500 text-2xl px-2">•</span>
