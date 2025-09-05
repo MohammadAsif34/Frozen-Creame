@@ -6,8 +6,6 @@ export const CreateProductAPI = async (data, file) => {
   const formData = new FormData();
   formData.append("data", JSON.stringify(data));
   formData.append("picture", file);
-
-  // const api = `http://localhost:8800/api/v1/product/upload/new`;
   const api = `${import.meta.env.VITE_BASE_URL}/product/upload/new`;
   try {
     console.log("data create product :: ", data);
@@ -27,7 +25,6 @@ export const CreateProductAPI = async (data, file) => {
 
 // update product
 export const UpdateProductAPI = async (data, id) => {
-  // const api = `http://localhost:8800/api/v1/product/upload/new`;
   const api = `${import.meta.env.VITE_BASE_URL}/product/update/${id}`;
   try {
     // console.log("data create product :: ", data);
@@ -44,8 +41,6 @@ export const UpdateProductAPI = async (data, id) => {
 
 // get all products
 export const GetProductsAPI = async () => {
-  // const api = `http://localhost:8800/api/v1/product/cake`;
-  // const api = `${import.meta.env.VITE_BASE_URL}/product/cake`;
   const api = `${import.meta.env.VITE_BASE_URL}/product/cake`;
   try {
     console.log(" product data :: ");
@@ -58,8 +53,7 @@ export const GetProductsAPI = async () => {
 
 // get all publish products
 export const GetPublishProductsAPI = async () => {
-  const api = `http://localhost:8800/api/v1/product/cake/published`;
-  // const api = `${import.meta.env.VITE_BASE_URL}/product/cake/published`;
+  const api = `${import.meta.env.VITE_BASE_URL}/product/cake/published`;
   try {
     console.log(" product data :: ");
     const res = await axios.get(api, { withCredentials: true });
@@ -71,7 +65,6 @@ export const GetPublishProductsAPI = async () => {
 
 // get single product by id
 export const GetSingleProductsAPI = async (id) => {
-  // const api = `http://localhost:8800/api/v1/product/cake/${id}`;
   const api = `${import.meta.env.VITE_BASE_URL}/product/cake/${id}`;
   try {
     console.log(" product data :: ");
@@ -84,8 +77,9 @@ export const GetSingleProductsAPI = async (id) => {
 
 // publish and unpublish product by id with type?
 export const PublishProductsAPI = async (id, type) => {
-  const api = `http://localhost:8800/api/v1/product/update/${id}/publish?type=${type}`;
-  // const api = `${import.meta.env.VITE_BASE_URL}/product/update/${id}/publish?type=${type}`;
+  const api = `${
+    import.meta.env.VITE_BASE_URL
+  }/product/update/${id}/publish?type=${type}`;
   console.log(api);
   try {
     const res = await axios.put(api, {}, { withCredentials: true });

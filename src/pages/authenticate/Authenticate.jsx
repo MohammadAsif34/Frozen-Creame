@@ -3,10 +3,10 @@ import { LoginForm } from "../../components/authenticate/LoginForm";
 import { RegisterForm } from "../../components/authenticate/RegisterForm";
 
 const Authenticate = () => {
-  const [isLogin, setIsLogin] = useState(true);
+  // const [isLogin, setIsLogin] = useState(true);
   return (
     <>
-      <div className="w-full min-h-[85vh] px-[12%] py-8 text-white bg-gray-50">
+      {/* <div className="w-full min-h-[85vh] px-[12%] py-8 text-white bg-gray-50">
         <div className="w-fit mx-auto p-1 bg-rose-400 rounded-full flex gap-3 transition-all duration-500">
           <button
             className={`min-w-40 max-w-50 px-4 py-1 ${
@@ -24,14 +24,14 @@ const Authenticate = () => {
           >
             Register
           </button>
-        </div>
-        {/* form  */}
-        {isLogin ? (
-          <>
-            <div className="pt-5">
-              <LoginForm />
-            </div>
-          </>
+        </div> */}
+      {/* form  */}
+      {/* {isLogin ? (
+          <> */}
+      <div className="pt-5 bg-gray-50 min-h-[85vh] px-[12%] py-8">
+        <LoginForm />
+      </div>
+      {/* </>
         ) : (
           <>
             <div className="pt-5">
@@ -39,7 +39,7 @@ const Authenticate = () => {
             </div>
           </>
         )}
-      </div>
+      </div> */}
     </>
   );
 };

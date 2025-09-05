@@ -14,6 +14,7 @@ export const LoginForm = () => {
   };
 
   const user = useSelector((s) => s.user);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState(defaultForm);
   const [error, setError] = useState("");
   const [status, setStatus] = useState("");
@@ -25,22 +26,27 @@ export const LoginForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    try {
+      if (!form.email || !form.password) {
+        setError("Please fill in both email and password.");
+        return;
+      }
 
-    if (!form.email || !form.password) {
-      setError("Please fill in both email and password.");
-      return;
+      const res = await LoginAPI(form);
+      console.log("Login res :: ", res);
+      if (res.status === "success") {
+        dispatch(setUser(res.user));
+        toast.success(res.message);
+      } else {
+        toast.error(res.message);
+      }
+      setError("");
+    } catch (err) {
+      console.error("Login api error : ", err.message);
+    } finally {
+      setLoading(false);
     }
-
-    const res = await LoginAPI(form);
-    console.log("Login res :: ", res);
-    if (res.status === "success") {
-      dispatch(setUser(res.user));
-      toast.success(res.message);
-    } else {
-      toast.error(res.message);
-    }
-    setError("");
-
     console.log(form);
     setForm(defaultForm);
   };
@@ -140,9 +146,13 @@ export const LoginForm = () => {
 
               <button
                 type="submit"
-                className="w-full rounded-2xl bg-rose-400 px-4 py-2.5 text-white text-sm font-medium shadow-sm cursor-pointer hover:bg-rose-500 focus:outline-none active:ring-2 active:ring-rose-600 focus:ring-offset-2"
+                className="w-full disabled:cursor-not-allowed rounded-2xl bg-rose-400 px-4 py-2.5 text-white text-sm font-medium shadow-sm cursor-pointer hover:bg-rose-500 focus:outline-none active:ring-2 active:ring-rose-600 focus:ring-offset-2"
+                disabled={loading}
               >
-                Sign in
+                Sign in{" "}
+                {loading && (
+                  <span className="inline-block w-5 h-5 border-2 border-t-transparent rounded-full animate-spin translate-1"></span>
+                )}
               </button>
               <div className="px-2 mt-6 text-xs text-gray-500 flex justify-between">
                 <Link className="text-blue-500">Forget password</Link>
