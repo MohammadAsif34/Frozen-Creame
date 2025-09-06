@@ -37,7 +37,7 @@ const cakeSchema = new mongoose.Schema(
     is_eggless: { type: Boolean, default: false },
     is_publish: { type: Boolean, default: false },
 
-    manufacturer: { type: String },
+    seller: { type: String },
     rating: { type: Number, default: 0 },
     reviews: { type: Number, default: 0 },
   },
@@ -46,7 +46,7 @@ const cakeSchema = new mongoose.Schema(
 
 cakeSchema.pre("save", function (next) {
   const discountedAmount = (this.price * this.discount) / 100;
-  this.final_price = this.price - discountedAmount;
+  this.final_price = parseFloat((this.price - discountedAmount).toFixed(2));
   next();
 });
 

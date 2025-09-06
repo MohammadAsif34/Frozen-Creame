@@ -1,25 +1,43 @@
 import mongoose from "mongoose";
 
-const UserSchema = mongoose.Schema(
+const WhyChooseUsSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+});
+
+const SocialLinkSchema = new mongoose.Schema({
+  name: String,
+  link: String,
+  icon: String,
+});
+
+const DeliveryPartnerSchema = new mongoose.Schema({
+  name: String,
+  icon: String,
+  link: String,
+});
+
+const UserSchema = new mongoose.Schema(
   {
-    fullname: { type: String, required: true },
+    name: { type: String, required: true },
+    logo: String,
+    picture: String,
+    phone_1: String,
+    phone_2: String,
+    address: String,
+    location_link: String,
     email: { type: String, required: true, unique: true },
-    phone: { type: Number, default: "" },
-    dob: { type: Date, required: true },
-    gender: {
-      type: String,
-      enum: ["male", "female", "transgender", "none"],
-      default: "none",
-    },
-    picture: {
-      type: String,
-      default:
-        "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
-    },
-    location: { type: String, default: "" },
     password: { type: String, required: true },
+    website: String,
+    about: String,
+    open_time: String,
+    why_choose_us: [WhyChooseUsSchema],
+    social_links: [SocialLinkSchema],
+    delivery_partner: [DeliveryPartnerSchema],
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
 const User = mongoose.model("users", UserSchema);

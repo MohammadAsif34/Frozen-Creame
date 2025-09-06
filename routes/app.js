@@ -1,6 +1,7 @@
 import express from "express";
 import Authentication from "./Authentication.route.js";
 import productRoutes from "./product.route.js";
+import AdminRoutes from "./Admin.route.js";
 
 import GetUser from "./User.route.js";
 import UpdateUser from "./Update.route.js";
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 
 // routes
 app.use("/auth", Authentication);
+app.use("/admin", AdminRoutes);
 app.use("/product", productRoutes);
 // app.use("/user", GetUser);
 // app.use("/update", UpdateUser);
