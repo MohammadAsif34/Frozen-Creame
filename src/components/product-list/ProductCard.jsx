@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 import { Link, useNavigate } from "react-router-dom";
-import { PublishProductsAPI } from "../../services/product.services";
+import { PublishProductAPI } from "../../services/admin/product.service.js";
 import { toast } from "react-toastify";
 
 const ProductCard = ({ product, isAction, setIsAction }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+
   const handlePublish = async () => {
-    // let res;
+    setLoading(true);
     try {
-      if (product.publish) {
-        const res = await PublishProductsAPI(product._id, "false");
+      if (product.is_publish) {
+        const res = await PublishProductAPI(product._id);
+        console.log("publish res :: ", res);
         if (res.status === "success") toast.success(res.message);
         else toast.error(res.message);
       } else {
-        console.log(product.publish);
-        const res = await PublishProductsAPI(product._id, "true");
-        console.log(res);
+        const res = await PublishProductAPI(product._id, "publish");
+        console.log("publish res :: ", res);
         if (res.status === "success") toast.success(res.message);
         else toast.error(res.message);
       }
@@ -26,88 +27,82 @@ const ProductCard = ({ product, isAction, setIsAction }) => {
     } finally {
       setLoading(false);
     }
-    // console.log(res);
   };
+
   return (
-    <div className="h-fit bg-white rounded-2xl shadow-md hover:shadow-lg transition p-3 grid grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-x-5 relative overflow-hidden">
-      {product?.publish && (
-        <div className="w-30 h-6 py-1 text-center  text-white text-xs bg-green-400 absolute top-0 -rotate-45 -translate-x-8 translate-y-4">
+    <div className="w-full h-fit bg-white rounded-2xl shadow-md hover:shadow-lg transition p-3 flex items-center  gap-x-5 relative overflow-hidden">
+      {product?.is_publish && (
+        <div className="w-30 h-6 py-1 text-center  text-white text-xs bg-green-400 absolute top-0 -rotate-45 -translate-x-10 translate-y-4">
           Published
         </div>
       )}
       {/* Image */}
-      <img
-        src={product.picture}
-        alt={product.name}
-        className="min-w-54 h-28 border border-gray-300 object-cover rounded-xl bg-gray-100 "
-        loading="lazy"
-        decoding="async"
-      />
-
-      {/* Name & Price */}
-      <div className="">
-        <h3 className="text-lg font-semibold text-gray-800 line-clamp-1">
-          {product.name}
-        </h3>
-        <p className="text-sm text-gray-500 mb-2">{product.flavour}</p>
+      <div className="max-w-54 min-w-40 h-32 ">
+        <img
+          src={product.picture}
+          alt={product.name}
+          className="w-full h-full border border-gray-300 object-cover rounded-xl bg-gray-100 "
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-
-      {/* Tags */}
-      <div className="my-auto flex flex-wrap gap-1 mb-3">
-        {product.tags.map((tag, index) => (
-          <span
-            key={index}
-            className="text-xs bg-rose-100 text-rose-600 px-2 py-1 rounded-md"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      {/* Price */}
-      <div className="my-auto mx-auto  items-center gap-2 mb-3">
-        <span className=" px-2 text-xl font-bold text-rose-500">
-          ₹{product.final_price}
-        </span>
-        {product.discount > 0 && (
-          <span className="text-sm text-gray-400 line-through">
-            ₹{product.price}
-          </span>
-        )}
-        <p className="text-sm text-gray-400 ">
-          <i className="bi bi-tag pr-2 text-rose-400"></i>
-          {product.discount}% discount
-        </p>
-      </div>
-
-      {/* Action */}
-      <div className="max-w-44 h-fit  my-auto text-sm px-4 flex flex-col justify-center flex-wrap gap-4">
-        <div className="relative flex-1 flex  text-rose-400 border rounded-md overflow-hidden">
-          <button
-            className="py-1 text-center border-r flex-1  whitespace-nowrap cursor-pointer hover:bg-rose-100 transition duration-500"
-            onClick={() => navigate(`view/cake/${product._id}/`)}
-          >
-            View
-          </button>
-          <button
-            className="flex-1 hover:bg-rose-100  transition duration-5"
-            onClick={() => setIsAction(product._id)}
-          >
-            Action
-          </button>
-          {isAction == product._id && (
-            <Action setIsAction={setIsAction} id={product._id} />
-          )}
+      <div className=" flex-1">
+        {/* Name & Price */}
+        <div className="">
+          <h3 className="text-xl font-semibold text-gray-800 line-clamp-1">
+            {product.name}
+          </h3>
+          <p className="text-sm py-1 text-gray-500 mb-2">
+            {`${product?.flavour}  |  ${product.category}  |  ${product.sub_category}`}
+          </p>
         </div>
-        <button
-          className=" flex-1 px-4 py-2 bg-rose-400 text-white  rounded-md cursor-pointer active:bg-green-300 hover:bg-rose-600 hover:scale-105 transition duration-500"
-          onClick={handlePublish}
-        >
-          {product?.publish ? "Suspend" : "Publish"}
-          {loading && (
-            <span className="inline-block w-4 h-4 border-2 rounded-full border-t-transparent translate-1 animate-spin"></span>
+
+        {/* Price */}
+        <div className="my-auto mx-auto flex items-center gap-2 mb-3">
+          <span className=" px-2 text-xl font-bold text-rose-500">
+            ₹{product.final_price}
+          </span>
+          {product.discount > 0 && (
+            <span className="text-sm text-gray-400 line-through">
+              ₹{product.price}
+            </span>
           )}
-        </button>
+          <p className="text-sm ml-5 text-gray-400 ">
+            <i className="bi bi-tag pr-2 text-rose-400"></i>
+            {product.discount}% discount
+          </p>
+        </div>
+
+        {/* Action */}
+        <div className="text-sm  flex justify-center flex-wrap gap-8">
+          <div className="relative flex-1 flex  text-rose-400 border rounded-md overflow-hidden">
+            <button
+              className="py-1 text-center border-r flex-1  whitespace-nowrap cursor-pointer hover:bg-rose-100 transition duration-500"
+              onClick={() => navigate(`view/cake/${product._id}/`)}
+            >
+              View
+            </button>
+            <button
+              className="flex-1 hover:bg-rose-100  transition duration-5"
+              onClick={() => setIsAction(product._id)}
+            >
+              Action
+            </button>
+            {isAction == product._id && (
+              <Action setIsAction={setIsAction} id={product._id} />
+            )}
+          </div>
+          <button
+            className=" flex-1 px-4 py-2 bg-rose-400 text-white  rounded-md cursor-pointer active:bg-green-300 hover:bg-rose-600 hover:scale-105 transition duration-500"
+            onClick={handlePublish}
+            disabled={loading}
+          >
+            {product?.is_publish ? "Suspend" : "Publish"}
+            {loading && (
+              <span className="inline-block w-4 h-4 border-2 rounded-full border-t-transparent translate-1 animate-spin"></span>
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { GetSingleProductsAPI } from "../../services/product.services";
+// import { GetSingleProductsAPI } from "../../services/product.services";
 import HeaderBack from "../navbar/HeaderBack";
 import { toast } from "react-toastify";
+import { GetSingleProductAPI } from "../../services/admin/product.service";
 
 const ViewProduct = () => {
   const location = useLocation();
@@ -14,11 +15,8 @@ const ViewProduct = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const res = await GetSingleProductsAPI(id);
-      console.log("single product ::> ", res);
-      if (res.status == "success") {
-        setProduct(res.cake);
-      }
+      const res = await GetSingleProductAPI(id);
+      if (res.status == "success") setProduct(res.data);
     };
     fetchProduct();
   }, []);

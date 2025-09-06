@@ -2,7 +2,7 @@ import React from "react";
 import {
   enquries,
   manageItem,
-  // sideItem, 
+  // sideItem,
   userItem,
 } from "../../assets/listData";
 import { Link } from "react-router-dom";
@@ -38,12 +38,12 @@ const DashboardSidebar = () => {
 
           {userItem?.map((item, idx) => (
             <li key={idx} className="w-full px-4 my-6 ">
-              {/* <Link> */}
-              <span className="cursor-pointer">
-                <i className={`mr-3 ${item?.icon}`}></i>
-                {item?.title}
-              </span>
-              {/* </Link> */}
+              <Link to={item.link}>
+                <span className="cursor-pointer">
+                  <i className={`mr-3 ${item?.icon}`}></i>
+                  {item?.title}
+                </span>
+              </Link>
             </li>
           ))}
         </ul>

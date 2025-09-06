@@ -34,9 +34,9 @@ const ProductList = () => {
 
   return (
     <div className="">
-      <ul>
+      <ul className="min-w-lg:border grid grid-cols-[repeat(auto-fill,minmax(450px,_1fr))] gap-4">
         {products?.map((product) => (
-          <li className="my-2" key={product._id}>
+          <li className="w-full min-w-sm my-2" key={product._id}>
             <ProductCard
               key={product.sku}
               product={product}

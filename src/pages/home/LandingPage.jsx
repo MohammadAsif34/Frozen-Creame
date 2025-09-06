@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { user } from "../../data/owner.js";
 
 const LandingPage = () => {
   return (
@@ -21,7 +22,7 @@ const LandingPage = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold text-rose-800"
           >
-            Frozen Cream Cakes
+            Frozen kreme Cakes
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -39,7 +40,7 @@ const LandingPage = () => {
       <section className="max-w-6xl mx-auto py-16 px-6 text-center">
         <h2 className="text-3xl font-bold text-rose-800">About Us</h2>
         <p className="mt-4 text-gray-700 leading-relaxed max-w-3xl mx-auto">
-          At <span className="font-semibold">Frozen Cream Cakes</span>, we bring
+          At <span className="font-semibold">Frozen Kreme Cakes</span>, we bring
           sweetness to every celebration. From birthdays to weddings, we deliver
           cakes that are not just desserts but memories. With years of passion
           and experience, our mission is to spread joy with delightful flavors
@@ -96,21 +97,11 @@ const LandingPage = () => {
       {/* Why Choose Us */}
       <section className="max-w-6xl mx-auto py-16 px-6 text-center">
         <h2 className="text-3xl font-bold text-rose-800">Why Choose Us?</h2>
-        <div className="mt-10 grid md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Seamless Delivery",
-              desc: "On-time doorstep delivery with freshness guaranteed.",
-            },
-            {
-              title: "Trusted Quality",
-              desc: "Thousands of happy customers trust our cakes for every event.",
-            },
-            {
-              title: "Personalized Service",
-              desc: "From custom designs to bulk orders, we make it hassle-free.",
-            },
-          ].map((item, idx) => (
+        {/* <div>
+          <p>{user?.why_choose_us}</p>
+        </div> */}
+        <div className="mt-10 grid md:grid-cols-4 gap-8">
+          {user?.why_choose_us.map((item, idx) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.05 }}
@@ -119,7 +110,7 @@ const LandingPage = () => {
               <h3 className="text-xl font-semibold text-rose-700">
                 {item.title}
               </h3>
-              <p className="mt-2 text-gray-600">{item.desc}</p>
+              <p className="text-sm mt-2 text-gray-600">{item.description}</p>
             </motion.div>
           ))}
         </div>
@@ -154,10 +145,26 @@ const LandingPage = () => {
           Have questions or want to order? We’d love to hear from you.
         </p>
         <div className="mt-6 space-y-2 text-gray-600">
-          <p>📍 123, Sweet Street, Kolkata, India</p>
-          <p>📞 +91 98765 43210</p>
-          <p>✉️ hello@frozencreamcakes.com</p>
+          <p>📍{user?.address} </p>
+          <p>
+            📞 {user?.phone_1} | {user?.phone_2}{" "}
+          </p>
+          <p>✉️ {user?.email}</p>
+          {/* social links  */}
+          <div className="flex justify-center">
+            <span>Follow on :</span>
+            <ul className="flex items-center">
+              {user?.social_links?.map((item, idx) => (
+                <li key={idx} title={item.name} className="mx-2 cursor-pointer">
+                  <Link to={item?.link}>
+                    <img src={item?.icon} alt="" className="w-6" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
+
         <div className="mt-6">
           <Link
             to="/contact"
@@ -167,6 +174,25 @@ const LandingPage = () => {
           </Link>
         </div>
       </section>
+      {/* deliver Partner  */}
+      <div className="bg-rose-200 py-10 flex flex-col items-center ">
+        <h1 className="pb-8 text-center text-3xl text-rose-800 font-bold">
+          Ours Delivery Partner
+        </h1>
+        <ul className="flex items-center">
+          {user?.delivery_partner?.map((item, idx) => (
+            <li key={idx} title={item.name} className=" mx-2 cursor-pointer">
+              <Link to={item?.link}>
+                <img
+                  src={item?.icon}
+                  alt=""
+                  className="w-28 aspect-3/2 object-center object-cover rounded-xl"
+                />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

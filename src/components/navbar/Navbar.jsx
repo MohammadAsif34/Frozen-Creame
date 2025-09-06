@@ -11,9 +11,9 @@ const Navbar = () => {
     <>
       <div className="w-full h-18 px-[8%] bg-rose-400">
         <div className="w-full h-full flex justify-between items-center">
-          <div>
-            {/* <img src="" alt="" /> */}
-            <span className=" font-bold text-white font-serif">
+          <div className="flex items-center gap-2">
+            <img src="/logo.png" alt="" className="w-10 p-1" />
+            <span className=" font-bold text-white font-serif text-2xl">
               Frozen Kreme
             </span>
           </div>

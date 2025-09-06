@@ -4,10 +4,10 @@ import MultipleInput from "./input-type/MultipleInput";
 import CheckboxInput from "./input-type/CheckboxInput";
 import KeyValueInput from "./input-type/KeyValueInput";
 import ImageUploadInput from "./input-type/ImageUploadInput";
-import {
-  CreateProductAPI,
-  // UpdateProductAPI,
-} from "../../services/product.services";
+// import {
+//   CreateProductAPI,
+//   // UpdateProductAPI,
+// } from "../../services/product.services";
 import { toast } from "react-toastify";
 import { defaultCakeForm } from "../../data/defaultData";
 import SelectInput from "./input-type/SelectInput";
@@ -19,8 +19,15 @@ import {
   unit_type,
 } from "../../data/optionData";
 
+import { useSelector } from "react-redux";
+import {
+  CreateProductAPI,
+  UpdateProductAPI,
+} from "../../services/admin/product.service";
+
 const ProductForm = ({ product = null, onSave, onCancel }) => {
   const [loading, setLoading] = useState(false);
+  const user = useSelector((s) => s.user.data);
 
   // Initialize formData from product prop or default form
   const [formData, setFormData] = useState(product || defaultCakeForm);
@@ -55,23 +62,14 @@ const ProductForm = ({ product = null, onSave, onCancel }) => {
     e.preventDefault();
     try {
       setLoading(true);
-
-      let res;
-      if (product) {
-        // Edit mode: call update API
-        res = await UpdateProductAPI(formData, file);
-      } else {
-        // Add mode: call create API
-        res = await CreateProductAPI(formData, file);
-      }
-
+      formData.seller = user._id;
+      const res = await CreateProductAPI(formData, file);
       if (res.status === "success") {
         toast.success(res.message);
         if (!product) {
           setFormData(defaultCakeForm);
           setFile(null);
         }
-        if (onSave) onSave(res.data);
       } else {
         toast.error(res.message || "Something went wrong");
       }

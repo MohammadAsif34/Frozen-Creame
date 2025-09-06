@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import {
-  GetSingleProductsAPI,
-  UpdateProductAPI,
-} from "../../services/product.services";
+import // GetSingleProductsAPI,
+// UpdateProductAPI,
+"../../services/product.services";
 import HeaderBack from "../navbar/HeaderBack";
 import { toast } from "react-toastify";
+import {
+  GetSingleProductAPI,
+  UpdateProductAPI,
+} from "../../services/admin/product.service";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -16,10 +19,9 @@ const EditProduct = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const res = await GetSingleProductsAPI(id);
-      if (res.status === "success") {
-        setFormData(res.cake);
-      }
+      console.log(id);
+      const res = await GetSingleProductAPI(id);
+      if (res.status === "success") setFormData(res.data);
       setLoading(false);
     };
     fetchProduct();
@@ -119,7 +121,8 @@ const EditProduct = () => {
   // Save handler (replace with your API call)
   const handleSave = async () => {
     try {
-      const res = await UpdateProductAPI(formData, formData._id);
+      const res = await UpdateProductAPI(formData._id, formData);
+
       console.log("update product res :: ", res);
       if (res.status === "success") {
         toast.success(res.message);

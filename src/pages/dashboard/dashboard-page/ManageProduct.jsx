@@ -12,7 +12,7 @@ const ManageProduct = () => {
     <>
       <HeaderBack />
       <div className="px-4">
-        <div className=" h-16 flex justify-between items-center ">
+        <div className=" py-2 flex justify-between items-center ">
           <h1 className="text-2xl text-rose-500 capitalize font-bold ">
             Your Products
           </h1>

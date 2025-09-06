@@ -18,7 +18,7 @@ const MainLayout = () => {
         <div className="w-full sticky top-0 left-0 z-30">
           <Navbar />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 bg-gray-50">
           <Outlet />
         </div>
       </div>

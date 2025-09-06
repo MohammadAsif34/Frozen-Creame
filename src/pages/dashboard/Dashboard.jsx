@@ -27,7 +27,7 @@ const Dashboard = () => {
       <div className="w-2xs  ">
         <DashboardSidebar />
       </div>
-      <div className="flex-1 p-4 bg-gray-50 overflow-y-auto">
+      <div className="flex-1 bg-gray-50 overflow-y-auto">
         <Outlet />
       </div>
     </div>

@@ -10,7 +10,7 @@ export const userItem = [
     _id: 2,
     title: "Setting",
     icon: "fa-solid fa-gear",
-    link: "",
+    link: "setting",
     function: "",
   },
 ];

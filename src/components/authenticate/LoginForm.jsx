@@ -155,7 +155,9 @@ export const LoginForm = () => {
                 )}
               </button>
               <div className="px-2 mt-6 text-xs text-gray-500 flex justify-between">
-                <Link className="text-blue-500">Forget password</Link>
+                <Link to={"/auth/forget-password"} className="text-blue-500">
+                  Forget password
+                </Link>
               </div>
             </form>
           </div>

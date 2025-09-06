@@ -18,6 +18,10 @@ import NewProduct from "./components/dashboard/NewProduct";
 import ViewProduct from "./components/dashboard/ViewProduct";
 import DashboardHome from "./pages/dashboard/dashboard-page/DashboardHome";
 import EditProduct from "./components/dashboard/EditProduct";
+import ProfilePage from "./pages/dashboard/dashboard-page/ProfilePage";
+import SettingPage from "./pages/dashboard/dashboard-page/SettingPage";
+import PageNotFound from "./pages/PageNotFound";
+import { ForgetPassword } from "./components/authenticate/ForgetPassword";
 
 // Layout wrapper
 const Layout = () => {
@@ -47,23 +51,19 @@ const router = createBrowserRouter([
 
         element: (
           <InitialLoad>
-            {" "}
             <Dashboard />
           </InitialLoad>
         ),
         children: [
-          {
-            index: true,
-            element: (
-              <DashboardHome />
-              // </InitialLoad>
-            ),
-          },
+          { index: true, element: <DashboardHome /> },
           { path: "products", element: <ManageProduct /> },
           { path: "publish-product", element: <PublishProduct /> },
           { path: "products/add-product", element: <NewProduct /> },
           { path: "products/view/cake/:id", element: <ViewProduct /> },
           { path: "products/edit/cake/:id", element: <EditProduct /> },
+
+          { path: "profile", element: <ProfilePage /> },
+          { path: "profile/edit", element: <SettingPage /> },
           // You don’t need another "dashboard" inside dashboard
         ],
       },
@@ -71,6 +71,11 @@ const router = createBrowserRouter([
         path: "/auth",
         element: <Authenticate />,
       },
+      {
+        path: "/auth/forget-password",
+        element: <ForgetPassword />,
+      },
+      { path: "*", element: <PageNotFound /> },
     ],
   },
 ]);
