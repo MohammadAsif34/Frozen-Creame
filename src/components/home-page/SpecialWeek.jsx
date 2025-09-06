@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ProductCard from "../products/ProductCard";
 import cakeItem from "../../assets/cakeItem.json";
 
 const SpecialWeek = () => {
+  const navigate = useNavigate();
   const specialWeekCakeItem = [...cakeItem].sort(() => 0.5 - Math.random());
   return (
     <>
@@ -35,7 +36,10 @@ const SpecialWeek = () => {
 
           <div className=" text-center py-2">
             <Link to={"/search"}>
-              <button className="px-8 py-2 bg-gradient-to-l from-rose-400 to-fuchsia-400 text-white font-medium rounded-md hover:bg-gradient-to-br transition-all duration-500 ease-in-out">
+              <button
+                className="px-8 py-2 bg-gradient-to-l from-rose-400 to-fuchsia-400 text-white font-medium rounded-md hover:bg-gradient-to-br transition-all duration-500 ease-in-out"
+                onClick={() => navigate("search/product")}
+              >
                 See More
               </button>
             </Link>

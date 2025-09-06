@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="w-full flex max-md:flex-col max-md:px-10">
           {/* address  */}
           <div className="flex-1">
-            <h1 className="text-2xl font-semibold">Frozen Creme</h1>
+            <h1 className="text-3xl font-semibold text-rose-400 ">Frozen Creme</h1>
             <ul className=" text-lg max-sm:text-sm px-3 py-1">
               <li className="flex items-center gap-5 my-3">
                 <i className="bi bi-telephone text-2xl"></i>

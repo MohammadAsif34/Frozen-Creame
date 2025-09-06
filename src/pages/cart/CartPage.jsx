@@ -1,0 +1,109 @@
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import ItemCard2 from "../../components/products/ItemCard2";
+import { toast } from "react-toastify";
+// import { cartItem } from "../dataSets/cartItem";
+// import { useUser } from "../contexts/CreateContext";
+// import ItemCard2 from "../../components/products/ItemCard2";
+
+const CartPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [price, setPrice] = useState(0);
+  const cart = useSelector((s) => s.cart.cartItem);
+  return (
+    <div className="px-[10%]  gap-x-20 relative">
+      <button
+        className="text-neutral-400 py-1 mt-2 cursor-pointer"
+        onClick={() => window.history.back()}
+      >
+        <i className="bi bi-arrow-left mr-2"></i>
+        Back
+      </button>
+      {/* cart items  */}
+
+      <div className="flex-2/3  text-gray-500 ">
+        <h1 className=" mt-5 text-3xl font-semibold">
+          Your Cart <span className="px-4 text-sm"> ({5} items)</span>
+        </h1>
+        <div className=" px-2 mt-5 rounded-md shadow-sm  bg-gray-50">
+          <div className="py-2 text-md font-semibold capitalize grid grid-cols-[1fr_3fr_1fr_1fr] gap-5">
+            <h1>product</h1>
+            <h3>Item</h3>
+            <p>Qty: 1</p>
+            <p className="text-center">Price</p>
+          </div>
+          <div className="pb-2 px-4 flex flex-col gap-2">
+            {cart?.map((item, idx) => (
+              <ItemCard2 key={item?.id || idx} item={item} />
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* cart checkout  */}
+      <CartCheckout />
+    </div>
+  );
+};
+
+export default CartPage;
+
+const CartCheckout = () => {
+  const cart = useSelector((s) => s.cart);
+  const finalPrice = useSelector((s) => s.cart.finalPrice);
+  console.log(cart);
+  return (
+    <>
+      <div className=" flex gap-x-10 py-18">
+        <div className="flex-1">
+          <form className="flex gap-2 p-1 border-2 border-gray-300 rounded-lg">
+            <input
+              type="text"
+              className="w-full h-8 px-4 outline-none text-gray-400"
+              placeholder="Enter Coupon Code"
+            />
+            <button className="px-6 bg-rose-400 text-white rounded-lg hover:bg-rose-500 cursor-pointer transition">
+              Apply
+            </button>
+          </form>
+        </div>
+        <div className=" flex-1  px-4 py-6 bg-gray-100 rounded-xl ">
+          <div className="px-4 pb-2 capitalize text-xl text-gray-500 border-b border-gray-300">
+            <h1>
+              your cart :{" "}
+              <span className="pl-4 pr-1">{cart.cartItem.length}</span>
+              <span className="text-sm">items</span>
+            </h1>
+          </div>
+          <div className="px-4 py-1.5 my-2 flex justify-between">
+            <p>{`Price (${cart.cartItem.length} items):`}</p>
+            <span>{cart?.totalPrice}</span>
+          </div>
+          <div className="px-4 py-1.5 my-2 flex justify-between">
+            <p>{`Discount:   5%`}</p>
+            <span>1526</span>
+          </div>
+          <div className="px-4 py-1.5 my-2 flex justify-between">
+            <p>{`Other charges:   5%`}</p>
+            <span>1526</span>
+          </div>
+          <div className=" my-3 px-4 py-1.5  flex justify-between border-y border-gray-300 text-xl">
+            <p>Total Amount</p>
+            <span>{finalPrice}</span>
+          </div>
+          <div className="px-10">
+            <button
+              className="w-full py-1.5 mt-5 border rounded-full text-white bg-rose-400 hover:bg-rose-500 transition duration-300 cursor-pointer"
+              onClick={() => toast.warn("Under development")}
+            >
+              Proceed to Payment
+            </button>
+            <button className="w-full py-1.5 mt-5 border border-rose-400 rounded-full text-rose-400 hover:bg-rose-200 transition duration-300 cursor-pointer">
+              Continue Shopping
+            </button>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </>
+  );
+};

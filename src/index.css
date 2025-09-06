@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+.animate-roll-back {
+  animation: roll-back 1.2s cubic-bezier(0.4, 0, 0.9, 1) infinite;
+}
+
+@keyframes roll-back {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(90deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

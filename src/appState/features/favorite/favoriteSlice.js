@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = { isOpen: false, favoriteItem: [] };
 
@@ -10,10 +11,29 @@ const favoriteSlice = createSlice({
       state.isOpen = !state.isOpen;
     },
     AddToFavorite: (state, actions) => {
-      state.cartItem.push = actions.payload;
+      try {
+        const exist = state.favoriteItem.find(
+          (item) => item.id == actions.payload?.id
+        );
+        if (!exist) {
+          state.favoriteItem.push(actions.payload);
+          toast.success("Added to favorite");
+        } else {
+          toast.info("Already Added ");
+        }
+      } catch (error) {
+        toast.error("failed! Adding to favorite");
+      }
     },
     RemoveFromFavorite: (state, actions) => {
-      return state.cartItem.at(actions.payload);
+      try {
+        state.favoriteItem = state.favoriteItem.filter(
+          (item) => item.id !== actions.payload
+        );
+        toast.success("Removed from favorite");
+      } catch (error) {
+        toast.error("failed! Removing from favorite");
+      }
     },
   },
 });

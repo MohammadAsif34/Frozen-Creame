@@ -10,7 +10,7 @@ const MainLayout = () => {
       <ConditionalComponent />
       <main className="w-full min-h-screen flex flex-col">
         {/* Sticky Navbar */}
-        <div className="w-full h-20  bg-rose-400 sticky top-0 left-0 z-30 overflow-hidden">
+        <div className="w-full h-16 bg-rose-400 sticky top-0 left-0 z-30 overflow-hidden">
           <Navbar />
         </div>
 

@@ -1,9 +1,9 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import ProductList from "../../components/manage/ProductList";
 
 const ManageProduct = () => {
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
   return (
     <>
       <div className="px-4">

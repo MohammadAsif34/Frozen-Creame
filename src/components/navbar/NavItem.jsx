@@ -21,19 +21,19 @@ const NavItem = () => {
         </div>
         <nav>
           <ul className="flex gap-x-5 items-center font-light">
-            <Link to={"about-us"}>
+            <Link to={"/about-us"}>
               <li className="cursor-pointer relative group ">
                 <span className=" absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300 ease-in-out"></span>
                 About Us
               </li>
             </Link>
-            <Link to={"contact-us"}>
+            <Link to={"/contact-us"}>
               <li className="cursor-pointer relative group ">
                 <span className=" absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300 ease-in-out"></span>
                 Contact Us
               </li>
             </Link>
-            <Link to={"franchise-enquiry"}>
+            <Link to={"/franchise-enquiry"}>
               <li className="cursor-pointer relative group ">
                 <span className=" absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
                 Franchise Enquiry

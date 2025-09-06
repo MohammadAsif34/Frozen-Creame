@@ -43,15 +43,16 @@
     "reviews": 124,
     "picture": "https://images.pexels.com/photos/11994921/pexels-photo-11994921.jpeg",
     "album": [
-      "https://example.com/images/chocolate-truffle1.jpg",
-      "https://example.com/images/chocolate-truffle2.jpg"
+      "https://images.pexels.com/photos/1829423/pexels-photo-1829423.jpeg",
+      "https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg",
+      "https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg"
     ],
     "date_added": "2025-08-15T10:00:00Z",
     "date_updated": "2025-08-15T10:00:00Z"
   },
   {
     "id": 2,
-    "sku": "CK-002",
+    "sku": "CK-002",  
     "name": "Red Velvet Cake",
     "description": "Soft red velvet sponge with cream cheese frosting.",
     "price": 699,
