@@ -21,12 +21,16 @@ const UserSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     logo: String,
-    picture: String,
+    picture: {
+      type: String,
+      default:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbaWBOy-mT9TQkuDT9b5I-w9X5Xs_mr6PJRg&s",
+    },
     phone_1: String,
     phone_2: String,
     address: String,
     location_link: String,
-    email: { type: String, required: true, unique: true },
+    email: { type: String, required: true, unique: true, immutable: true },
     password: { type: String, required: true },
     website: String,
     about: String,

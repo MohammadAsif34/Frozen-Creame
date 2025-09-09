@@ -1,10 +1,10 @@
 import Cake from "../../models/Cake.model.js";
+import User from "../../models/Users.model.js";
 import uploadBuffer from "../../utils/uploadBuffer.js";
 
 export const createProduct = async (req, res) => {
   try {
     const data = JSON.parse(req.body.data);
-    console.log(data);
     let picture_url =
       "https://kaverisias.com/wp-content/uploads/2018/01/catalog-default-img-1024x1024.gif";
 
@@ -52,13 +52,21 @@ export const updateProductImage = async (req, res) => {
     res.json({ code: 500, status: "unsuccess", message: error.message });
   }
 };
+
 export const publishProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const { type } = req.body;
-    const item = await Cake.findByIdAndUpdate(id, {
-      is_publish: type === "publish",
-    });
+
+    const item = await Cake.findById(id);
+    if (!item)
+      return res.json({
+        code: 404,
+        status: "unseccess",
+        message: "something went wrong",
+      });
+    item.publish = type === "publish";
+    item.save();
     res.json({
       code: 200,
       status: "success",
@@ -92,13 +100,38 @@ export const getSingleProduct = async (req, res) => {
 };
 export const getAllProduct = async (req, res) => {
   try {
-    // console.log(req.admin_id);
     const item = await Cake.find({ seller: req.admin_id });
     res.json({
       code: 200,
       status: "success",
       message: "product fetch",
       data: item,
+    });
+  } catch (error) {
+    res.json({ code: 500, status: "unsuccess", message: error.message });
+  }
+};
+
+export const updateAdmin = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log(req.body);
+    const user = await User.findById(id);
+
+    if (!user)
+      return res.json({
+        code: 404,
+        status: "unsuccess",
+        message: "user not found",
+      });
+    Object.assign(user, req.body);
+    await user.save();
+
+    res.json({
+      code: 200,
+      status: "success",
+      message: "user updated",
+      data: user,
     });
   } catch (error) {
     res.json({ code: 500, status: "unsuccess", message: error.message });

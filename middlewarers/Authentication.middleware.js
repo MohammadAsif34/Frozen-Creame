@@ -3,12 +3,13 @@ import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
+// import { use } from "react";
 dotenv.config();
 
 export const register = async (req, res) => {
   try {
     const { fullname, email, password, dob } = req.body;
-    if (!fullname || !email || !dob || !password) {
+    if (!fullname || !email || !password) {
       return res.json({
         status: 400,
         code: "MISSING_FIELDS",
@@ -134,6 +135,54 @@ export const logout = async (req, res) => {
     res.json({
       status: 500,
       msg: "invalid and expried token",
+      error: err.message,
+    });
+  }
+};
+
+export const forgetPassword = async (req, res) => {
+  console.log("forget password");
+  try {
+    // const token = req.cookies.token_token;
+    const id = req.userId;
+    const { password, new_password } = req.body;
+    if (!password || !new_password) {
+      return res.json({
+        code: 500,
+        status: "unseccess",
+        message: "input required",
+      });
+    }
+
+    const user = await User.findById(decode.userId).select("password");
+    if (!user)
+      return res.json({
+        code: 400,
+        status: "unseccess",
+        message: "user not found",
+      });
+
+    const checkPassword = await bcrypt.compare(password, user.password);
+
+    if (!checkPassword)
+      return res.json({
+        code: 201,
+        status: "unsuccess",
+        message: "wrong password",
+      });
+
+    user.password = await bcrypt.hash(new_password, 8);
+    await user.save();
+
+    res.json({
+      code: 200,
+      status: "success",
+      message: "password forgetted",
+    });
+  } catch (err) {
+    res.json({
+      status: 500,
+      msg: "something went worng",
       error: err.message,
     });
   }

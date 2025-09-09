@@ -27,7 +27,7 @@ const AdminSchema = new mongoose.Schema(
     website: { type: String },
     about: { type: String },
     open_time: { type: String },
-    why_choose_us: { type: String },
+    why_choose_us: [{ type: String }],
     social_links: [SocialLinkSchema],
     delivery_partner: [DeliveryPartnerSchema],
   },

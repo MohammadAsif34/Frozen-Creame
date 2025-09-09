@@ -15,7 +15,7 @@ const cakeSchema = new mongoose.Schema(
     stock: { type: Number, default: 0 },
     prepare_time: { type: Number },
     unit: { type: String },
-    unit_values: [{ type: String }],
+    unit_value: [{ type: String }],
     category: { type: String },
     sub_category: { type: String },
 
@@ -26,16 +26,15 @@ const cakeSchema = new mongoose.Schema(
     allergens: [{ type: String }],
     nutrition_info: {
       calories: { type: Number },
-      sugar_g: { type: Number },
-      fat_g: { type: Number },
-      protein_g: { type: Number },
+      sugar: { type: Number },
+      fat: { type: Number },
+      protein: { type: Number },
     },
 
-    is_customizable: { type: Boolean, default: false },
-    is_featured: { type: Boolean, default: false },
-    isAvailable: { type: Boolean, default: true },
-    is_eggless: { type: Boolean, default: false },
-    is_publish: { type: Boolean, default: false },
+    customizable: { type: Boolean, default: false },
+    eggless: { type: Boolean, default: false },
+    available: { type: Boolean, default: false },
+    publish: { type: Boolean, default: false },
 
     seller: { type: String },
     rating: { type: Number, default: 0 },
@@ -47,6 +46,9 @@ const cakeSchema = new mongoose.Schema(
 cakeSchema.pre("save", function (next) {
   const discountedAmount = (this.price * this.discount) / 100;
   this.final_price = parseFloat((this.price - discountedAmount).toFixed(2));
+  if (this.stock > 0) {
+    this.available = true;
+  }
   next();
 });
 

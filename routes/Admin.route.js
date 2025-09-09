@@ -4,6 +4,7 @@ import {
   getAllProduct,
   getSingleProduct,
   publishProduct,
+  updateAdmin,
   updateProductdetails,
 } from "../controllers/admin/product.controller.js";
 import upload from "../config/multer.js";
@@ -17,6 +18,8 @@ router.post("/product/update/imgae", updateProductdetails); // update product im
 router.post("/product/publish/:id/", publishProduct); // publish (type from body)                     -- works - works
 
 router.get("/product/:id", getSingleProduct); // get single product                                   -- works - works
-router.get("/products", verifyAdmin, getAllProduct); // get all products                                           -- works - works
+router.get("/products", verifyAdmin, getAllProduct); // get all products                              -- works - works
+
+router.post("/me/update/:id", verifyAdmin, updateAdmin); // get all products                              -- works - works
 
 export default router;
