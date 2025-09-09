@@ -3,6 +3,7 @@ import { NavItem } from "./NavItem";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser, UnsetUser } from "../../redux/slice/userSlice";
+import { persistor } from "../../redux/app/store";
 
 const Navbar = () => {
   const user = useSelector((s) => s.user);
@@ -41,6 +42,12 @@ export default Navbar;
 const LoginedProfile = ({ user }) => {
   const [dropMenu, setDropMenu] = useState(false);
   const dispatch = useDispatch();
+  const handleLogout = async () => {
+    // dispatch(UnsetUser());
+    // await persistor.purge();
+    // window.location.reload();
+    dispatch({ type: "LOGOUT" });
+  };
 
   return (
     <>
@@ -50,19 +57,19 @@ const LoginedProfile = ({ user }) => {
       >
         <div className="w-8 h-8 border  rounded-full overflow-hidden">
           <img
-            src={user?.picture || "./banner-1.png"}
+            src={user?.picture || "/banner-1.png"}
             alt="profile"
             className="w-full h-full rounded-full object-center object-cover"
           />
         </div>
         <div className=" max-w-[100px] truncate text-sm ">
-          {user?.fullname || "Mohammad Asif"}
+          {user?.name || "Mohammad Asif"}
         </div>
         {dropMenu && (
           <div className="w-36 py-1 bg-gray-100 text-gray-500 rounded-md  absolute top-12 right-0 shadow">
             <button
               className="w-full px-4 py-1 text-start hover:bg-gray-200 cursor-pointer"
-              onClick={() => dispatch(UnsetUser())}
+              onClick={handleLogout}
             >
               Logout
             </button>

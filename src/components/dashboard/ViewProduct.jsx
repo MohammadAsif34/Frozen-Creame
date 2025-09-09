@@ -12,16 +12,22 @@ const ViewProduct = () => {
   const { id } = useParams();
   console.log("id :: ", id);
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     const fetchProduct = async () => {
       const res = await GetSingleProductAPI(id);
       if (res.status == "success") setProduct(res.data);
     };
     fetchProduct();
+    setLoading(false);
   }, []);
 
-  if (!product) {
+  if (loading & !product) {
+    return <div>Loading...</div>;
+  }
+  if (!product && !loading) {
     return (
       <div className="p-6 text-center text-gray-500">
         <i className="fas fa-info-circle mr-2"></i> No product selected
@@ -36,7 +42,7 @@ const ViewProduct = () => {
 
   return (
     <>
-      <HeaderBack />
+      {/* <HeaderBack /> */}
       <div className="p-10 mt-2 bg-white shadow rounded-lg  mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -101,7 +107,7 @@ const ViewProduct = () => {
               </p>
               <p className="mb-2">
                 <span className="font-semibold pr-2">Unit:</span>
-                {product?.unit_values.map((u) => (
+                {product?.unit_values?.map((u) => (
                   <span className="pr-1">
                     {u}
                     {product.unit + ","}
@@ -116,11 +122,11 @@ const ViewProduct = () => {
             <div></div>
           </div>
           {/* image  */}
-          <div className="">
+          <div className="min-w-72 max-w-md aspect-square">
             <img
               src={product.picture}
               alt={product.name}
-              className="rounded-lg shadow-lg h-96 w-full object-cover bg-gray-100"
+              className="rounded-lg shadow-lg w-full object-cover bg-gray-100"
             />
           </div>
         </div>
@@ -168,100 +174,15 @@ const ViewProduct = () => {
           <div>
             <h3 className="font-bold mb-2">Nutrition Info (per slice)</h3>
             <ul className="text-gray-700">
-              <li>Calories: {product.nutrition_info.calories}</li>
-              <li>Fat: {product.nutrition_info.fat_g}</li>
-              <li>Sugar: {product.nutrition_info.sugar_g}</li>
+              <li>Calories (kcal): {product.nutrition_info.calories}</li>
+              <li>Fat (g): {product.nutrition_info.fat}</li>
+              <li>Sugar (g): {product.nutrition_info.sugar}</li>
+              <li>Protien (g): {product.nutrition_info.protien}</li>
             </ul>
           </div>
         </div>
 
-        <div className="grid grid-cols-4 px-4">
-          <p className="mb-2 font-semibold">
-            <span>Featured:</span>
-            <span
-              className={` px-2 font-semibold ${
-                product.is_featured ? "text-green-500" : "text-red-500"
-              }`}
-            >
-              {product.is_featured ? "Yes" : "No"}
-            </span>
-          </p>
-          <p className="mb-2 font-semibold">
-            <span>Customizable:</span>
-            <span
-              className={` px-2 font-semibold ${
-                product.is_customizable ? "text-green-500" : "text-red-500"
-              }`}
-            >
-              {product.is_customizable ? "Yes" : "No"}
-            </span>
-          </p>
-          <p className="mb-2 font-semibold">
-            <span>Eggless:</span>
-            <span
-              className={` px-2 font-semibold ${
-                product.is_eggless ? "text-green-500" : "text-red-500"
-              }`}
-            >
-              {product.is_eggless ? "Yes" : "No"}
-            </span>
-          </p>
-          <p className="mb-2 font-semibold">
-            <span>Availabel:</span>
-            <span
-              className={` px-2 font-semibold ${
-                product.is_available ? "text-green-500" : "text-red-500"
-              }`}
-            >
-              {product.is_available ? "Yes" : "No"}
-            </span>
-          </p>
-          <p className="mb-2 font-semibold">
-            <span>Publish:</span>
-            <span
-              className={` px-2 font-semibold ${
-                product.is_publish ? "text-green-500" : "text-red-500"
-              }`}
-            >
-              {product.is_publish ? "Yes" : "No"}
-            </span>
-          </p>
-          <p className="mb-2">
-            <span className="font-semibold">Rating:</span> ⭐ {product.rating} (
-            {product.reviews} reviews)
-          </p>
-        </div>
-      </div>
-
-      {/* Image + Info */}
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12"> */}
-      {/* Image */}
-
-      {/* Details */}
-      {/* <div>
-          <p className="mb-2">
-            <span className="font-semibold">Origin:</span> {product.origin}
-          </p> */}
-      {/* 
-          <p className="mb-2">
-            <span className="font-semibold">Eggless:</span>{" "}
-            {product.isEggless ? (
-              <span className="text-green-600">Yes</span>
-            ) : (
-              <span className="text-red-600">No</span>
-            )}
-          </p> */}
-
-      {/* <p className="mb-2 font-semibold">
-            <span>Eggless:</span>
-            <span
-              className={` px-2 font-semibold ${
-                product.isEggless ? "text-green-500" : "text-red-500"
-              }`}
-            >
-              {product.isEggless ? "Yes" : "No"}
-            </span>
-          </p>
+        <div className="grid grid-cols-1 px-4">
           <p className="mb-2 font-semibold">
             <span>Customizable:</span>
             <span
@@ -272,36 +193,45 @@ const ViewProduct = () => {
               {product.customizable ? "Yes" : "No"}
             </span>
           </p>
-        </div>
-      </div> */}
 
-      {/* Extra Info */}
-      {/* <div className="mt-6 grid grid-cols-2">
-        <div>
-          <h3 className="text-lg font-bold mb-2">Description</h3>
-          <p className="text-gray-700">{product.description}</p>
-        </div>
-        <div>
-          <h3 className="text-lg font-bold mb-2">Tags</h3>
+          <p className="mb-2 font-semibold">
+            <span>Eggless:</span>
+            <span
+              className={` px-2 font-semibold ${
+                product.eggless ? "text-green-500" : "text-red-500"
+              }`}
+            >
+              {product.eggless ? "Yes" : "No"}
+            </span>
+          </p>
+
+          <p className="mb-2 font-semibold">
+            <span>Available:</span>
+            <span
+              className={` px-2 font-semibold ${
+                product?.stock > 0 ? "text-green-500" : "text-red-500"
+              }`}
+            >
+              {product?.stock > 0 ? "Yes" : "No"}
+            </span>
+          </p>
+
+          <p className="mb-2 font-semibold">
+            <span>Publish:</span>
+            <span
+              className={` px-2 font-semibold ${
+                product.publish ? "text-green-500" : "text-red-500"
+              }`}
+            >
+              {product.publish ? "Yes" : "No"}
+            </span>
+          </p>
+          <p className="mb-2">
+            <span className="font-semibold">Rating:</span> ⭐ {product.rating} (
+            {product.reviews} reviews)
+          </p>
         </div>
       </div>
-
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4"> */}
-      {/* Tags & Creme */}
-      {/* <div className="mt-6 flex flex-wrap gap-2">
-          {product.tags.map((tag, idx) => (
-            <span
-              key={idx}
-              className="px-3 py-1 bg-rose-100 text-rose-700 rounded-full text-sm"
-            >
-              #{tag}
-            </span>
-          ))}
-        </div>
-        <div className="mt-4">
-          <span className="font-bold">Creme Types:</span>{" "}
-          {product.creme.join(", ")}
-        </div> */}
 
       {/* Footer Actions */}
       <div className="flex gap-3 mt-8">

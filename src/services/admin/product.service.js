@@ -2,6 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 const base_url = import.meta.env.VITE_BASE_URL;
 
+// create new product
 export const CreateProductAPI = async (data, file) => {
   console.log(data);
   const formData = new FormData();

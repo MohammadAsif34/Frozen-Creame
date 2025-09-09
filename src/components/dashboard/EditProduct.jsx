@@ -147,7 +147,7 @@ const EditProduct = () => {
 
   return (
     <>
-      <HeaderBack />
+      {/* <HeaderBack /> */}
       <div className="p-10 pt-0 bg-white shadow rounded-lg mx-auto max-w-7xl">
         <p className="py-5 text-xl font-bold text-center underline">
           Edit Product
@@ -229,19 +229,7 @@ const EditProduct = () => {
                   ₹{formData.price}
                 </span>
               </p>
-              <p className="mb-2 flex items-center gap-2">
-                <span className="font-semibold pr-2">Final Price:</span>
-                <input
-                  type="number"
-                  name="final_price"
-                  value={formData.final_price}
-                  onChange={handleChange}
-                  className="border px-2 py-1 rounded w-24 text-green-600 font-bold"
-                />
-                <span className="text-sm text-red-500">
-                  ({formData.discount}% OFF)
-                </span>
-              </p>
+
               <p className="mb-2">
                 <span className="font-semibold pr-2">Discount (%):</span>
                 <input
@@ -252,16 +240,7 @@ const EditProduct = () => {
                   className="border px-2 py-1 rounded w-24"
                 />
               </p>
-              <p className="mb-2">
-                <span className="font-semibold pr-2">Sold:</span>
-                <input
-                  type="number"
-                  name="sold"
-                  value={formData.sold}
-                  onChange={handleChange}
-                  className="border px-2 py-1 rounded w-24"
-                />
-              </p>
+
               <p className="mb-2">
                 <span className="font-semibold pr-2">Stock:</span>
                 <input
@@ -297,7 +276,7 @@ const EditProduct = () => {
               </p>
               <div className="mb-2">
                 <span className="font-semibold pr-2">Unit Values:</span>
-                {formData.unit_values.map((u, idx) => (
+                {formData.unit_values?.map((u, idx) => (
                   <div key={idx} className="flex gap-2 items-center mb-1">
                     <input
                       type="text"
@@ -415,7 +394,7 @@ const EditProduct = () => {
               <input
                 type="number"
                 name="fat_g"
-                value={formData.nutrition_info.fat_g}
+                value={formData.nutrition_info.fat}
                 onChange={handleNutritionChange}
                 className="border px-2 py-1 rounded w-full"
               />
@@ -425,7 +404,17 @@ const EditProduct = () => {
               <input
                 type="number"
                 name="sugar_g"
-                value={formData.nutrition_info.sugar_g}
+                value={formData.nutrition_info.sugar}
+                onChange={handleNutritionChange}
+                className="border px-2 py-1 rounded w-full"
+              />
+            </div>
+            <div>
+              <label className="block font-semibold">Protien (g):</label>
+              <input
+                type="number"
+                name="sugar_g"
+                value={formData.nutrition_info.protien}
                 onChange={handleNutritionChange}
                 className="border px-2 py-1 rounded w-full"
               />
@@ -434,11 +423,11 @@ const EditProduct = () => {
           {/* Boolean flags and rating */}
           <div className=" flex-1 pl-20   grid-cols-4 gap-4 px-4 mt-6">
             {[
-              { label: "Featured", name: "is_featured" },
+              // { label: "Featured", name: "is_featured" },
               { label: "Customizable", name: "customizable" },
-              { label: "Eggless", name: "is_eggless" },
-              { label: "Available", name: "is_available" },
-              { label: "Publish", name: "is_publish" },
+              { label: "Eggless", name: "eggless" },
+              { label: "Available", name: "available" },
+              // { label: "Publish", name: "publish" },
             ].map(({ label, name }) => (
               <label
                 key={name}
@@ -466,7 +455,7 @@ const EditProduct = () => {
             Cancel
           </button>
           <button
-            className="px-8 py-2 bg-blue-400 text-white rounded hover:bg-blue-600 cursor-pointer"
+            className="px-8 py-2 bg-rose-400 text-white rounded hover:bg-rose-500 cursor-pointer"
             onClick={handleSave}
           >
             Save

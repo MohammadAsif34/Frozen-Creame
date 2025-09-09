@@ -15,11 +15,19 @@ const persistConfig = {
 };
 
 // Combine all reducers
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
   user: userReducer,
   product: productReducer,
 });
 
+//handle global logout
+const rootReducer = (state, action) => {
+  if (action.type === "LOGOUT") {
+    storage.removeItem("persist:root");
+    return appReducer(undefined, action);
+  }
+  return appReducer(state, action);
+};
 // Create a persisted reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

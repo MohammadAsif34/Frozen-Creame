@@ -4,6 +4,7 @@ import DashboardSidebar from "../../components/component/DashboardSidebar";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
+import HeaderBack from "../../components/navbar/HeaderBack";
 
 const Dashboard = () => {
   // const user = useSelector((s) => s.user);
@@ -27,7 +28,8 @@ const Dashboard = () => {
       <div className="w-2xs  ">
         <DashboardSidebar />
       </div>
-      <div className="flex-1 bg-gray-50 overflow-y-auto">
+      <div className="flex-1 pb-5 bg-gray-50 overflow-y-auto">
+        <HeaderBack />
         <Outlet />
       </div>
     </div>

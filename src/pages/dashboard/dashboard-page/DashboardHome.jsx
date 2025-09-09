@@ -8,7 +8,7 @@ const DashboardHome = () => {
       <h1 className="text-2xl font-bold mb-6">🍰 Cake Shop Dashboard</h1>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white p-4 shadow rounded-2xl flex items-center justify-between">
           <div>
             <p className="text-gray-500">Total Orders</p>
@@ -100,7 +100,7 @@ const DashboardHome = () => {
 export default DashboardHome;
 
 const ActiveProducts = () => {
-  const products = useSelector((s) => s.product);
+  const products = useSelector((s) => s.product.all_products);
   const [size, setSize] = useState(8);
   console.log("active :: ", products);
 
@@ -132,7 +132,7 @@ const ActiveProducts = () => {
               </tr>
             </thead>
             <tbody>
-              {products?.slice(0, size).map((item, idx) => (
+              {products?.slice(0, size)?.map((item, idx) => (
                 <>
                   <tr className="border-b border-dotted border-gray-300">
                     <td className="py-2 px-3">{idx + 1}</td>

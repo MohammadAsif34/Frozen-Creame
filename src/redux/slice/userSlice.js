@@ -18,6 +18,7 @@ const userSlice = createSlice({
     UnsetUser: (state) => {
       state.isAuth = false;
       state.data = null;
+      
     },
   },
 });

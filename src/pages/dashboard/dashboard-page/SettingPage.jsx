@@ -1,16 +1,17 @@
 import React from "react";
 import { user } from "../../../data/owner.js";
 import Settings from "../../../components/dashboard/profile-page/ProfileEdit.jsx";
+import HeaderBack from "../../../components/navbar/HeaderBack.jsx";
+import { Link } from "react-router-dom";
 
 const SettingPage = () => {
-  const handleSave = (updatedUser) => {
-    console.log("Updated data:", updatedUser);
-    // Save to API, DB, or state
-  };
-
   return (
-    <div className="bg-gray-100 min-h-screen p-4">
-      <Settings user={user} onSave={handleSave} />
+    <div className=" p-4">
+      <ul className=" mt-10">
+        <li className="capitalize px-4 py-2 bg-white rounded-md shadow hover:scale-101 transition-all duration-300">
+          <Link to={"/auth/forget-password"}>forget password</Link>
+        </li>
+      </ul>
     </div>
   );
 };

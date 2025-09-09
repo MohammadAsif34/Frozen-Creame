@@ -3,24 +3,33 @@ import OutsideClickHandler from "react-outside-click-handler";
 import { Link, useNavigate } from "react-router-dom";
 import { PublishProductAPI } from "../../services/admin/product.service.js";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import {
+  AddPublishProduct,
+  RemovePublishProduct,
+} from "../../redux/slice/productSlice.js";
 
 const ProductCard = ({ product, isAction, setIsAction }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
 
   const handlePublish = async () => {
     setLoading(true);
     try {
-      if (product.is_publish) {
+      if (product.publish) {
         const res = await PublishProductAPI(product._id);
-        console.log("publish res :: ", res);
-        if (res.status === "success") toast.success(res.message);
-        else toast.error(res.message);
+        if (res.status === "success") {
+          // console.log("publish res :: ", res);
+          toast.success(res.message);
+          dispatch(RemovePublishProduct(product._id));
+        } else toast.error(res.message);
       } else {
         const res = await PublishProductAPI(product._id, "publish");
-        console.log("publish res :: ", res);
-        if (res.status === "success") toast.success(res.message);
-        else toast.error(res.message);
+        if (res.status === "success") {
+          toast.success(res.message);
+          dispatch(AddPublishProduct(product._id));
+        } else toast.error(res.message);
       }
     } catch (error) {
       console.log(error);
@@ -31,7 +40,7 @@ const ProductCard = ({ product, isAction, setIsAction }) => {
 
   return (
     <div className="w-full h-fit bg-white rounded-2xl shadow-md hover:shadow-lg transition p-3 flex items-center  gap-x-5 relative overflow-hidden">
-      {product?.is_publish && (
+      {product?.publish && (
         <div className="w-30 h-6 py-1 text-center  text-white text-xs bg-green-400 absolute top-0 -rotate-45 -translate-x-10 translate-y-4">
           Published
         </div>
@@ -97,7 +106,7 @@ const ProductCard = ({ product, isAction, setIsAction }) => {
             onClick={handlePublish}
             disabled={loading}
           >
-            {product?.is_publish ? "Suspend" : "Publish"}
+            {product?.publish ? "Suspend" : "Publish"}
             {loading && (
               <span className="inline-block w-4 h-4 border-2 rounded-full border-t-transparent translate-1 animate-spin"></span>
             )}

@@ -22,6 +22,7 @@ import ProfilePage from "./pages/dashboard/dashboard-page/ProfilePage";
 import SettingPage from "./pages/dashboard/dashboard-page/SettingPage";
 import PageNotFound from "./pages/PageNotFound";
 import { ForgetPassword } from "./components/authenticate/ForgetPassword";
+import ProfileEdit from "./components/dashboard/profile-page/ProfileEdit";
 
 // Layout wrapper
 const Layout = () => {
@@ -63,8 +64,9 @@ const router = createBrowserRouter([
           { path: "products/edit/cake/:id", element: <EditProduct /> },
 
           { path: "profile", element: <ProfilePage /> },
-          { path: "profile/edit", element: <SettingPage /> },
-          // You don’t need another "dashboard" inside dashboard
+          { path: "profile/edit", element: <ProfileEdit /> },
+
+          { path: "setting", element: <SettingPage /> },
         ],
       },
       {

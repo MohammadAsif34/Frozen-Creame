@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import products from "../../assets/cakeItem.json";
 import ProductCard from "./ProductCard";
-import { GetProductsAPI } from "../../services/product.services";
+// import { GetProductsAPI } from "../../services/product.services";
 import { useSelector } from "react-redux";
 
 const ProductList = () => {
@@ -23,10 +23,11 @@ const ProductList = () => {
   //   fetchProduct();
   // }, []);
 
-  const products = useSelector((s) => s.product);
+  const products = useSelector((s) => s.product.all_products);
   if (products?.length <= 0) {
     return (
       <div className="mt-20">
+        {/* {JSON.stringify(products)} */}
         <img src="/no_product.png" alt="" className="w-2xs mx-auto" />
       </div>
     );
@@ -34,6 +35,7 @@ const ProductList = () => {
 
   return (
     <div className="">
+      {/* {JSON.stringify(products)} */}
       <ul className="min-w-lg:border grid grid-cols-[repeat(auto-fill,minmax(450px,_1fr))] gap-4">
         {products?.map((product) => (
           <li className="w-full min-w-sm my-2" key={product._id}>

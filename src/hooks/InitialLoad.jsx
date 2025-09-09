@@ -1,26 +1,26 @@
 import React, { useEffect } from "react";
-// import { GetProductsAPI } from "../services/product.services";
-import { useDispatch, useSelector } from "react-redux";
-import { setProduct } from "../redux/slice/productSlice";
+import { useDispatch } from "react-redux";
 import { GetAllProductsAPI } from "../services/admin/product.service.js";
+import { FetchAllProduct } from "../redux/slice/productSlice.js";
 
 const InitialLoad = ({ children }) => {
+  console.log("initialLoad");
   const dispatch = useDispatch();
-  const products = useSelector((s) => s.product);
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const productRes = await GetAllProductsAPI();
-        console.log("product res api :: ", productRes);
-        if (productRes.status === "success") {
-          dispatch(setProduct(productRes.data));
-        }
-      } catch (error) {
-        console.log("initial app load error :: ", error);
+
+  // fetched all products
+  const fetchAllProduct = async () => {
+    try {
+      const res = await GetAllProductsAPI();
+      if (res.status === "success") {
+        dispatch(FetchAllProduct(res.data));
       }
-      console.log("Active p : ", products);
-    };
-    fetchProduct();
+    } catch (error) {
+      console.error("initial app load error :: ", error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchAllProduct();
   }, []);
 
   return <>{children}</>;

@@ -2,15 +2,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import ProductList from "../../../components/product-list/ProductList";
 import HeaderBack from "../../../components/navbar/HeaderBack";
-// import { useLocation } from "react-router-dom";
-// import ProductList from "../../components/manage/ProductList";
+import { useSelector } from "react-redux";
 
 const ManageProduct = () => {
-  // const { pathname } = useLocation();
   const navigate = useNavigate();
+  const product = useSelector((s) => s.product);
+
   return (
     <>
-      <HeaderBack />
+      {/* <HeaderBack /> */}
       <div className="px-4">
         <div className=" py-2 flex justify-between items-center ">
           <h1 className="text-2xl text-rose-500 capitalize font-bold ">
@@ -18,11 +18,11 @@ const ManageProduct = () => {
           </h1>
           <div className="flex text-xs text-gray-500 gap-x-10">
             <p>
-              <span>Total Item : 00 </span>
+              <span>Total Item : {product.all_products?.length} </span>
               {}
             </p>
             <p>
-              <span>Published Item : 00</span>
+              <span>Published Item : {product.published_products.length}</span>
             </p>
           </div>
           <button
@@ -33,11 +33,20 @@ const ManageProduct = () => {
             Add Item
           </button>
         </div>
-
-        {/* product list */}
-        <div className=" ">
-          <ProductList />
-        </div>
+        {product.all_products?.length <= 0 ? (
+          <>
+            <div className="mt-20">
+              <img src="/no_product.png" alt="" className="w-2xs mx-auto" />
+            </div>
+          </>
+        ) : (
+          <>
+            {/* product list */}
+            <div className=" ">
+              <ProductList />
+            </div>
+          </>
+        )}
       </div>
     </>
   );
