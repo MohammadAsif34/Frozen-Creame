@@ -18,7 +18,7 @@ const Profile = () => {
         {/* Header: Logo + Name + Address */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
           <img
-            src={user.picture}
+            src={user?.picture}
             alt={user.name}
             className="w-24 h-24 object-cover rounded-full shadow border"
           />

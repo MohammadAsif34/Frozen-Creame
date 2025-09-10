@@ -235,7 +235,7 @@ const ViewProduct = () => {
         {/* Footer Actions */}
         <div className="flex gap-3 mt-8">
           <button
-            className="px-6 py-2  text-rose-400 border rounded-full hover:bg-blue-600"
+            className="px-6 py-2  text-rose-400 border rounded-full hover:bg-rose-500"
             onClick={() => handleEdit()}
           >
             <i className="fas fa-edit mr-2"></i>Edit
