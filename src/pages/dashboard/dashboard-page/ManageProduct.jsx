@@ -16,11 +16,13 @@ const ManageProduct = () => {
           </h1>
           <div className="flex text-xs text-gray-500 gap-x-10">
             <p>
-              <span>Total Item : {product.all_products?.length} </span>
+              <span>Total Item : {(product.all_products ?? [])?.length} </span>
               {}
             </p>
             <p>
-              <span>Published Item : {product.published_products.length}</span>
+              <span>
+                Published Item : {(product.published_products ?? [])?.length}
+              </span>
             </p>
           </div>
           <button
