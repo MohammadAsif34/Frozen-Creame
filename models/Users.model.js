@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema(
     phone_2: String,
     address: String,
     location_link: String,
-    email: { type: String, required: true, unique: true, immutable: true },
+    email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     website: String,
     about: String,

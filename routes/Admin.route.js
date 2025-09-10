@@ -20,6 +20,6 @@ router.post("/product/publish/:id/", publishProduct); // publish (type from body
 router.get("/product/:id", getSingleProduct); // get single product                                   -- works - works
 router.get("/products", verifyAdmin, getAllProduct); // get all products                              -- works - works
 
-router.post("/me/update/:id", verifyAdmin, updateAdmin); // get all products                              -- works - works
+router.post("/me/update", verifyAdmin, updateAdmin); // get all products                              -- works - works
 
 export default router;

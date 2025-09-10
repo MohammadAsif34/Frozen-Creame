@@ -28,7 +28,7 @@ const cakeSchema = new mongoose.Schema(
       calories: { type: Number },
       sugar: { type: Number },
       fat: { type: Number },
-      protein: { type: Number },
+      protien: { type: Number },
     },
 
     customizable: { type: Boolean, default: false },

@@ -8,8 +8,8 @@ dotenv.config();
 
 export const register = async (req, res) => {
   try {
-    const { fullname, email, password, dob } = req.body;
-    if (!fullname || !email || !password) {
+    const { name, email, password, dob } = req.body;
+    if (!name || !email || !password) {
       return res.json({
         status: 400,
         code: "MISSING_FIELDS",
@@ -28,7 +28,7 @@ export const register = async (req, res) => {
     const hashPassword = await bcrypt.hash(password, 8);
 
     const newUser = await User({
-      fullname,
+      name,
       email,
       dob,
       password: hashPassword,

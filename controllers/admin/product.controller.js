@@ -28,7 +28,11 @@ export const createProduct = async (req, res) => {
 export const updateProductdetails = async (req, res) => {
   try {
     const { id } = req.params;
-    const item = await Cake.findByIdAndUpdate(id, { $set: { ...req.body } });
+    const item = await Cake.findByIdAndUpdate(
+      id,
+      { $set: { ...req.body } },
+      { new: true, runValidators: true }
+    );
     await item.save();
     res.json({
       code: 200,
@@ -114,18 +118,22 @@ export const getAllProduct = async (req, res) => {
 
 export const updateAdmin = async (req, res) => {
   try {
-    const { id } = req.params;
-    console.log(req.body);
-    const user = await User.findById(id);
+    const id = req.userId;
+    // const user = await User.findById(id);
+    const user = await User.findByIdAndUpdate(id, req.body, {
+      new: true,
+      runValidators: true,
+    });
 
     if (!user)
       return res.json({
         code: 404,
         status: "unsuccess",
         message: "user not found",
+        id,
       });
-    Object.assign(user, req.body);
-    await user.save();
+    // Object.assign(user, req.body);
+    // await user.save();
 
     res.json({
       code: 200,

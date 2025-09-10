@@ -4,7 +4,7 @@ export const verifyAdmin = async (req, res, next) => {
     const token = req.cookies.token_token;
     // console.log("token :", token);
     const decode = jwt.verify(token, process.env.JWT_SECRET);
-    req.admin_id = decode.userId;
+    req.userId = decode.userId;
     next();
   } catch (error) {
     res.json({
