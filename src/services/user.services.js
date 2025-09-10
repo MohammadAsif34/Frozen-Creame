@@ -38,10 +38,11 @@ export const ForgetPAsswordAPI = async (data) => {
 };
 
 export const AdminUpdateAPI = async (data) => {
-  const api = `${import.meta.env.VITE_BASE_URL}/admin/me/update/${data._id}`;
+  const api = `${import.meta.env.VITE_BASE_URL}/admin/me/update`;
   console.warn(api);
   try {
     const res = await axios.post(api, data, { withCredentials: true });
+    console.log(res.data);
     return res.data;
   } catch (err) {
     toast.error(err.message);

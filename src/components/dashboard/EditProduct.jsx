@@ -148,7 +148,7 @@ const EditProduct = () => {
   return (
     <>
       {/* <HeaderBack /> */}
-      <div className="p-10 pt-0 bg-white shadow rounded-lg mx-auto max-w-7xl">
+      <div className="p-10 pt-0 mx-6 bg-white shadow rounded-lg max-w-7xl">
         <p className="py-5 text-xl font-bold text-center underline">
           Edit Product
         </p>
@@ -274,9 +274,19 @@ const EditProduct = () => {
                   className="border px-2 py-1 rounded w-24"
                 />
               </p>
-              <div className="mb-2">
+              <p className="mb-2">
+                <span className="font-semibold pr-2">Unit Value:</span>
+                <input
+                  type="number"
+                  name="unit_value"
+                  value={formData.unit_value}
+                  onChange={handleChange}
+                  className="border px-2 py-1 rounded w-24"
+                />
+              </p>
+              {/* <div className="mb-2">
                 <span className="font-semibold pr-2">Unit Values:</span>
-                {formData.unit_values?.map((u, idx) => (
+                {formData.unit_value?.map((u, idx) => (
                   <div key={idx} className="flex gap-2 items-center mb-1">
                     <input
                       type="text"
@@ -302,7 +312,7 @@ const EditProduct = () => {
                 >
                   + Add Unit Value
                 </button>
-              </div>
+              </div> */}
 
               <p className="mb-2">
                 <span className="font-semibold pr-2">Description:</span>
@@ -393,7 +403,7 @@ const EditProduct = () => {
               <label className="block font-semibold">Fat (g):</label>
               <input
                 type="number"
-                name="fat_g"
+                name="fat"
                 value={formData.nutrition_info.fat}
                 onChange={handleNutritionChange}
                 className="border px-2 py-1 rounded w-full"
@@ -403,7 +413,7 @@ const EditProduct = () => {
               <label className="block font-semibold">Sugar (g):</label>
               <input
                 type="number"
-                name="sugar_g"
+                name="sugar"
                 value={formData.nutrition_info.sugar}
                 onChange={handleNutritionChange}
                 className="border px-2 py-1 rounded w-full"
@@ -413,7 +423,7 @@ const EditProduct = () => {
               <label className="block font-semibold">Protien (g):</label>
               <input
                 type="number"
-                name="sugar_g"
+                name="protien"
                 value={formData.nutrition_info.protien}
                 onChange={handleNutritionChange}
                 className="border px-2 py-1 rounded w-full"
@@ -423,11 +433,10 @@ const EditProduct = () => {
           {/* Boolean flags and rating */}
           <div className=" flex-1 pl-20   grid-cols-4 gap-4 px-4 mt-6">
             {[
-              // { label: "Featured", name: "is_featured" },
+              ,
               { label: "Customizable", name: "customizable" },
               { label: "Eggless", name: "eggless" },
               { label: "Available", name: "available" },
-              // { label: "Publish", name: "publish" },
             ].map(({ label, name }) => (
               <label
                 key={name}

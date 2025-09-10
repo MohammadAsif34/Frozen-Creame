@@ -185,8 +185,8 @@ const ProductForm = ({ product = null, onCancel }) => {
               />
               <SingleInput
                 label="Unit value"
-                name="unit_values"
-                value={formData.unit_values}
+                name="unit_value"
+                value={formData.unit_value}
                 onChange={handleChange}
               />
               <SingleInput
@@ -251,7 +251,7 @@ const ProductForm = ({ product = null, onCancel }) => {
               obj={formData.nutrition_info}
               onChange={(newObj) =>
                 setFormData({ ...formData, nutrition_info: newObj })
-              }
+              } 
             />
           </div>
         </div>

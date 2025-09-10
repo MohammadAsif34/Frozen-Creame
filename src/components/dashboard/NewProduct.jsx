@@ -2,10 +2,11 @@ import React from "react";
 import AddProductForm from "../form/AddProductForm";
 
 const NewProduct = () => {
-  
   return (
     <>
-      <AddProductForm />
+      <div className="px-6">
+        <AddProductForm />
+      </div>
     </>
   );
 };

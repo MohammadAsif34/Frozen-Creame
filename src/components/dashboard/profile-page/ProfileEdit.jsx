@@ -9,6 +9,7 @@ import { AdminUpdateAPI } from "../../../services/user.services.js";
 const ProfileEdit = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const initialUser = useSelector((s) => s.user.data);
 
   const [loading, setLoading] = useState(false);
@@ -21,9 +22,12 @@ const ProfileEdit = () => {
 
   // Why Choose Us handlers
   const handleWhyChange = (index, field, value) => {
-    const newWhy = [...formData.why_choose_us];
-    newWhy[index][field] = value;
-    setFormData({ ...formData, why_choose_us: newWhy });
+    setFormData((prev) => {
+      const updated = prev.why_choose_us.map((item, i) =>
+        i === index ? { ...item, [field]: value } : item
+      );
+      return { ...prev, why_choose_us: updated };
+    });
   };
 
   const addWhyItem = () => {
@@ -43,9 +47,12 @@ const ProfileEdit = () => {
 
   // Social Links handlers
   const handleSocialChange = (index, field, value) => {
-    const newSocial = [...formData.social_links];
-    newSocial[index][field] = value;
-    setFormData({ ...formData, social_links: newSocial });
+    setFormData((prev) => {
+      const updated = prev.social_links.map((item, i) =>
+        i === index ? { ...item, [field]: value } : item
+      );
+      return { ...prev, social_links: updated };
+    });
   };
 
   const addSocial = () => {
@@ -65,9 +72,12 @@ const ProfileEdit = () => {
 
   // Delivery Partners handlers
   const handlePartnerChange = (index, field, value) => {
-    const newPartner = [...formData.delivery_partner];
-    newPartner[index][field] = value;
-    setFormData({ ...formData, delivery_partner: newPartner });
+    setFormData((prev) => {
+      const updated = prev.delivery_partner.map((item, i) =>
+        i === index ? { ...item, [field]: value } : item
+      );
+      return { ...prev, delivery_partner: updated };
+    });
   };
 
   const addPartner = () => {
@@ -90,6 +100,7 @@ const ProfileEdit = () => {
     setLoading(true);
     try {
       const res = await AdminUpdateAPI(formData);
+      console.info(res);
       if (res.status === "success") {
         dispatch(setUser(res.data));
         toast.success(res.message);
@@ -102,8 +113,6 @@ const ProfileEdit = () => {
         navigate(-1);
       }, 1500);
     }
-    // console.log("Saved Profile Data:", formData);
-    // alert("Profile saved! Check console for data.");
   };
 
   return (
@@ -335,7 +344,7 @@ const ProfileEdit = () => {
                   placeholder="Icon URL"
                   className="w-full border border-gray-300 p-2 rounded mb-1 focus:border-rose-300 focus:ring-1 ring-red-400 focus:outline-0 transition-all duration-300"
                   onChange={(e) =>
-                    handleSocialChange(index, "icon", e.target.value)
+                    handlePartnerChange(index, "icon", e.target.value)
                   }
                 />
                 <button

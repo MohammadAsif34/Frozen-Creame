@@ -43,7 +43,7 @@ const ViewProduct = () => {
   return (
     <>
       {/* <HeaderBack /> */}
-      <div className="p-10 mt-2 bg-white shadow rounded-lg  mx-auto">
+      <div className="p-10 mt-2 bg-white shadow rounded-lg  mx-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold flex items-center gap-2">
@@ -107,7 +107,7 @@ const ViewProduct = () => {
               </p>
               <p className="mb-2">
                 <span className="font-semibold pr-2">Unit:</span>
-                {product?.unit_values?.map((u) => (
+                {product?.unit_value?.map((u) => (
                   <span className="pr-1">
                     {u}
                     {product.unit + ","}
@@ -231,23 +231,24 @@ const ViewProduct = () => {
             {product.reviews} reviews)
           </p>
         </div>
+
+        {/* Footer Actions */}
+        <div className="flex gap-3 mt-8">
+          <button
+            className="px-6 py-2  text-rose-400 border rounded-full hover:bg-blue-600"
+            onClick={() => handleEdit()}
+          >
+            <i className="fas fa-edit mr-2"></i>Edit
+          </button>
+          <button
+            className="px-6 py-2 bg-red-500 text-white rounded-full hover:bg-red-600"
+            onClick={() => toast.info("not available")}
+          >
+            <i className="fas fa-trash mr-2"></i>Delete
+          </button>
+        </div>
       </div>
 
-      {/* Footer Actions */}
-      <div className="flex gap-3 mt-8">
-        <button
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-          onClick={() => handleEdit()}
-        >
-          <i className="fas fa-edit mr-2"></i>Edit
-        </button>
-        <button
-          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-          onClick={() => toast.info("not available")}
-        >
-          <i className="fas fa-trash mr-2"></i>Delete
-        </button>
-      </div>
       {/* </div> */}
     </>
   );

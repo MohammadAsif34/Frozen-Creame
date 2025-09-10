@@ -11,7 +11,7 @@ export const defaultCakeForm = {
   sub_category: "",
   prepare_time: 0,
   unit: "",
-  unit_values: "",
+  unit_value: "",
   stock: 0,
 
   tags: [],
