@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ProductList from "../../../components/product-list/ProductList";
-import HeaderBack from "../../../components/navbar/HeaderBack";
 import { useSelector } from "react-redux";
 
 const ManageProduct = () => {
@@ -10,7 +9,6 @@ const ManageProduct = () => {
 
   return (
     <>
-      {/* <HeaderBack /> */}
       <div className="px-4">
         <div className=" py-2 flex justify-between items-center ">
           <h1 className="text-2xl text-rose-500 capitalize font-bold ">
@@ -33,7 +31,7 @@ const ManageProduct = () => {
             Add Item
           </button>
         </div>
-        {product.all_products?.length <= 0 ? (
+        {product?.all_products?.length == 0 ? (
           <>
             <div className="mt-20">
               <img src="/no_product.png" alt="" className="w-2xs mx-auto" />
