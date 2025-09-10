@@ -120,10 +120,14 @@ export const updateAdmin = async (req, res) => {
   try {
     const id = req.userId;
     // const user = await User.findById(id);
-    const user = await User.findByIdAndUpdate(id, req.body, {
-      new: true,
-      runValidators: true,
-    });
+    const user = await User.findByIdAndUpdate(
+      id,
+      { $set: req.body },
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
 
     if (!user)
       return res.json({
