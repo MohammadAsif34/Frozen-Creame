@@ -23,6 +23,9 @@ import SettingPage from "./pages/dashboard/dashboard-page/SettingPage";
 import PageNotFound from "./pages/PageNotFound";
 import { ForgetPassword } from "./components/authenticate/ForgetPassword";
 import ProfileEdit from "./components/dashboard/profile-page/ProfileEdit";
+import ContactUsPage from "./pages/dashboard/dashboard-page/ContactUsPage";
+import ManageOrderPage from "./pages/dashboard/dashboard-page/ManageOrderPage";
+import FranchisePage from "./pages/dashboard/dashboard-page/FranchisePage";
 
 // Layout wrapper
 const Layout = () => {
@@ -65,6 +68,12 @@ const router = createBrowserRouter([
 
           { path: "profile", element: <ProfilePage /> },
           { path: "profile/edit", element: <ProfileEdit /> },
+
+          { path: "manage-order", element: <ManageOrderPage /> },
+          { path: "franchise", element: <FranchisePage /> },
+          { path: "contact-us", element: <ContactUsPage /> },
+
+          { path: "profile", element: <ProfilePage /> },
 
           { path: "setting", element: <SettingPage /> },
         ],

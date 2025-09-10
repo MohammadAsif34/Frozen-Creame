@@ -41,7 +41,7 @@ export const manageItem = [
     _id: 2,
     title: "Manage Order",
     icon: "bi bi-basket3-fill",
-    link: "",
+    link: "manage-order",
     function: "",
   },
   {
@@ -55,7 +55,7 @@ export const manageItem = [
     _id: 2,
     title: "Contact Us",
     icon: "bi bi-person-lines-fill",
-    link: "",
+    link: "contact-us",
     function: "",
   },
 ];
