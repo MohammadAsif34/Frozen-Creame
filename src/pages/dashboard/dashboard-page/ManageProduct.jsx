@@ -31,7 +31,7 @@ const ManageProduct = () => {
             Add Item
           </button>
         </div>
-        {product?.all_products?.length == 0 ? (
+        {(product.all_products ?? []).length === 0 ? (
           <>
             <div className="mt-20">
               <img src="/no_product.png" alt="" className="w-2xs mx-auto" />

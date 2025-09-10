@@ -5,10 +5,9 @@ import { useSelector } from "react-redux";
 const PublishProduct = () => {
   const product = useSelector((s) => s.product.published_products);
 
-  if (product?.length == 0)
+  if ((product ?? []).length === 0)
     return (
       <>
-        {/* <HeaderBack /> */}
         <div className="mt-20">
           <img src="/no_product.png" alt="" className="w-2xs mx-auto" />
         </div>
