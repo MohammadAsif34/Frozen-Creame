@@ -6,16 +6,13 @@ import { useDispatch } from "react-redux";
 import { AddToCart } from "../../appState/features/cart/cartSlice";
 
 export const ProductDetails = () => {
-  const { product_name, product_id } = useParams();
-  // const [item, setItem] = useState(null);
-  const item = cakeItem.find(
-    (cake) => cake.id == product_id && cake.name == product_name
-  );
-  console.log(item);
+  const { product_sku } = useParams();
+  const sku = atob(product_sku);
+  const item = cakeItem.find((cake) => cake.sku == sku);
+
   if (!item) {
     return (
       <div className="text-center py-10 font-semibold text-xl text-gray-400">
-        {" "}
         No product found!
       </div>
     );
@@ -23,7 +20,7 @@ export const ProductDetails = () => {
   return (
     <div className="px-[10%] relative ">
       {/* similar items  */}
-      <div className="py-10 flex gap-16">
+      <div className="py-10 flex gap-16 flex-col lg:flex-row ">
         <ProductImage src={item?.picture} album={item?.album} />
         <ProductDescription item={item} />
       </div>
@@ -31,7 +28,7 @@ export const ProductDetails = () => {
         <h1 className=" py-3 text-4xl text-rose-500 font-semibold text-center">
           Similar, You amy also like
         </h1>
-        <div className=" my-10 py-5 flex gap-5 ">
+        <div className=" my-10 py-5 flex gap-5 overflow-x-scroll  ">
           {/* 4 prodeuts here  */}
           {cakeItem?.slice(0, 4).map((item, idx) => (
             <ProductCard item={item} key={idx} />
@@ -220,7 +217,7 @@ const ProductDescription = ({ item }) => {
             <i className="bi bi-info-circle mx-2"></i>
           </span>
           <title>this allergens title</title>
-          <div>
+          {/* <div>
             <span className="px-2 text-rose-500">
               <i className="bi bi-truck mx-2"></i>
               Get it by {"2 jul"}
@@ -228,15 +225,22 @@ const ProductDescription = ({ item }) => {
             <span className="px-2 text-green-600 font-semibold">
               Order in {"2h 23min"}
             </span>
-          </div>
+          </div> */}
         </div>
-        <div>
+        <div className="pt-4 text-lg text-gray-600">
+          {item?.category}
+          <span className="px-4">•</span>
+          {item?.flavour}
+          <span className="px-4">•</span>
+          {item?.quantity}
+        </div>
+        {/* <div>
           <span className="ml-5 text-green-600">
             <i className="bi bi-stopwatch mx-2"></i>
             <strong> {10} </strong>
             People bought this in last 23 hours
           </span>
-        </div>
+        </div> */}
 
         {/* price  */}
         <div className="my-4">
@@ -321,17 +325,20 @@ const ProductDescription = ({ item }) => {
   );
 };
 
-const ProductImage = ({ src = "/banner/banner-101.png", album }) => {
+const ProductImage = ({
+  src = "https://asdlib.org/wp-content/uploads/2021/11/no-image.jpg",
+  album,
+}) => {
   const [img, setImg] = useState(src);
   return (
     <>
-      <div className=" flex-1 sticky left-0 bottom-0 my-5  gap-20 ">
+      <div className=" flex-1 sticky left-0 bottom-0 my-5  gap-20 bg-gray-200 rounded-xl">
         {/* product image  */}
         <div className="flex-1 max-h-96 min-h-20 rounded-xl overflow-hidden">
           <img
             src={img}
             alt=""
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-contain object-center "
           />
         </div>
         <div className="py-2 flex gap-2">

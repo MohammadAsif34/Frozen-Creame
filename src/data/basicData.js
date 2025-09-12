@@ -124,18 +124,59 @@ export const collections = [
 ];
 export const faqs = [
   {
-    q: "What is Flowbite?",
-    a: "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.",
+    q: "Do you offer eggless cakes?",
+    a: "Yes! Most of our cakes are available in eggless variants. You can select 'Eggless' when placing your order.",
   },
   {
-    q: "Is there a Figma file available?",
-    a: "Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.",
+    q: "How far in advance should I place my order?",
+    a: "We recommend placing your order at least 24 hours in advance. For custom or large orders, 48-72 hours is ideal.",
   },
   {
-    q: "What are the differences between Flowbite and Tailwind UI?",
-    a: "The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product.",
+    q: "Can I customize the design of my cake?",
+    a: "Absolutely! You can share your design idea or photo reference, and our team will make it for you.",
+  },
+  {
+    q: "Do you cater for corporate or bulk orders?",
+    a: "Yes, we offer bulk orders for events, offices, and parties. Please contact us at least a week in advance.",
+  },
+  {
+    q: "How far in advance should I place an order?",
+    a: "For regular cakes, same-day orders are possible depending on availability. For custom cakes, we recommend placing an order at least 1–2 days in advance.",
+  },
+  {
+    q: "Do you offer home delivery?",
+    a: "Yes, we deliver within our service area. Delivery charges may vary depending on the location. Same-day and midnight delivery options are available.",
+  },
+  {
+    q: "What payment options do you accept?",
+    a: "We accept cash, debit/credit cards, UPI, and popular wallets. Cash on delivery is available for select areas.",
+  },
+  {
+    q: "Do you provide eggless or vegan cakes?",
+    a: "Yes, we offer both eggless and vegan cake options. Please specify your preference when placing an order.",
+  },
+  {
+    q: "Can I cancel or modify my order?",
+    a: "Orders can be modified or canceled within 2 hours of placing them. Custom cake cancellations may not be refundable.",
+  },
+  {
+    q: "Do you provide birthday decorations with cakes?",
+    a: "Yes! We provide candles, cake toppers, and other decorations on request. Some items may have additional charges.",
+  },
+  {
+    q: "Is midnight delivery available?",
+    a: "Yes, we offer midnight and early-morning delivery in select areas for an extra charge.",
+  },
+  {
+    q: "How do I store my cake after delivery?",
+    a: "We recommend refrigerating cream-based cakes. Fondant cakes should be kept in a cool, dry place. Always consume within 24–48 hours for best taste.",
+  },
+  {
+    q: "Do you provide bulk or corporate cake orders?",
+    a: "Yes, we handle bulk and corporate cake orders for events, parties, and offices. Please contact us in advance for special pricing.",
   },
 ];
+
 export const statsData = [
   { value: "150+", label: "Cakes Baked Daily", iconClass: "bi bi-cake" },
   {

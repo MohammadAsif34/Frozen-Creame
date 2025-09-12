@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { faqs } from "../../data/basicData";
 
 const FAQs = () => {
+  const [n, setN] = useState(5);
   const [accordionOpen, setAccordionOpen] = useState({}); // for FAQ items
   const toggleAccordion = (id) => {
     setAccordionOpen((prev) => ({
@@ -13,7 +14,7 @@ const FAQs = () => {
   return (
     <div className=" px-[12%] py-12">
       <h1 className="py-5 text-3xl font-bold text-rose-400">Frequently Ask</h1>
-      {faqs?.map((item, idx) => (
+      {faqs?.slice(0, n).map((item, idx) => (
         <div key={idx} className="border-b border-gray-200 ">
           <button
             className="flex items-center justify-between w-full py-3 px-2 text-left text-gray-500  font-medium "
@@ -38,10 +39,18 @@ const FAQs = () => {
             </svg>
           </button>
           {accordionOpen[idx] && (
-            <div className="py-2 text-gray-400 px-2 ">{item.a}</div>
+            <div className="py-2 px-4 text-gray-400 ">{item.a}</div>
           )}
         </div>
       ))}
+      <div className="text-center my-4">
+        <button
+          className="text-gray-500 italic hover:underline cursor-pointer"
+          onClick={() => setN((prev) => (prev == 5 ? faqs.length : 5))}
+        >
+          {n == 5 ? "see more" : "see less"}
+        </button>
+      </div>
     </div>
   );
 };

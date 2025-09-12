@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import ItemCard2 from "../../components/products/ItemCard2";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 // import { cartItem } from "../dataSets/cartItem";
 // import { useUser } from "../contexts/CreateContext";
 // import ItemCard2 from "../../components/products/ItemCard2";
@@ -10,6 +11,20 @@ const CartPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [price, setPrice] = useState(0);
   const cart = useSelector((s) => s.cart.cartItem);
+
+  useEffect(() => {
+    const final_price = cart.reduce(
+      (sum, item) => sum + item?.final_price * item?.quntity,
+      0
+    );
+  }, [cart]);
+
+  if (cart.length == 0)
+    return (
+      <div className=" flex  justify-center">
+        <img src="/default/empty_item.png" alt="" />
+      </div>
+    );
   return (
     <div className="px-[10%]  gap-x-20 relative">
       <button
@@ -47,13 +62,33 @@ const CartPage = () => {
 
 export default CartPage;
 
-const CartCheckout = () => {
-  const cart = useSelector((s) => s.cart);
-  const finalPrice = useSelector((s) => s.cart.finalPrice);
-  console.log(cart);
+const CartCheckout = ({ discount = 0 }) => {
+  const [price, setPrice] = useState({
+    price: 0,
+    discount: discount,
+    charge: 39,
+    finalPrice: 0,
+  });
+  const navigate = useNavigate();
+  const cart = useSelector((s) => s.cart.cartItem);
+
+  useEffect(() => {
+    const totalPrice = cart.reduce((sum, item) => sum + item?.final_price, 0);
+
+    const finalPrice =
+      totalPrice + (totalPrice * 5) / 100 - (totalPrice * discount) / 100;
+
+    setPrice({
+      price: totalPrice,
+      discount: discount,
+      charge: (totalPrice * 5) / 100,
+      finalPrice: finalPrice,
+    });
+  }, [cart, discount, price.charge]);
+
   return (
     <>
-      <div className=" flex gap-x-10 py-18">
+      <div className=" flex gap-10 py-18 max-lg:flex-col ">
         <div className="flex-1">
           <form className="flex gap-2 p-1 border-2 border-gray-300 rounded-lg">
             <input
@@ -66,29 +101,28 @@ const CartCheckout = () => {
             </button>
           </form>
         </div>
-        <div className=" flex-1  px-4 py-6 bg-gray-100 rounded-xl ">
-          <div className="px-4 pb-2 capitalize text-xl text-gray-500 border-b border-gray-300">
-            <h1>
-              your cart :{" "}
-              <span className="pl-4 pr-1">{cart.cartItem.length}</span>
-              <span className="text-sm">items</span>
-            </h1>
-          </div>
+        <div className=" flex-1  px-4 py-6 bg-gray-100 rounded-xl text-gray-500">
+          {/* <div className="px-4 pb-2 capitalize text-xl text-gray-500 border-b border-gray-300"> */}
+          <h1 className="px-4  pb-2 ">
+            <span className="text-xl capitalize">your cart : </span>
+            {cart?.length} {cart.length && " item"}
+          </h1>
+          {/* </div> */}
           <div className="px-4 py-1.5 my-2 flex justify-between">
-            <p>{`Price (${cart.cartItem.length} items):`}</p>
-            <span>{cart?.totalPrice}</span>
+            <p>{`Price (${cart?.length} items):`}</p>
+            <span>{price?.price}</span>
           </div>
           <div className="px-4 py-1.5 my-2 flex justify-between">
             <p>{`Discount:   5%`}</p>
-            <span>1526</span>
+            <span>{price?.discount}</span>
           </div>
           <div className="px-4 py-1.5 my-2 flex justify-between">
             <p>{`Other charges:   5%`}</p>
-            <span>1526</span>
+            <span>{price?.charge}</span>
           </div>
           <div className=" my-3 px-4 py-1.5  flex justify-between border-y border-gray-300 text-xl">
             <p>Total Amount</p>
-            <span>{finalPrice}</span>
+            <span>{price?.finalPrice}</span>
           </div>
           <div className="px-10">
             <button
@@ -97,7 +131,10 @@ const CartCheckout = () => {
             >
               Proceed to Payment
             </button>
-            <button className="w-full py-1.5 mt-5 border border-rose-400 rounded-full text-rose-400 hover:bg-rose-200 transition duration-300 cursor-pointer">
+            <button
+              className="w-full py-1.5 mt-5 border border-rose-400 rounded-full text-rose-400 hover:bg-rose-200 transition duration-300 cursor-pointer"
+              onClick={() => navigate(-1)}
+            >
               Continue Shopping
             </button>
           </div>

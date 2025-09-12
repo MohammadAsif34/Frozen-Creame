@@ -8,30 +8,32 @@ const ProductCard = ({ item }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   if (!item) {
-    // console.log(item);
     return;
   }
+  const encode = btoa(item.sku);
+  console.log(encode);
+
   return (
     <>
-      <div className="max-w-xs bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+      <div className="min-w-2xs border border-gray-300 flex-1 bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 cursor-default">
         <div
           className="relative group"
-          onClick={() => navigate(`/product/${item.name}/${item.id}`)}
+          onClick={() => navigate(`/product/${encode}`)}
         >
           <img
             src={`${item?.picture}?auto=compress&cs=tinysrgb&w=800&dpr=2`}
             // "/banner/banner-101.png"
 
             alt="Choco Delight Cake"
-            className=" w-full h-48 max-sm:h-32 object-cover group-hover:scale-110 transition-all duration-500 ease-in-out"
+            className=" w-full h-48 bg-gray-200 max-sm:h-32 object-cover group-hover:scale-110 transition-all duration-500 ease-in-out"
             loading="lazy"
             decoding="async"
           />
           <span
-            className="group-hover:block  absolute top-2 right-2 px-1.5 py-1 rounded-full text-lg text-rose-400 hover: bg-rose-100 group]: "
+            className="w-8 h-8 group-hover:block  absolute top-2 right-2  rounded-full text-lg text-rose-400 hover: bg-white cursor-pointer "
             onClick={() => dispatch(AddToFavorite(item))}
           >
-            <i className="fa-regular fa-heart translate-y-0.5 "></i>
+            <i className="fa-regular fa-heart translate-1 "></i>
             {/* <i className="bi bi-heart"></i> */}
           </span>
         </div>
@@ -44,8 +46,8 @@ const ProductCard = ({ item }) => {
             {item?.name}
           </h3>
           {/* product description  */}
-          <p className="text-sm max-sm:text-xs text-gray-500 mt-1">
-            {item?.description}
+          <p className="text-sm max-sm:text-xs text-gray-500 pt-2">
+            {`${item?.flavour} • ${item?.tags[0]}`}
           </p>
 
           <div className="mt-4 flex items-center justify-between">
@@ -53,22 +55,23 @@ const ProductCard = ({ item }) => {
             <div className="flex items-end">
               <span className="text-xl max-sm:text-sm font-semibold text-rose-400">
                 <i className="bi bi-currency-rupee"></i>
-                {item?.price}
+                {item?.final_price}
               </span>
-              <div className="px-2 text-xs">
-                <i className="fa-solid fa-tags mr-1 text-gray-500"></i>
-                {item?.discount_percent}%
-                {/* <i className="fa-solid fa-percent"></i> */}
+              <div className="px-2 text-xs text-gray-500">
+                <span className="px-2 line-through italic">
+                  {" "}
+                  {item?.price}{" "}
+                </span>
+                <i className="fa-solid fa-tags mr-1 "></i>
+                {item?.discount}%{/* <i className="fa-solid fa-percent"></i> */}
               </div>
             </div>
-            {/* <span>
-              <i className="bi bi-heart text-rose-500"></i>
-            </span> */}
+
             <button
-              className="px-4 max-sm:px-2 py-1 whitespace-nowrap bg-rose-400 text-white text-sm max-sm:text-xs font-medium rounded-md hover:bg-rose-500 transition cursor-pointer"
+              className="px-2  max-sm:px-2 py-1 whitespace-nowrap bg-rose-400 text-white text-lg max-sm:text-xs font-medium rounded-md hover:bg-rose-500 transition cursor-pointer"
               onClick={() => dispatch(AddToCart(item))}
             >
-              Add to Cart
+              <i className="fa-solid fa-cart-plus"></i>
             </button>
           </div>
         </div>

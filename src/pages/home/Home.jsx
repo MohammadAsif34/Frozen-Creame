@@ -17,29 +17,25 @@ import WhyChooseUs from "../../components/home-page/WhyChooseUs";
 const Home = () => {
   return (
     <>
-      <div className="bg-gray-50 ">
-        {/* hero section  */}
-        {/* <SliderHero /> */}
+      <div className="bg-gray-100 ">
         <Slider />
 
-        {/* special offer cards  */}
         <SpecialOfferSection />
 
-        {/* trending product section  */}
         <TrendingProduct />
 
         <Collection />
-        {/* special week product  */}
+
         <SpecialWeek />
 
-        {/* collection cards  */}
-
-        {/* feature product section */}
         <FeaturedProduct />
+
         <TestimonialSection />
-        {/* <TabsAccordion /> */}
+
         <Statistics />
+
         <FAQs />
+
         <WhyChooseUs />
         {/* <div className="w-full h-80 bg-gray-100 bg-[url('/banner/banner-51.png')] bg-center bg-cover opacity-50"> */}
         <LocationMap />

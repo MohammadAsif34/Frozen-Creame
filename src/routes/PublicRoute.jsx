@@ -21,12 +21,12 @@ export const publicRoutes = [
       // { path: "/about-us", element: <AboutUsPage /> },
       // { path: "/contact-us", element: <ContactUsPage /> },
       // { path: "/franchise-enquiry", element: <FranchiseEnquiryPage /> },
-      // {
-      //   path: "/product/:product_name/:product_id",
-      //   element: <ProductDetails />,
-      // },
+      {
+        path: "/product/:product_sku",
+        element: <ProductDetails />,
+      },
       // { path: "/search/product", element: <SearchProduct /> },
-      // { path: "/cart", element: <Cart /> },
+      { path: "/cart", element: <Cart /> },
       { path: "*", element: <RouteErrorPage /> },
     ],
   },

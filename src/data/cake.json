@@ -363,7 +363,8 @@
     "rating": 4.8,
     "reviews": 134,
     "picture": "https://images.pexels.com/photos/4109995/pexels-photo-4109995.jpeg"
-  },
+  }
+,
   {
     "id": 11,
     "sku": "CK-011",
@@ -727,7 +728,8 @@
     "rating": 4.6,
     "reviews": 77,
     "picture": "https://images.pexels.com/photos/3026827/pexels-photo-3026827.jpeg"
-  },
+  }
+,
   {
     "id": 21,
     "sku": "CK-021",
@@ -748,16 +750,7 @@
     "unit": "kg",
     "category": "Cakes",
     "sub_category": "Cookies Cakes",
-    "ingredients": [
-      "Flour",
-      "Cocoa powder",
-      "Sugar",
-      "Eggs",
-      "Butter",
-      "Milk",
-      "Oreo cookies",
-      "Cream"
-    ],
+    "ingredients": ["Flour", "Cocoa powder", "Sugar", "Eggs", "Butter", "Milk", "Oreo cookies", "Cream"],
     "nutrition_info": { "calories": 340, "sugar": 30, "fat": 16, "protien": 5 },
     "customizable": true,
     "allergens": ["Eggs", "Dairy", "Gluten"],
@@ -786,14 +779,7 @@
     "unit": "kg",
     "category": "Cakes",
     "sub_category": "Fruit Cakes",
-    "ingredients": [
-      "Flour",
-      "Sugar",
-      "Peach compote",
-      "Vanilla extract",
-      "Butter",
-      "Cream"
-    ],
+    "ingredients": ["Flour", "Sugar", "Peach compote", "Vanilla extract", "Butter", "Cream"],
     "nutrition_info": { "calories": 285, "sugar": 24, "fat": 13, "protien": 4 },
     "customizable": true,
     "allergens": ["Dairy", "Gluten"],
@@ -822,15 +808,7 @@
     "unit": "kg",
     "category": "Cakes",
     "sub_category": "Chocolate Cakes",
-    "ingredients": [
-      "Flour",
-      "Sugar",
-      "Cocoa powder",
-      "Butter",
-      "Eggs",
-      "KitKat bars",
-      "Cream"
-    ],
+    "ingredients": ["Flour", "Sugar", "Cocoa powder", "Butter", "Eggs", "KitKat bars", "Cream"],
     "nutrition_info": { "calories": 400, "sugar": 34, "fat": 18, "protien": 6 },
     "customizable": true,
     "allergens": ["Eggs", "Dairy", "Gluten"],
@@ -888,14 +866,7 @@
     "unit": "kg",
     "category": "Cakes",
     "sub_category": "Tropical Cakes",
-    "ingredients": [
-      "Flour",
-      "Sugar",
-      "Coconut milk",
-      "Butter",
-      "Coconut flakes",
-      "Cream"
-    ],
+    "ingredients": ["Flour", "Sugar", "Coconut milk", "Butter", "Coconut flakes", "Cream"],
     "nutrition_info": { "calories": 310, "sugar": 25, "fat": 14, "protien": 4 },
     "customizable": true,
     "allergens": ["Dairy", "Gluten", "Coconut"],
@@ -924,15 +895,7 @@
     "unit": "kg",
     "category": "Cakes",
     "sub_category": "Premium Cakes",
-    "ingredients": [
-      "Flour",
-      "Sugar",
-      "Cocoa powder",
-      "Butter",
-      "Eggs",
-      "Ferrero Rocher",
-      "Hazelnut cream"
-    ],
+    "ingredients": ["Flour", "Sugar", "Cocoa powder", "Butter", "Eggs", "Ferrero Rocher", "Hazelnut cream"],
     "nutrition_info": { "calories": 420, "sugar": 36, "fat": 20, "protien": 6 },
     "customizable": true,
     "allergens": ["Eggs", "Dairy", "Gluten", "Nuts"],
@@ -961,16 +924,7 @@
     "unit": "kg",
     "category": "Cakes",
     "sub_category": "Nutty Cakes",
-    "ingredients": [
-      "Flour",
-      "Sugar",
-      "Carrots",
-      "Cinnamon",
-      "Walnuts",
-      "Eggs",
-      "Butter",
-      "Cream cheese"
-    ],
+    "ingredients": ["Flour", "Sugar", "Carrots", "Cinnamon", "Walnuts", "Eggs", "Butter", "Cream cheese"],
     "nutrition_info": { "calories": 330, "sugar": 26, "fat": 15, "protien": 5 },
     "customizable": true,
     "allergens": ["Eggs", "Dairy", "Gluten", "Nuts"],
@@ -999,15 +953,7 @@
     "unit": "kg",
     "category": "Cakes",
     "sub_category": "Coffee Cakes",
-    "ingredients": [
-      "Flour",
-      "Sugar",
-      "Coffee extract",
-      "Butter",
-      "Eggs",
-      "Cocoa powder",
-      "Cream"
-    ],
+    "ingredients": ["Flour", "Sugar", "Coffee extract", "Butter", "Eggs", "Cocoa powder", "Cream"],
     "nutrition_info": { "calories": 360, "sugar": 29, "fat": 17, "protien": 5 },
     "customizable": true,
     "allergens": ["Eggs", "Dairy", "Gluten"],
@@ -1036,14 +982,7 @@
     "unit": "kg",
     "category": "Cakes",
     "sub_category": "Fruit Cakes",
-    "ingredients": [
-      "Flour",
-      "Sugar",
-      "Pineapple compote",
-      "Butter",
-      "Milk",
-      "Cream"
-    ],
+    "ingredients": ["Flour", "Sugar", "Pineapple compote", "Butter", "Milk", "Cream"],
     "nutrition_info": { "calories": 290, "sugar": 25, "fat": 13, "protien": 4 },
     "customizable": true,
     "allergens": ["Dairy", "Gluten"],
@@ -1072,15 +1011,7 @@
     "unit": "kg",
     "category": "Cakes",
     "sub_category": "Premium Cakes",
-    "ingredients": [
-      "Flour",
-      "Sugar",
-      "Cocoa powder",
-      "Butter",
-      "Eggs",
-      "Cream cheese",
-      "Milk"
-    ],
+    "ingredients": ["Flour", "Sugar", "Cocoa powder", "Butter", "Eggs", "Cream cheese", "Milk"],
     "nutrition_info": { "calories": 430, "sugar": 37, "fat": 19, "protien": 6 },
     "customizable": true,
     "allergens": ["Eggs", "Dairy", "Gluten"],
@@ -1088,7 +1019,8 @@
     "rating": 4.9,
     "reviews": 182,
     "picture": "https://images.pexels.com/photos/1702376/pexels-photo-1702376.jpeg"
-  },
+  }
+,
   {
     "id": 31,
     "sku": "CK-031",

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ProductCard from "../products/ProductCard";
-import cakeItem from "../../assets/cakeItem.json";
+import cakeItem from "../../data/cake.json";
 
 const FeaturedSection = () => {
   const featuredCakeItem = [...cakeItem].sort(() => 0.5 - Math.random);

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ProductCard from "../products/ProductCard";
-import cakeItem from "../../assets/cakeItem.json";
+import cakeItem from "../../data/cake.json";
 
 const SpecialWeek = () => {
   const navigate = useNavigate();
   const [size, setSize] = useState(12);
-  const specialWeekCakeItem = [...cakeItem].sort(() => 0.5 - Math.random());
+  // const specialWeekCakeItem = [...cakeItem].sort(() => 0.5 - Math.random());
+  const specialWeekCakeItem = cakeItem;
   const handleSeeMore = (type) => {
     if (type === "See Less") {
       setSize(12);
@@ -30,12 +31,6 @@ const SpecialWeek = () => {
           </div>
           {/* products cards  */}
           <div className="mx-auto py-6 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-sm:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-6 max-sm:gap-3 justify-center">
-            {/* <div className="mx-auto py-6 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-sm:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-8 justify-center"> */}
-            {/* {[...Array(12)].slice(0, 8).map((item, idx) => (
-              <div key={idx} className="mx-auto">
-                <ProductCard item={item} />
-              </div>
-            ))} */}
             {specialWeekCakeItem?.slice(0, size).map((item, idx) => (
               <div key={idx} className="mx-auto">
                 <ProductCard item={item} />
