@@ -18,8 +18,8 @@ const Navbar = () => {
         {/* Logo section  */}
         <div className="w-14 h-14 logo  p-2 rounded-full overflow-hidden">
           <Link to={"/"}>
-            <i className="bi bi-cake text-4xl"></i>
-            {/* <img src="/logo.png" alt="" className="w-full h-full object-cover object-center scale-130" /> */}
+            {/* <i className="bi bi-cake text-4xl"></i> */}
+            <img src="/logo.png" alt="" className="w-full h-full object-cover object-center scale-130" />
           </Link>
         </div>
         {isMobile ? (
