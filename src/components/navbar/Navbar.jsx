@@ -16,10 +16,14 @@ const Navbar = () => {
     <>
       <header className="w-full h-18 px-[12%] max-sm:px-2   flex justify-between items-center text-white">
         {/* Logo section  */}
-        <div className="w-14 h-14 logo  p-2 rounded-full overflow-hidden">
+        <div className="w-16 h-16 logo  p-2  overflow-hidden">
           <Link to={"/"}>
-            {/* <i className="bi bi-cake text-4xl"></i> */}
-            <img src="/logo.png" alt="" className="w-full h-full object-cover object-center scale-130" />
+            {/* <i className="bi bi-patch-check-fill text-5xl z-10"></i> */}
+            <img
+              src="/logo.png"
+              alt=""
+              className="w-full h-full object-cover object-center scale-130 z-2"
+            />
           </Link>
         </div>
         {isMobile ? (

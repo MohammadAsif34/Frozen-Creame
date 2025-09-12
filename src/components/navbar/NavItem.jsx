@@ -1,24 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { ToggleCart } from "../../appState/features/cart/cartSlice";
 import { ToggleFavorite } from "../../appState/features/favorite/favoriteSlice";
+import { toast } from "react-toastify";
 
 const NavItem = () => {
+  const [search, setSearch] = useState(false);
+  const [inp, setInp] = useState("");
+
   const dispatch = useDispatch();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    toast.info("added soon!");
+    setSearch(false);
+    setInp("");
+  };
 
   return (
     <>
       <div className="nav flex items-center gap-x-5 max-sm:gap-5">
-        {/* search section */}
-        <div className="w-64 max-sm:w-48 h-10 border  rounded-md overflow-hidden">
-          <input
-            type="text"
-            className="w-full h-full px-4 bg-white/30 outline-none group-[]:"
-            placeholder="search.."
-            disabled
-          />
-        </div>
         <nav>
           <ul className="flex gap-x-5 items-center font-light">
             <Link to={"/about-us"}>
@@ -40,6 +42,36 @@ const NavItem = () => {
               </li>
             </Link>
             {/* cart button */}
+            <div className="flex relative items-center">
+              {/* Search Section */}
+              <div
+                className={`absolute right-10 top-0 h-10 border rounded-full overflow-hidden
+      flex items-center
+      transition-all duration-500 ease-in-out
+      ${
+        search ? "w-sm opacity-100" : "w-0 opacity-0 px-0 pointer-events-none"
+      }`}
+              >
+                <form onSubmit={handleSearch} className="w-full">
+                  <input
+                    value={inp}
+                    onChange={(e) => setInp(e.target.value)}
+                    type="text"
+                    className="w-full h-10 px-4 text-gray-500 bg-white outline-none font-normal"
+                    placeholder="Search..."
+                  />
+                </form>
+              </div>
+
+              {/* Search Button */}
+              <button
+                className="text-2xl ml-2 max-sm:hidden"
+                onClick={() => setSearch((p) => !p)}
+              >
+                <i className="bi bi-search cursor-pointer"></i>
+              </button>
+            </div>
+
             <button
               className="text-2xl max-sm:hidden"
               onClick={() => dispatch(ToggleCart())}
