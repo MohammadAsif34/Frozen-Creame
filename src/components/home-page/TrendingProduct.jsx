@@ -30,7 +30,7 @@ const TrendingProduct = () => {
           </div>
 
           {/* products card  */}
-          <div className="mx-auto py-6 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-sm:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-6 max-sm:gap-3 justify-center">
+          <div className="mx-auto py-6 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] max-sm:grid-cols-1 [repeat(auto-fit,minmax(100px,1fr))] gap-6 max-sm:gap-3 justify-center">
             {/* {[...Array(12)].slice(0, 4).map((item, idx) => (
               <div key={idx} className="mx-auto">
                 <ProductCard item={item} />

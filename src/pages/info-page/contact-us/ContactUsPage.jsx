@@ -25,7 +25,7 @@ const ContactUsPage = () => {
             </picture>
           </div>
         </div>
-        <div className=" flex p-2">
+        <div className=" flex max-md:flex-col p-2">
           <div className="flex-1">
             <ContactInfo />
           </div>

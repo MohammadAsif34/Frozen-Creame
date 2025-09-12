@@ -19,7 +19,7 @@ export const publicRoutes = [
     children: [
       { path: "", element: <Home /> },
       // { path: "/about-us", element: <AboutUsPage /> },
-      // { path: "/contact-us", element: <ContactUsPage /> },
+      { path: "/contact-us", element: <ContactUsPage /> },
       // { path: "/franchise-enquiry", element: <FranchiseEnquiryPage /> },
       {
         path: "/product/:product_sku",

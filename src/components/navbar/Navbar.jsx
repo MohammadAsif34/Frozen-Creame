@@ -16,7 +16,7 @@ const Navbar = () => {
     <>
       <header className="w-full h-18 px-[12%] max-sm:px-2   flex justify-between items-center text-white">
         {/* Logo section  */}
-        <div className="w-16 h-16 logo  p-2  overflow-hidden">
+        <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 logo  p-2  overflow-hidden">
           <Link to={"/"}>
             {/* <i className="bi bi-patch-check-fill text-5xl z-10"></i> */}
             <img

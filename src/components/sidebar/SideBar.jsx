@@ -34,11 +34,10 @@ const SideBar = () => {
                 key={idx}
                 className="w-full px-8 my-6  text-gray-400 capitalize text-lg"
               >
-                <button>
-                  {" "}
+                <Link to={item?.link  }>
                   <i className={`mr-3 ${item?.icon}`}></i>
                   {item?.title}
-                </button>
+                </Link>
               </div>
             ))}
           </div>
@@ -50,10 +49,8 @@ const SideBar = () => {
                 className="w-full px-8 my-6  text-gray-400 capitalize text-lg"
               >
                 <Link to={item?.link}>
-                  <button>
-                    <i className={`mr-3 ${item?.icon}`}></i>
-                    {item?.title}
-                  </button>
+                  <i className={`mr-3 ${item?.icon}`}></i>
+                  {item?.title}
                 </Link>
               </div>
             ))}

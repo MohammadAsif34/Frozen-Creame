@@ -11,8 +11,8 @@ export const Footer = () => {
   ];
   return (
     <>
-      <footer className=" w-full px-[8%] max-sm:px-5 py-10 text-gray-600 bg-gradient-to-br from-fuchsia-100 via-red-50 to-rose-100 ">
-        <div className="w-full h-full max-md:px-10 grid grid-cols-[1fr_0.5fr_1fr] max-lg:grid-cols-1 max-lg:items-center gap-8">
+      <footer className=" w-full px-[8%] max-sm:px-5 border py-10 text-gray-600 bg-gradient-to-br from-fuchsia-100 via-red-50 to-rose-100 ">
+        <div className="w-full h-full  grid grid-cols-[1fr_0.5fr_1fr] max-lg:grid-cols-1 max-lg:items-center gap-8">
           {/* important links  */}
           <div className="flex-1 px-4">
             <div className=" py-4 flex  items-center gap-4">

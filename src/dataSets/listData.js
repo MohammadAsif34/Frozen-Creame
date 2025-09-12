@@ -36,21 +36,21 @@ export const sideItem = [
     title: "Order",
     icon: "fa-solid fa-truck-fast",
     link: "order",
-    function: "",
+    function: "/order",
   },
   {
     _id: 2,
     title: "Cart Item",
     icon: "fa-solid fa-cart-shopping",
     link: "cart",
-    function: "",
+    function: "cart",
   },
   {
     _id: 3,
     title: "Favorite Item",
     icon: "bi bi-bag-check-fill",
     link: "favorite",
-    function: "",
+    function: "favorite",
   },
 ];
 
