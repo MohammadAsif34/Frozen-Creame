@@ -1,20 +1,7 @@
 import React, { useState } from "react";
+import { faqs } from "../../data/basicData";
 
 const FAQs = () => {
-  const faqs = [
-    {
-      q: "What is Flowbite?",
-      a: "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.",
-    },
-    {
-      q: "Is there a Figma file available?",
-      a: "Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.",
-    },
-    {
-      q: "What are the differences between Flowbite and Tailwind UI?",
-      a: "The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product.",
-    },
-  ];
   const [accordionOpen, setAccordionOpen] = useState({}); // for FAQ items
   const toggleAccordion = (id) => {
     setAccordionOpen((prev) => ({

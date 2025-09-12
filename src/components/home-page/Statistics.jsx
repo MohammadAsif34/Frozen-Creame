@@ -1,33 +1,11 @@
 import React from "react";
+import { statsData } from "../../data/basicData";
 
 const StatisticsGrid = () => {
-  const statsData = [
-    { value: "150+", label: "Cakes Baked Daily", iconClass: "bi bi-cake" },
-    {
-      value: "50+",
-      label: "Flavors Available",
-      iconClass: "bi bi-fork-knife",
-    },
-    {
-      value: "2000+",
-      label: "Happy Customers",
-      iconClass: "bi bi-emoji-smile",
-    },
-    {
-      value: "25+",
-      label: "Skilled Bakers",
-      iconClass: "bi bi-person-fill",
-    },
-    {
-      value: "500+",
-      label: "Custom Orders Completed",
-      iconClass: "bi bi-truck",
-    },
-  ];
-
+  
   return (
     <>
-      <section className="w-full bg-gradient-to-tr from-fuchsia-200 via-rose-50 to-rose-200 py-10 px-[10%]">
+      <section className="w-full bg-gradient-to-tr from-fuchsia-200 via-rose-50 to-rose-200 py-10 px-[8%]">
         {/* <div className=" px-[12%] py-8 "> */}
 
         <div className="text-center py-4">

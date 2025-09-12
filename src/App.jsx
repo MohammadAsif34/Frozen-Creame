@@ -66,11 +66,10 @@ import { PublicRoute, publicRoutes } from "./routes/PublicRoute";
 
 const router = createBrowserRouter([
   { element: <PublicRoute />, children: publicRoutes },
-  { element: <PublicRoute />, children: publicRoutes },
-  { element: <PublicRoute />, children: publicRoutes },
+  // { element: <PublicRoute />, children: publicRoutes },
+  // { element: <PublicRoute />, children: publicRoutes },
 ]);
 const App = () => {
- 
   return (
     <>
       <RouterProvider router={router} />

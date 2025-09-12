@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="w-full h-16 px-[12%] max-sm:px-2   flex justify-between items-center text-white">
+      <header className="w-full h-18 px-[12%] max-sm:px-2   flex justify-between items-center text-white">
         {/* Logo section  */}
         <div className="w-14 h-14 logo  p-2 rounded-full overflow-hidden">
           <Link to={"/"}>

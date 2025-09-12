@@ -11,14 +11,16 @@ import TabsAccordion from "../../components/home-page/TabsAccordion";
 import Statistics from "../../components/home-page/Statistics";
 import FAQs from "../../components/home-page/FAQs";
 import SliderHero from "../../components/home-page/SliderHero";
+import Slider from "../../components/home-page/hero-section/Slider";
+import WhyChooseUs from "../../components/home-page/WhyChooseUs";
 
 const Home = () => {
   return (
     <>
-      <div className="bg-gray-50">
+      <div className="bg-gray-50 ">
         {/* hero section  */}
-        {/* <HeroSection /> */}
-        <SliderHero />
+        {/* <SliderHero /> */}
+        <Slider />
 
         {/* special offer cards  */}
         <SpecialOfferSection />
@@ -26,11 +28,11 @@ const Home = () => {
         {/* trending product section  */}
         <TrendingProduct />
 
+        <Collection />
         {/* special week product  */}
         <SpecialWeek />
 
         {/* collection cards  */}
-        <Collection />
 
         {/* feature product section */}
         <FeaturedProduct />
@@ -38,6 +40,7 @@ const Home = () => {
         {/* <TabsAccordion /> */}
         <Statistics />
         <FAQs />
+        <WhyChooseUs />
         {/* <div className="w-full h-80 bg-gray-100 bg-[url('/banner/banner-51.png')] bg-center bg-cover opacity-50"> */}
         <LocationMap />
         {/* </div> */}

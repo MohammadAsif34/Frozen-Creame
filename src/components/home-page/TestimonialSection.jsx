@@ -1,35 +1,14 @@
 import React from "react";
+import { testimonials } from "../../data/basicData";
 // import TestimonialCard from "./TestimonialCard";
 
-const testimonials = [
-  {
-    name: "John Doe",
-    role: "CEO, Company",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    rating: 5,
-    message: "This service is amazing! Highly recommend to everyone.",
-  },
-  {
-    name: "Jane Smith",
-    role: "Designer",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    rating: 4,
-    message: "Great experience, very satisfied with the product.",
-  },
-  {
-    name: "Mike Johnson",
-    role: "Developer",
-    avatar: "https://randomuser.me/api/portraits/men/65.jpg",
-    rating: 5,
-    message: "Exceptional quality and fast delivery!",
-  },
-];
+
 
 const TestimonialSection = () => {
   return (
-    <section className="px-[10%] py-12 bg-rose-50">
+    <section className="px-[10%] py-16 bg-rose-50">
       <div className=" mx-auto pb-4 ">
-        <h1 className="py-8 text-center text-4xl max-sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-l from-rose-400 to-fuchsia-400">
+        <h1 className="pb-16 text-center text-4xl max-sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-l from-rose-400 to-fuchsia-400">
           What Our Clients Say
         </h1>
         <div className="grid gap-x-6 md:grid-cols-2 lg:grid-cols-3">

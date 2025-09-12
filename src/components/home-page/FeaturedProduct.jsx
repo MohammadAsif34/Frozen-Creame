@@ -27,7 +27,7 @@ const FeaturedProduct = () => {
                 <ProductCard item={item} />
               </div>
             ))} */}
-            {featuredCakeItem?.slice(0, 4).map((item, idx) => (
+            {featuredCakeItem?.slice(0, 8).map((item, idx) => (
               <div key={idx} className=" mx-auto">
                 <ProductCard item={item} />
               </div>

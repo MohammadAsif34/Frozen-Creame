@@ -36,7 +36,7 @@ const TrendingProduct = () => {
                 <ProductCard item={item} />
               </div>
             ))} */}
-            {trendCakeItem?.slice(0, 4).map((item, idx) => (
+            {trendCakeItem?.slice(0, 8).map((item, idx) => (
               <div key={idx} className="mx-auto">
                 <ProductCard item={item} />
               </div>

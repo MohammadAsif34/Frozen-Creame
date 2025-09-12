@@ -1,39 +1,13 @@
+import { collections } from "../../data/basicData";
+
 export const Collection = () => {
-  const collections = [
-    {
-      _id: 1,
-      title: "Celebration Cake",
-      sub_title: "Celebrate Every Moment",
-      quote:
-        "From birthdays to victories, make your celebrations unforgettable with our handcrafted cakes.",
-      picture: "/banner/banner-101.png",
-      link: "",
-    },
-    {
-      _id: 3,
-      title: "Wedding Cake",
-      sub_title: "Elegance & Love in Every Bite",
-      quote:
-        "Crafted to match your forever — stunning designs and timeless flavors.",
-      picture: "/banner/banner-102.png",
-      link: "",
-    },
-    {
-      _id: 3,
-      title: "Aniversary Cake",
-      sub_title: "Mark the Milestone with Sweet Memories",
-      quote:
-        "Celebrate love, laughter, and years together with a cake that says it all.",
-      picture: "/banner/banner-103.png",
-      link: "",
-    },
-  ];
+  
   return (
     <>
       <section className="w-full px-[12%]  pt-6 pb-12">
         <div className="text-center py-6">
           <h1 className="py-2 capitalize font-bold text-4xl max-sm:text-3xl text-transparent bg-clip-text bg-gradient-to-l from-rose-400 to-fuchsia-400">
-            Shop Our collections
+            Browse Our collections
           </h1>
           <p className=" py-2 text-gray-400 max-sm:text-xs">
             Discover our exclusive collection, crafted with timeless elegance.
