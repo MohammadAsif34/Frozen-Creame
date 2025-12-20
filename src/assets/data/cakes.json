@@ -1,0 +1,2061 @@
+[
+  {
+    "_id": "FK-CAKE-0001",
+    "sku": "CAKE-CHOC-TRUFFLE-01",
+    "slug": "chocolate-truffle-cake",
+    "type": "cake",
+    "name": "Chocolate Truffle Cake",
+    "category": "Chocolate",
+    "subCategory": "Premium",
+    "description": "Rich and creamy chocolate truffle cake made with premium cocoa and fresh cream.",
+    "image": "1578985545062-69928b1d9587",
+    "pricing": {
+      "basePrice": 799,
+      "discount": {
+        "type": "percentage",
+        "value": 10,
+        "validTill": "2025-12-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [
+        { "weight": "0.5 kg", "price": 399 },
+        { "weight": "1 kg", "price": 799 },
+        { "weight": "2 kg", "price": 1499 }
+      ]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 45,
+      "sameDayDelivery": true,
+      "deliveryTime": "2–4 hrs"
+    },
+    "ratings": { "average": 4.8, "totalReviews": 126 },
+    "tags": ["trending", "bestseller", "birthday"],
+    "customization": {
+      "messageAllowed": true,
+      "maxMessageLength": 30,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk", "soy"],
+      "caloriesPerSlice": 320
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Keep refrigerated at 4°C"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-001",
+      "bakeryName": "FreshBake Cakes",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-01T10:00:00.000Z",
+    "updatedAt": "2025-01-01T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-PASTRY-0002",
+    "sku": "PASTRY-BLACKFOREST-01",
+    "slug": "black-forest-pastry",
+    "type": "pastry",
+    "name": "Black Forest Pastry",
+    "category": "Chocolate",
+    "subCategory": "Classic",
+    "description": "Soft chocolate sponge layered with whipped cream and cherries.",
+    "image": "1716535232783-38a9e49eeffa",
+    "pricing": {
+      "basePrice": 149,
+      "discount": { "type": "flat", "value": 20, "validTill": "2025-10-31" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 149 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 120,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 210 },
+    "tags": ["classic", "snack"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk", "gluten"],
+      "caloriesPerSlice": 180
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Consume fresh, keep chilled"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-002",
+      "bakeryName": "Cake Delight",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-02T10:00:00.000Z",
+    "updatedAt": "2025-01-02T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CUPCAKE-0003",
+    "sku": "CUPCAKE-VANILLA-01",
+    "slug": "vanilla-frosted-cupcake",
+    "type": "cupcake",
+    "name": "Vanilla Frosted Cupcake",
+    "category": "Vanilla",
+    "subCategory": "Regular",
+    "description": "Moist vanilla cupcake topped with creamy vanilla frosting.",
+    "image": "1663839412105-16a24aef987d",
+    "pricing": {
+      "basePrice": 99,
+      "discount": {
+        "type": "percentage",
+        "value": 5,
+        "validTill": "2025-08-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 99 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 200,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.5, "totalReviews": 98 },
+    "tags": ["kids", "snack"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 150
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Store in cool place"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-003",
+      "bakeryName": "Sweet Treats",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-03T10:00:00.000Z",
+    "updatedAt": "2025-01-03T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-DESSERT-0004",
+    "sku": "DESSERT-CHOCO-MOUSSE-01",
+    "slug": "chocolate-mousse-cup",
+    "type": "dessert",
+    "name": "Chocolate Mousse Cup",
+    "category": "Chocolate",
+    "subCategory": "Premium",
+    "description": "Silky smooth chocolate mousse served in a single-serve cup.",
+    "image": "1563801802091-1576649a2602",
+    "pricing": {
+      "basePrice": 199,
+      "discount": {
+        "type": "percentage",
+        "value": 8,
+        "validTill": "2025-09-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 cup", "price": 199 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 80,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.7, "totalReviews": 145 },
+    "tags": ["dessert", "chocolate", "bestseller"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 210
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Keep refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-004",
+      "bakeryName": "Choco Bliss",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-04T10:00:00.000Z",
+    "updatedAt": "2025-01-04T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CAKE-0005",
+    "sku": "CAKE-REDVELVET-01",
+    "slug": "red-velvet-cake",
+    "type": "cake",
+    "name": "Red Velvet Cake",
+    "category": "Velvet",
+    "subCategory": "Premium",
+    "description": "Classic red velvet cake with smooth cream cheese frosting.",
+    "image": "1713920189815-876dbdf5f56e?7",
+    "pricing": {
+      "basePrice": 899,
+      "discount": {
+        "type": "percentage",
+        "value": 12,
+        "validTill": "2025-12-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [
+        { "weight": "0.5 kg", "price": 449 },
+        { "weight": "1 kg", "price": 899 }
+      ]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 35,
+      "sameDayDelivery": true,
+      "deliveryTime": "2–4 hrs"
+    },
+    "ratings": { "average": 4.9, "totalReviews": 312 },
+    "tags": ["premium", "anniversary"],
+    "customization": {
+      "messageAllowed": true,
+      "maxMessageLength": 30,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk", "gluten"],
+      "caloriesPerSlice": 340
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Refrigerate after cutting"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-001",
+      "bakeryName": "FreshBake Cakes",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-05T10:00:00.000Z",
+    "updatedAt": "2025-01-05T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CUPCAKE-0006",
+    "sku": "CUPCAKE-CHOC-CHIP-01",
+    "slug": "chocolate-chip-cupcake",
+    "type": "cupcake",
+    "name": "Chocolate Chip Cupcake",
+    "category": "Chocolate",
+    "subCategory": "Regular",
+    "description": "Soft cupcake loaded with rich chocolate chips.",
+    "image": "1599785209793-8a5d43b0f07b",
+    "pricing": {
+      "basePrice": 109,
+      "discount": { "type": "flat", "value": 10, "validTill": "2025-08-31" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 109 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 160,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.4, "totalReviews": 87 },
+    "tags": ["snack", "kids"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 170
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Store in airtight container"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-003",
+      "bakeryName": "Sweet Treats",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-06T10:00:00.000Z",
+    "updatedAt": "2025-01-06T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-PASTRY-0007",
+    "sku": "PASTRY-PINEAPPLE-01",
+    "slug": "pineapple-pastry",
+    "type": "pastry",
+    "name": "Pineapple Pastry",
+    "category": "Fruit",
+    "subCategory": "Classic",
+    "description": "Light vanilla sponge layered with pineapple cream.",
+    "image": "1599785209707-bf8cfdcdb38b",
+    "pricing": {
+      "basePrice": 139,
+      "discount": {
+        "type": "percentage",
+        "value": 5,
+        "validTill": "2025-09-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 139 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 110,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.3, "totalReviews": 64 },
+    "tags": ["fruit", "classic"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 160
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Keep chilled"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-002",
+      "bakeryName": "Cake Delight",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-07T10:00:00.000Z",
+    "updatedAt": "2025-01-07T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-DESSERT-0008",
+    "sku": "DESSERT-TIRAMISU-01",
+    "slug": "classic-tiramisu-cup",
+    "type": "dessert",
+    "name": "Classic Tiramisu Cup",
+    "category": "Coffee",
+    "subCategory": "Premium",
+    "description": "Italian-style tiramisu with coffee-soaked sponge and mascarpone cream.",
+    "image": "1608219959300-0d36b3c8f5b3",
+    "pricing": {
+      "basePrice": 249,
+      "discount": {
+        "type": "percentage",
+        "value": 10,
+        "validTill": "2025-11-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 cup", "price": 249 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 70,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.8, "totalReviews": 188 },
+    "tags": ["premium", "coffee", "dessert"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk", "coffee"],
+      "caloriesPerSlice": 260
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Keep refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-004",
+      "bakeryName": "Choco Bliss",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-08T10:00:00.000Z",
+    "updatedAt": "2025-01-08T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CAKE-0009",
+    "sku": "CAKE-BUTTERSCOTCH-01",
+    "slug": "butterscotch-crunch-cake",
+    "type": "cake",
+    "name": "Butterscotch Crunch Cake",
+    "category": "Butterscotch",
+    "subCategory": "Regular",
+    "description": "Butterscotch flavored cake topped with crunchy caramel chips.",
+    "image": "1621303837174-89787a7c14a6",
+    "pricing": {
+      "basePrice": 699,
+      "discount": {
+        "type": "percentage",
+        "value": 8,
+        "validTill": "2025-10-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [
+        { "weight": "0.5 kg", "price": 349 },
+        { "weight": "1 kg", "price": 699 }
+      ]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 50,
+      "sameDayDelivery": true,
+      "deliveryTime": "2–4 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 204 },
+    "tags": ["bestseller", "birthday"],
+    "customization": {
+      "messageAllowed": true,
+      "maxMessageLength": 30,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 310
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Refrigerate after cutting"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-001",
+      "bakeryName": "FreshBake Cakes",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-09T10:00:00.000Z",
+    "updatedAt": "2025-01-09T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CUPCAKE-0010",
+    "sku": "CUPCAKE-REDVELVET-01",
+    "slug": "red-velvet-cupcake",
+    "type": "cupcake",
+    "name": "Red Velvet Cupcake",
+    "category": "Velvet",
+    "subCategory": "Premium",
+    "description": "Red velvet cupcake with cream cheese frosting.",
+    "image": "1603532648955-039310d9ed75",
+    "pricing": {
+      "basePrice": 119,
+      "discount": { "type": "flat", "value": 10, "validTill": "2025-09-30" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 119 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 140,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.7, "totalReviews": 132 },
+    "tags": ["premium", "snack"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk", "gluten"],
+      "caloriesPerSlice": 190
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Store refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-003",
+      "bakeryName": "Sweet Treats",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-10T10:00:00.000Z",
+    "updatedAt": "2025-01-10T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-PASTRY-0011",
+    "sku": "PASTRY-MANGO-01",
+    "slug": "mango-delight-pastry",
+    "type": "pastry",
+    "name": "Mango Delight Pastry",
+    "category": "Fruit",
+    "subCategory": "Seasonal",
+    "description": "Fresh mango cream layered with soft vanilla sponge.",
+    "image": "1599785209707-bf8cfdcdb38b",
+    "pricing": {
+      "basePrice": 159,
+      "discount": {
+        "type": "percentage",
+        "value": 6,
+        "validTill": "2025-07-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 159 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 90,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.5, "totalReviews": 77 },
+    "tags": ["seasonal", "fruit"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 170
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Consume fresh"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-002",
+      "bakeryName": "Cake Delight",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-11T10:00:00.000Z",
+    "updatedAt": "2025-01-11T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-DESSERT-0012",
+    "sku": "DESSERT-GULABJAMUN-01",
+    "slug": "gulab-jamun-cup",
+    "type": "dessert",
+    "name": "Gulab Jamun Cup",
+    "category": "Indian",
+    "subCategory": "Classic",
+    "description": "Soft gulab jamuns soaked in aromatic sugar syrup.",
+    "image": "1601050690597-df0568f70950",
+    "pricing": {
+      "basePrice": 129,
+      "discount": { "type": "flat", "value": 10, "validTill": "2025-12-31" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "2 pcs", "price": 129 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 180,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 260 },
+    "tags": ["indian", "classic"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 220
+    },
+    "shelfLife": {
+      "duration": "36 hrs",
+      "storageInstructions": "Store in cool place"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-005",
+      "bakeryName": "Desi Sweets",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-12T10:00:00.000Z",
+    "updatedAt": "2025-01-12T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CAKE-0013",
+    "sku": "CAKE-VANILLA-CLASSIC-01",
+    "slug": "classic-vanilla-cake",
+    "type": "cake",
+    "name": "Classic Vanilla Cake",
+    "category": "Vanilla",
+    "subCategory": "Classic",
+    "description": "Soft vanilla sponge cake layered with smooth vanilla cream.",
+    "image": "1603532648955-039310d9ed75",
+    "pricing": {
+      "basePrice": 599,
+      "discount": {
+        "type": "percentage",
+        "value": 7,
+        "validTill": "2025-11-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [
+        { "weight": "0.5 kg", "price": 299 },
+        { "weight": "1 kg", "price": 599 }
+      ]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 60,
+      "sameDayDelivery": true,
+      "deliveryTime": "2–4 hrs"
+    },
+    "ratings": { "average": 4.4, "totalReviews": 98 },
+    "tags": ["classic", "birthday"],
+    "customization": {
+      "messageAllowed": true,
+      "maxMessageLength": 30,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk", "gluten"],
+      "caloriesPerSlice": 280
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Keep refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-001",
+      "bakeryName": "FreshBake Cakes",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-13T10:00:00.000Z",
+    "updatedAt": "2025-01-13T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-PASTRY-0014",
+    "sku": "PASTRY-CHOCO-FUDGE-01",
+    "slug": "chocolate-fudge-pastry",
+    "type": "pastry",
+    "name": "Chocolate Fudge Pastry",
+    "category": "Chocolate",
+    "subCategory": "Premium",
+    "description": "Dense chocolate pastry layered with rich fudge frosting.",
+    "image": "1578985545062-69928b1d9587",
+    "pricing": {
+      "basePrice": 169,
+      "discount": { "type": "flat", "value": 15, "validTill": "2025-10-31" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 169 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 100,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 142 },
+    "tags": ["chocolate", "bestseller"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk", "gluten"],
+      "caloriesPerSlice": 200
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Consume fresh"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-002",
+      "bakeryName": "Cake Delight",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-14T10:00:00.000Z",
+    "updatedAt": "2025-01-14T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CUPCAKE-0015",
+    "sku": "CUPCAKE-BLUEBERRY-01",
+    "slug": "blueberry-cupcake",
+    "type": "cupcake",
+    "name": "Blueberry Cupcake",
+    "category": "Fruit",
+    "subCategory": "Regular",
+    "description": "Soft cupcake infused with blueberry flavor and cream topping.",
+    "image": "1599785209707-bf8cfdcdb38b",
+    "pricing": {
+      "basePrice": 115,
+      "discount": {
+        "type": "percentage",
+        "value": 6,
+        "validTill": "2025-09-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 115 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 130,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.3, "totalReviews": 76 },
+    "tags": ["fruit", "snack"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 160
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Store cool"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-003",
+      "bakeryName": "Sweet Treats",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-15T10:00:00.000Z",
+    "updatedAt": "2025-01-15T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-DESSERT-0016",
+    "sku": "DESSERT-BROWNIE-01",
+    "slug": "chocolate-brownie",
+    "type": "dessert",
+    "name": "Chocolate Brownie",
+    "category": "Chocolate",
+    "subCategory": "Classic",
+    "description": "Fudgy chocolate brownie with rich cocoa flavor.",
+    "image": "1599785209793-8a5d43b0f07b",
+    "pricing": {
+      "basePrice": 149,
+      "discount": { "type": "flat", "value": 10, "validTill": "2025-12-31" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 149 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 170,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.7, "totalReviews": 220 },
+    "tags": ["dessert", "chocolate"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": true,
+      "allergens": ["milk", "nuts"],
+      "caloriesPerSlice": 290
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Store in airtight container"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-004",
+      "bakeryName": "Choco Bliss",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-16T10:00:00.000Z",
+    "updatedAt": "2025-01-16T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CAKE-0017",
+    "sku": "CAKE-FRUIT-01",
+    "slug": "fresh-fruit-cake",
+    "type": "cake",
+    "name": "Fresh Fruit Cake",
+    "category": "Fruit",
+    "subCategory": "Premium",
+    "description": "Vanilla cake topped with fresh seasonal fruits and cream.",
+    "image": "1542826438-5c7dcd47a338",
+    "pricing": {
+      "basePrice": 849,
+      "discount": {
+        "type": "percentage",
+        "value": 9,
+        "validTill": "2025-10-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [
+        { "weight": "0.5 kg", "price": 429 },
+        { "weight": "1 kg", "price": 849 }
+      ]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 40,
+      "sameDayDelivery": true,
+      "deliveryTime": "2–4 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 156 },
+    "tags": ["fruit", "premium"],
+    "customization": {
+      "messageAllowed": true,
+      "maxMessageLength": 30,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 270
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Refrigerate immediately"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-001",
+      "bakeryName": "FreshBake Cakes",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-17T10:00:00.000Z",
+    "updatedAt": "2025-01-17T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-PASTRY-0018",
+    "sku": "PASTRY-STRAWBERRY-01",
+    "slug": "strawberry-cream-pastry",
+    "type": "pastry",
+    "name": "Strawberry Cream Pastry",
+    "category": "Fruit",
+    "subCategory": "Classic",
+    "description": "Soft sponge pastry layered with strawberry cream.",
+    "image": "1542826438-5c7dcd47a338",
+    "pricing": {
+      "basePrice": 149,
+      "discount": {
+        "type": "percentage",
+        "value": 5,
+        "validTill": "2025-08-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 149 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 95,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.4, "totalReviews": 83 },
+    "tags": ["fruit", "classic"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 165
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Consume fresh"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-002",
+      "bakeryName": "Cake Delight",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-18T10:00:00.000Z",
+    "updatedAt": "2025-01-18T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-DESSERT-0019",
+    "sku": "DESSERT-CARAMEL-PUDDING-01",
+    "slug": "caramel-pudding",
+    "type": "dessert",
+    "name": "Caramel Pudding",
+    "category": "Caramel",
+    "subCategory": "Classic",
+    "description": "Smooth caramel pudding with rich caramel sauce.",
+    "image": "1608219959300-0d36b3c8f5b3",
+    "pricing": {
+      "basePrice": 159,
+      "discount": { "type": "flat", "value": 10, "validTill": "2025-12-31" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 cup", "price": 159 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 140,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.5, "totalReviews": 112 },
+    "tags": ["dessert", "classic"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 230
+    },
+    "shelfLife": {
+      "duration": "36 hrs",
+      "storageInstructions": "Keep refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-005",
+      "bakeryName": "Desi Sweets",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-19T10:00:00.000Z",
+    "updatedAt": "2025-01-19T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CUPCAKE-0020",
+    "sku": "CUPCAKE-COFFEE-01",
+    "slug": "coffee-flavored-cupcake",
+    "type": "cupcake",
+    "name": "Coffee Cupcake",
+    "category": "Coffee",
+    "subCategory": "Regular",
+    "description": "Coffee-infused cupcake topped with light coffee cream.",
+    "image": "1603532648955-039310d9ed75",
+    "pricing": {
+      "basePrice": 125,
+      "discount": {
+        "type": "percentage",
+        "value": 5,
+        "validTill": "2025-09-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 125 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 120,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.4, "totalReviews": 69 },
+    "tags": ["coffee", "snack"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk", "coffee"],
+      "caloriesPerSlice": 175
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Store cool"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-003",
+      "bakeryName": "Sweet Treats",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-20T10:00:00.000Z",
+    "updatedAt": "2025-01-20T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CAKE-0021",
+    "sku": "CAKE-CHOCOLATE-OVERLOAD-01",
+    "slug": "chocolate-overload-cake",
+    "type": "cake",
+    "name": "Chocolate Overload Cake",
+    "category": "Chocolate",
+    "subCategory": "Premium",
+    "description": "Rich chocolate cake layered with ganache and chocolate chips.",
+    "image": "1578985545062-69928b1d9587",
+    "pricing": {
+      "basePrice": 999,
+      "discount": {
+        "type": "percentage",
+        "value": 10,
+        "validTill": "2025-12-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [
+        { "weight": "0.5 kg", "price": 499 },
+        { "weight": "1 kg", "price": 999 }
+      ]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 30,
+      "sameDayDelivery": true,
+      "deliveryTime": "2–4 hrs"
+    },
+    "ratings": { "average": 4.9, "totalReviews": 410 },
+    "tags": ["bestseller", "premium"],
+    "customization": {
+      "messageAllowed": true,
+      "maxMessageLength": 30,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": true,
+      "allergens": ["milk", "nuts", "gluten"],
+      "caloriesPerSlice": 360
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Keep refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-001",
+      "bakeryName": "FreshBake Cakes",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-21T10:00:00.000Z",
+    "updatedAt": "2025-01-21T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-PASTRY-0022",
+    "sku": "PASTRY-OREO-01",
+    "slug": "oreo-crunch-pastry",
+    "type": "pastry",
+    "name": "Oreo Crunch Pastry",
+    "category": "Chocolate",
+    "subCategory": "Premium",
+    "description": "Chocolate pastry layered with Oreo cream and crushed cookies.",
+    "image": "1608198093002-ad4e005484ec",
+    "pricing": {
+      "basePrice": 179,
+      "discount": { "type": "flat", "value": 15, "validTill": "2025-11-30" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 179 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 90,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 155 },
+    "tags": ["oreo", "trending"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk", "gluten"],
+      "caloriesPerSlice": 210
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Consume fresh"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-002",
+      "bakeryName": "Cake Delight",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-22T10:00:00.000Z",
+    "updatedAt": "2025-01-22T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CUPCAKE-0023",
+    "sku": "CUPCAKE-LEMON-01",
+    "slug": "lemon-zest-cupcake",
+    "type": "cupcake",
+    "name": "Lemon Zest Cupcake",
+    "category": "Citrus",
+    "subCategory": "Regular",
+    "description": "Refreshing lemon-flavored cupcake with light cream frosting.",
+    "image": "1614707267537-b85aaf00c4b7",
+    "pricing": {
+      "basePrice": 110,
+      "discount": {
+        "type": "percentage",
+        "value": 5,
+        "validTill": "2025-09-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 110 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 125,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.3, "totalReviews": 61 },
+    "tags": ["refreshing", "snack"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 155
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Store cool"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-003",
+      "bakeryName": "Sweet Treats",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-23T10:00:00.000Z",
+    "updatedAt": "2025-01-23T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-DESSERT-0024",
+    "sku": "DESSERT-ICECREAM-SUNDAE-01",
+    "slug": "chocolate-icecream-sundae",
+    "type": "dessert",
+    "name": "Chocolate Ice Cream Sundae",
+    "category": "Ice Cream",
+    "subCategory": "Classic",
+    "description": "Vanilla ice cream topped with chocolate sauce and nuts.",
+    "image": "1599785209793-8a5d43b0f07b",
+    "pricing": {
+      "basePrice": 189,
+      "discount": { "type": "flat", "value": 15, "validTill": "2025-08-31" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 cup", "price": 189 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 75,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.5, "totalReviews": 134 },
+    "tags": ["dessert", "summer"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": true,
+      "allergens": ["milk", "nuts"],
+      "caloriesPerSlice": 300
+    },
+    "shelfLife": {
+      "duration": "12 hrs",
+      "storageInstructions": "Keep frozen"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-006",
+      "bakeryName": "Ice Cream Hub",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-24T10:00:00.000Z",
+    "updatedAt": "2025-01-24T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CAKE-0025",
+    "sku": "CAKE-COFFEE-MOCHA-01",
+    "slug": "coffee-mocha-cake",
+    "type": "cake",
+    "name": "Coffee Mocha Cake",
+    "category": "Coffee",
+    "subCategory": "Premium",
+    "description": "Mocha-flavored cake layered with coffee cream and chocolate glaze.",
+    "image": "1603532648955-039310d9ed75",
+    "pricing": {
+      "basePrice": 899,
+      "discount": {
+        "type": "percentage",
+        "value": 9,
+        "validTill": "2025-12-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [
+        { "weight": "0.5 kg", "price": 449 },
+        { "weight": "1 kg", "price": 899 }
+      ]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 38,
+      "sameDayDelivery": true,
+      "deliveryTime": "2–4 hrs"
+    },
+    "ratings": { "average": 4.7, "totalReviews": 198 },
+    "tags": ["coffee", "premium"],
+    "customization": {
+      "messageAllowed": true,
+      "maxMessageLength": 30,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk", "coffee"],
+      "caloriesPerSlice": 330
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Refrigerate after cutting"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-001",
+      "bakeryName": "FreshBake Cakes",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-25T10:00:00.000Z",
+    "updatedAt": "2025-01-25T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-PASTRY-0026",
+    "sku": "PASTRY-KITKAT-01",
+    "slug": "kitkat-chocolate-pastry",
+    "type": "pastry",
+    "name": "KitKat Chocolate Pastry",
+    "category": "Chocolate",
+    "subCategory": "Premium",
+    "description": "Chocolate pastry topped with crunchy KitKat pieces.",
+    "image": "1608198093002-ad4e005484ec",
+    "pricing": {
+      "basePrice": 189,
+      "discount": { "type": "flat", "value": 15, "validTill": "2025-11-30" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 189 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 85,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 141 },
+    "tags": ["kitkat", "trending"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk", "gluten"],
+      "caloriesPerSlice": 215
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Consume fresh"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-002",
+      "bakeryName": "Cake Delight",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-26T10:00:00.000Z",
+    "updatedAt": "2025-01-26T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CUPCAKE-0027",
+    "sku": "CUPCAKE-ORANGE-01",
+    "slug": "orange-blast-cupcake",
+    "type": "cupcake",
+    "name": "Orange Blast Cupcake",
+    "category": "Citrus",
+    "subCategory": "Regular",
+    "description": "Soft cupcake infused with fresh orange flavor.",
+    "image": "1614707267537-b85aaf00c4b7",
+    "pricing": {
+      "basePrice": 105,
+      "discount": {
+        "type": "percentage",
+        "value": 5,
+        "validTill": "2025-09-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 105 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 115,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.2, "totalReviews": 58 },
+    "tags": ["citrus", "snack"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 150
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Store cool"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-003",
+      "bakeryName": "Sweet Treats",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-27T10:00:00.000Z",
+    "updatedAt": "2025-01-27T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-DESSERT-0028",
+    "sku": "DESSERT-CHOCO-LAVA-01",
+    "slug": "chocolate-lava-cake",
+    "type": "dessert",
+    "name": "Chocolate Lava Cake",
+    "category": "Chocolate",
+    "subCategory": "Premium",
+    "description": "Warm chocolate cake with molten chocolate center.",
+    "image": "1599785209793-8a5d43b0f07b",
+    "pricing": {
+      "basePrice": 199,
+      "discount": { "type": "flat", "value": 20, "validTill": "2025-12-31" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 199 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 90,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.8, "totalReviews": 275 },
+    "tags": ["lava", "bestseller"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": true,
+      "allergens": ["milk", "nuts"],
+      "caloriesPerSlice": 340
+    },
+    "shelfLife": {
+      "duration": "12 hrs",
+      "storageInstructions": "Serve warm"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-004",
+      "bakeryName": "Choco Bliss",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-28T10:00:00.000Z",
+    "updatedAt": "2025-01-28T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CAKE-0029",
+    "sku": "CAKE-RAINBOW-01",
+    "slug": "rainbow-layer-cake",
+    "type": "cake",
+    "name": "Rainbow Layer Cake",
+    "category": "Special",
+    "subCategory": "Kids",
+    "description": "Colorful layered cake with vanilla cream frosting.",
+    "image": "1542826438-5c7dcd47a338",
+    "pricing": {
+      "basePrice": 949,
+      "discount": {
+        "type": "percentage",
+        "value": 8,
+        "validTill": "2025-10-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [
+        { "weight": "0.5 kg", "price": 479 },
+        { "weight": "1 kg", "price": 949 }
+      ]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 28,
+      "sameDayDelivery": true,
+      "deliveryTime": "2–4 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 143 },
+    "tags": ["kids", "birthday"],
+    "customization": {
+      "messageAllowed": true,
+      "maxMessageLength": 30,
+      "customDesignAllowed": true
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk", "gluten"],
+      "caloriesPerSlice": 320
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Keep refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-001",
+      "bakeryName": "FreshBake Cakes",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-29T10:00:00.000Z",
+    "updatedAt": "2025-01-29T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-PASTRY-0030",
+    "sku": "PASTRY-COCONUT-01",
+    "slug": "coconut-cream-pastry",
+    "type": "pastry",
+    "name": "Coconut Cream Pastry",
+    "category": "Coconut",
+    "subCategory": "Classic",
+    "description": "Light pastry with coconut-flavored cream.",
+    "image": "1599785209707-bf8cfdcdb38b",
+    "pricing": {
+      "basePrice": 149,
+      "discount": {
+        "type": "percentage",
+        "value": 5,
+        "validTill": "2025-08-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 149 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 88,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.3, "totalReviews": 67 },
+    "tags": ["coconut", "classic"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 170
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Consume fresh"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-002",
+      "bakeryName": "Cake Delight",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-30T10:00:00.000Z",
+    "updatedAt": "2025-01-30T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CUPCAKE-0031",
+    "sku": "CUPCAKE-CHOCO-MINT-01",
+    "slug": "choco-mint-cupcake",
+    "type": "cupcake",
+    "name": "Choco Mint Cupcake",
+    "category": "Chocolate",
+    "subCategory": "Regular",
+    "description": "Chocolate cupcake with refreshing mint frosting.",
+    "image": "1614707267537-b85aaf00c4b7",
+    "pricing": {
+      "basePrice": 115,
+      "discount": {
+        "type": "percentage",
+        "value": 6,
+        "validTill": "2025-09-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 115 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 105,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.4, "totalReviews": 74 },
+    "tags": ["mint", "snack"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 180
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Store cool"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-003",
+      "bakeryName": "Sweet Treats",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-01-31T10:00:00.000Z",
+    "updatedAt": "2025-01-31T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-DESSERT-0032",
+    "sku": "DESSERT-RASMALAI-01",
+    "slug": "rasmalai-cup",
+    "type": "dessert",
+    "name": "Rasmalai Cup",
+    "category": "Indian",
+    "subCategory": "Classic",
+    "description": "Soft paneer dumplings soaked in saffron-flavored milk.",
+    "image": "1601050690597-df0568f70950",
+    "pricing": {
+      "basePrice": 149,
+      "discount": { "type": "flat", "value": 10, "validTill": "2025-12-31" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "2 pcs", "price": 149 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 160,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.7, "totalReviews": 240 },
+    "tags": ["indian", "dessert"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": true,
+      "allergens": ["milk", "nuts"],
+      "caloriesPerSlice": 260
+    },
+    "shelfLife": {
+      "duration": "36 hrs",
+      "storageInstructions": "Keep refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-005",
+      "bakeryName": "Desi Sweets",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-02-01T10:00:00.000Z",
+    "updatedAt": "2025-02-01T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CAKE-0033",
+    "sku": "CAKE-ALMOND-CRUNCH-01",
+    "slug": "almond-crunch-cake",
+    "type": "cake",
+    "name": "Almond Crunch Cake",
+    "category": "Nut",
+    "subCategory": "Premium",
+    "description": "Vanilla cake layered with almond crunch and cream.",
+    "image": "1542826438-5c7dcd47a338",
+    "pricing": {
+      "basePrice": 929,
+      "discount": {
+        "type": "percentage",
+        "value": 10,
+        "validTill": "2025-12-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [
+        { "weight": "0.5 kg", "price": 469 },
+        { "weight": "1 kg", "price": 929 }
+      ]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 34,
+      "sameDayDelivery": true,
+      "deliveryTime": "2–4 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 167 },
+    "tags": ["nutty", "premium"],
+    "customization": {
+      "messageAllowed": true,
+      "maxMessageLength": 30,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": true,
+      "allergens": ["milk", "nuts"],
+      "caloriesPerSlice": 340
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Keep refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-001",
+      "bakeryName": "FreshBake Cakes",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-02-02T10:00:00.000Z",
+    "updatedAt": "2025-02-02T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-PASTRY-0034",
+    "sku": "PASTRY-VANILLA-ALMOND-01",
+    "slug": "vanilla-almond-pastry",
+    "type": "pastry",
+    "name": "Vanilla Almond Pastry",
+    "category": "Nut",
+    "subCategory": "Classic",
+    "description": "Vanilla pastry topped with sliced almonds.",
+    "image": "1608198093002-ad4e005484ec",
+    "pricing": {
+      "basePrice": 169,
+      "discount": { "type": "flat", "value": 15, "validTill": "2025-10-31" },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 169 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 92,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.4, "totalReviews": 88 },
+    "tags": ["almond", "classic"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": true,
+      "allergens": ["milk", "nuts"],
+      "caloriesPerSlice": 190
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Consume fresh"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-002",
+      "bakeryName": "Cake Delight",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-02-03T10:00:00.000Z",
+    "updatedAt": "2025-02-03T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CUPCAKE-0035",
+    "sku": "CUPCAKE-CARAMEL-01",
+    "slug": "salted-caramel-cupcake",
+    "type": "cupcake",
+    "name": "Salted Caramel Cupcake",
+    "category": "Caramel",
+    "subCategory": "Premium",
+    "description": "Cupcake topped with salted caramel cream.",
+    "image": "1614707267537-b85aaf00c4b7",
+    "pricing": {
+      "basePrice": 129,
+      "discount": {
+        "type": "percentage",
+        "value": 7,
+        "validTill": "2025-09-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 129 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 100,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 95 },
+    "tags": ["caramel", "premium"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 210
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Store cool"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-003",
+      "bakeryName": "Sweet Treats",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-02-04T10:00:00.000Z",
+    "updatedAt": "2025-02-04T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-DESSERT-0036",
+    "sku": "DESSERT-FALUDA-01",
+    "slug": "royal-faluda",
+    "type": "dessert",
+    "name": "Royal Faluda",
+    "category": "Indian",
+    "subCategory": "Premium",
+    "description": "Traditional faluda with vermicelli, basil seeds, and ice cream.",
+    "image": "1601050690597-df0568f70950",
+    "pricing": {
+      "basePrice": 219,
+      "discount": {
+        "type": "percentage",
+        "value": 8,
+        "validTill": "2025-10-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 glass", "price": 219 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 70,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.5, "totalReviews": 118 },
+    "tags": ["indian", "summer"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": true,
+      "allergens": ["milk", "nuts"],
+      "caloriesPerSlice": 320
+    },
+    "shelfLife": {
+      "duration": "12 hrs",
+      "storageInstructions": "Serve chilled"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-005",
+      "bakeryName": "Desi Sweets",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-02-05T10:00:00.000Z",
+    "updatedAt": "2025-02-05T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CAKE-0037",
+    "sku": "CAKE-CHOCO-ORANGE-01",
+    "slug": "chocolate-orange-cake",
+    "type": "cake",
+    "name": "Chocolate Orange Cake",
+    "category": "Chocolate",
+    "subCategory": "Premium",
+    "description": "Chocolate cake infused with fresh orange zest.",
+    "image": "1578985545062-69928b1d9587",
+    "pricing": {
+      "basePrice": 879,
+      "discount": {
+        "type": "percentage",
+        "value": 8,
+        "validTill": "2025-11-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [
+        { "weight": "0.5 kg", "price": 439 },
+        { "weight": "1 kg", "price": 879 }
+      ]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 42,
+      "sameDayDelivery": true,
+      "deliveryTime": "2–4 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 152 },
+    "tags": ["chocolate", "citrus"],
+    "customization": {
+      "messageAllowed": true,
+      "maxMessageLength": 30,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk"],
+      "caloriesPerSlice": 325
+    },
+    "shelfLife": {
+      "duration": "48 hrs",
+      "storageInstructions": "Keep refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-001",
+      "bakeryName": "FreshBake Cakes",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-02-06T10:00:00.000Z",
+    "updatedAt": "2025-02-06T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-PASTRY-0038",
+    "sku": "PASTRY-MOCHA-01",
+    "slug": "mocha-cream-pastry",
+    "type": "pastry",
+    "name": "Mocha Cream Pastry",
+    "category": "Coffee",
+    "subCategory": "Classic",
+    "description": "Coffee-flavored pastry with smooth mocha cream.",
+    "image": "1608198093002-ad4e005484ec",
+    "pricing": {
+      "basePrice": 159,
+      "discount": {
+        "type": "percentage",
+        "value": 6,
+        "validTill": "2025-10-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 159 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 97,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.4, "totalReviews": 82 },
+    "tags": ["coffee", "classic"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk", "coffee"],
+      "caloriesPerSlice": 185
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Consume fresh"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-002",
+      "bakeryName": "Cake Delight",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-02-07T10:00:00.000Z",
+    "updatedAt": "2025-02-07T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-CUPCAKE-0039",
+    "sku": "CUPCAKE-PISTACHIO-01",
+    "slug": "pistachio-cupcake",
+    "type": "cupcake",
+    "name": "Pistachio Cupcake",
+    "category": "Nut",
+    "subCategory": "Premium",
+    "description": "Cupcake infused with rich pistachio flavor.",
+    "image": "1614707267537-b85aaf00c4b7",
+    "pricing": {
+      "basePrice": 135,
+      "discount": {
+        "type": "percentage",
+        "value": 8,
+        "validTill": "2025-09-30"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 pc", "price": 135 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 88,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.6, "totalReviews": 104 },
+    "tags": ["pistachio", "premium"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": true,
+      "containsNuts": true,
+      "allergens": ["milk", "nuts"],
+      "caloriesPerSlice": 220
+    },
+    "shelfLife": {
+      "duration": "24 hrs",
+      "storageInstructions": "Store cool"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-003",
+      "bakeryName": "Sweet Treats",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-02-08T10:00:00.000Z",
+    "updatedAt": "2025-02-08T10:00:00.000Z"
+  },
+  {
+    "_id": "FK-DESSERT-0040",
+    "sku": "DESSERT-CHEESECAKE-01",
+    "slug": "classic-cheesecake-slice",
+    "type": "dessert",
+    "name": "Classic Cheesecake Slice",
+    "category": "Cheesecake",
+    "subCategory": "Premium",
+    "description": "Creamy baked cheesecake with buttery biscuit base.",
+    "image": "1608219959300-0d36b3c8f5b3",
+    "pricing": {
+      "basePrice": 249,
+      "discount": {
+        "type": "percentage",
+        "value": 10,
+        "validTill": "2025-12-31"
+      },
+      "taxPercent": 5,
+      "weightOptions": [{ "weight": "1 slice", "price": 249 }]
+    },
+    "availability": {
+      "inStock": true,
+      "stockQuantity": 65,
+      "sameDayDelivery": true,
+      "deliveryTime": "1–2 hrs"
+    },
+    "ratings": { "average": 4.8, "totalReviews": 305 },
+    "tags": ["cheesecake", "premium"],
+    "customization": {
+      "messageAllowed": false,
+      "maxMessageLength": 0,
+      "customDesignAllowed": false
+    },
+    "nutrition": {
+      "egglessAvailable": false,
+      "containsNuts": false,
+      "allergens": ["milk", "gluten"],
+      "caloriesPerSlice": 350
+    },
+    "shelfLife": {
+      "duration": "36 hrs",
+      "storageInstructions": "Keep refrigerated"
+    },
+    "vendor": {
+      "bakeryId": "BAKERY-KOL-004",
+      "bakeryName": "Choco Bliss",
+      "city": "Kolkata"
+    },
+    "status": "active",
+    "createdAt": "2025-02-09T10:00:00.000Z",
+    "updatedAt": "2025-02-09T10:00:00.000Z"
+  }
+]
