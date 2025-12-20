@@ -10,7 +10,7 @@ const collections = [
   {
     id: 2,
     title: "Anniversary Cakes",
-    image: "https://images.unsplash.com/photo-1542826438-8b4a97c5c6b5",
+    image: "https://images.unsplash.com/photo-1599318725142-2193a2d62b28",
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ const CuratedCollections = () => {
               />
 
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                <h3 className="text-white text-xl font-semibold">
+                <h3 className="text-white text-xl font-bold">
                   {item.title}
                 </h3>
               </div>

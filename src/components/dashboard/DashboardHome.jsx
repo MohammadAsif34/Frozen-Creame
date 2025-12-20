@@ -19,6 +19,9 @@ const DashboardHome = () => {
               <strong>Email:</strong> {user.email || "johndoe@gmail.com"}
             </p>
             <p>
+              <strong>Phone:</strong> {user.phone_number || "johndoe@gmail.com"}
+            </p>
+            <p>
               <strong>Member Since:</strong> Jan 2024
             </p>
           </div>

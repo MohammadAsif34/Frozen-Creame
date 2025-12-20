@@ -1,18 +1,42 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../hooks/firebase";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { auth, db } from "../../hooks/firebase";
 import { toast } from "react-toastify";
 import { LayoutDashboard, LogOut, Truck } from "lucide-react";
 import { clearProfile } from "../../redux/slices/userSlice";
+import { setCart } from "../../redux/slices/cartSlice";
 import { clearUser } from "../../redux/slices/authSlice";
+import { useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { getCartList } from "../../utils/getCartList";
 
 const LoginedClient = () => {
   const [open, setOpen] = useState(false);
   const user = useSelector((s) => s.auth.user);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    async function loadCart() {
+      const user = auth.currentUser;
+      if (!user) {
+        toast.error("Authenticateion Required");
+        navigate(-1);
+        return;
+      }
+      try {
+        const items = await getCartList();
+        dispatch(setCart(items));
+      } catch (err) {
+        console.error(err);
+      } finally {
+        // setLoading(false);
+      }
+    }
+
+    loadCart();
+  }, []);
   const handleLogout = async () => {
     try {
       await auth.signOut();
@@ -45,7 +69,7 @@ const LoginedClient = () => {
             <img
               src={user?.photo || "https://i.pravatar.cc/40"}
               alt="user"
-              className="w-9 h-9 rounded-full bg-gray-400"
+              className="w-9 h-9 rounded-full bg-gray-100 border border-gray-300"
             />
             {/* <span className="text-sm font-medium">
               {user?.displayName || user?.email}

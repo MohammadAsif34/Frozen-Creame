@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { collection, getDocs, addDoc, deleteDoc } from "firebase/firestore";
-import { auth, db } from "../../hooks/firebase";
+import React, { useState } from "react";
+import { auth } from "../../hooks/firebase";
 import { toast } from "react-toastify";
-import { getCartList } from "../../utils/getCartList";
 import AddressForm from "../../components/component/AddressForm";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { encodeObject } from "../../utils/encodeDecode";
 
 const CheckoutPage = () => {
   const [address, setAddress] = useState({
@@ -26,7 +23,6 @@ const CheckoutPage = () => {
   const location = useLocation();
   const cartItems = location?.state;
 
-  console.log("cartItems :: ", cartItems);
   const subtotal = cartItems?.reduce(
     (sum, item) => sum + item.pricing.basePrice * item.quantity,
     0
@@ -60,7 +56,7 @@ const CheckoutPage = () => {
       platformFee,
       totalAmount,
       status: "PENDING",
-      createdAt: new Date().toISOString(),
+      createdAt: Date.now(),
     };
 
     const link = `/checkout/payment/${user.uid}`;

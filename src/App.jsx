@@ -23,6 +23,7 @@ import CheckoutPage from "./pages/checkout/CheckoutPage";
 import PaymentPage from "./pages/payment-page/PaymentPage";
 import useScrollToTop from "./hooks/useScrollToTop";
 import DefaultPage from "./pages/default-route/DefaultPage";
+import OrderBill from "./components/component/OrderBill";
 
 const Layout = () => {
   const { loading } = useCheckAuth();
@@ -63,6 +64,7 @@ const router = createBrowserRouter([
       { path: "cake/:cakeId", element: <CakeDetails /> },
       { path: "checkout", element: <CheckoutPage /> },
       { path: "checkout/payment/:order", element: <PaymentPage /> },
+      { path: "order", element: <OrderBill /> },
       { path: "*", element: <DefaultPage /> },
       {
         path: "dashboard",

@@ -1,7 +1,6 @@
 import React from "react";
 
 const AddressForm = ({ address, setAddress }) => {
-  console.log("add form::", address.fullName);
   const handleChange = (e) => {
     setAddress((add) => ({ ...add, [e.target.name]: e.target.value }));
   };

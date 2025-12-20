@@ -27,9 +27,10 @@ const Navbar = () => {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-rose-500">
+          <Link to="/" className="text-2xl font-bold text-rose-500 flex items-center gap-4">
+            <img src="/logo.svg" alt="" className="w-10 grayscale-50" />
             𝓕𝓻𝓸𝔃𝓮𝓷 𝓚𝓻𝓮𝓶𝓮
           </Link>
 

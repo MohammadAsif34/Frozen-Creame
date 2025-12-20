@@ -14,7 +14,6 @@ const CartPage = () => {
   const u = useSelector((s) => s.auth.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(u);
 
   useEffect(() => {
     async function loadCart() {

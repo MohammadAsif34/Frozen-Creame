@@ -3,7 +3,6 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   getRedirectResult,
-  signInWithRedirect,
   signInWithPopup,
 } from "firebase/auth";
 import { auth, db, googleProvider } from "../../hooks/firebase";
@@ -28,7 +27,7 @@ const AuthPage = () => {
         const user = result.user;
 
         // Check if user already exists
-        const userRef = doc(db, "Users", user.uid);
+        const userRef = doc(db, "users", user.uid);
         const snap = await getDoc(userRef);
 
         if (!snap.exists()) {
@@ -61,7 +60,6 @@ const AuthPage = () => {
     try {
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
-        console.log(auth);
       } else {
         await createUserWithEmailAndPassword(auth, email, password);
       }
@@ -79,7 +77,7 @@ const AuthPage = () => {
       const user = auth.currentUser;
       if (!user) return;
 
-      const userRef = doc(db, "Users", user.uid);
+      const userRef = doc(db, "users", user.uid);
       const snap = await getDoc(userRef);
 
       // Create user ONLY if not exists
@@ -93,7 +91,6 @@ const AuthPage = () => {
           createdAt: new Date(),
         });
       }
-      console.log(auth);
       toast.success("Logged in with Google");
       navigate("/");
     } catch (err) {

@@ -13,13 +13,13 @@ export const AddToCart = async (cake) => {
   if (!user) {
     return "User not Authenticted";
   }
-  const cartItemRef = doc(db, "User", user.uid, "Cart", cake._id);
+  const cartItemRef = doc(db, "carts", user.uid, "items", cake._id);
   const snap = await getDoc(cartItemRef);
   if (!snap.exists()) {
     await setDoc(cartItemRef, {
       ...cake,
       quantity: 1,
-      addedAt: new Date().toISOString(),
+      addedAt: Date.now(),
     });
     return "Item added";
   }
@@ -30,7 +30,7 @@ export const updateCart = async (productId, type) => {
   const user = auth.currentUser;
   if (!user) throw new Error("User not logged in");
 
-  const cartRef = doc(db, "User", user.uid, "Cart", productId);
+  const cartRef = doc(db, "carts", user.uid, "items", productId);
   const snap = await getDoc(cartRef);
 
   if (!snap.exists()) throw new Error("Item not found");

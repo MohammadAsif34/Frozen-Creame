@@ -16,6 +16,8 @@ const useCheckAuth = () => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       try {
         // ❌ Not logged in
+        const u = auth.currentUser;
+        if (!u) navigate("/auth");
         if (!user) {
           dispatch(clearUser());
           dispatch(clearProfile());
@@ -40,16 +42,15 @@ const useCheckAuth = () => {
         // dispatch(setUser(user));
         const authUser = auth.currentUser;
         if (!authUser) {
-          console.log("No user login");
-          return null;
+          console.warn("No user login");
+          return;
         }
         // 📦 Fetch user profile from Firestore
-        const userRef = doc(db, "Users", authUser.uid);
+        const userRef = doc(db, "users", authUser.uid);
         const snap = await getDoc(userRef);
-        console.log("snap::", snap.data());
 
         if (!snap.exists()) {
-          console.log("Doc does not exist in firestore");
+          console.warn("Doc does not exist in firestore");
           return null;
         }
 

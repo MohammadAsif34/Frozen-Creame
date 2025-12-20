@@ -1,21 +1,21 @@
 import { collection, getDocs } from "firebase/firestore";
 import { auth, db } from "../hooks/firebase";
 
-export async function getCartList() {
+export async function getOrderList() {
   const user = auth.currentUser;
 
   if (!user) {
     throw new Error("User not authenticated");
   }
 
-  const cartItemsRef = collection(db, "carts", user.uid, "items");
+  const orderRef = collection(db, "orders", user.uid, "order");
 
-  const snapshot = await getDocs(cartItemsRef);
+  const snapshot = await getDocs(orderRef);
 
-  const cartList = snapshot.docs.map((doc) => ({
+  const orderList = snapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
   }));
 
-  return cartList;
+  return orderList;
 }

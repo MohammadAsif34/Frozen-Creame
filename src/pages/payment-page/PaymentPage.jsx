@@ -1,18 +1,35 @@
-import { div } from "framer-motion/client";
 import React, { useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { orderPlaceCOD } from "../../utils/orderFunction";
 
-const PaymentPage = ({ onPaymentSuccess }) => {
+const PaymentPage = () => {
   const [paymentMethod, setPaymentMethod] = useState("COD");
   const [loading, setLoading] = useState(false);
   const location = useLocation();
-  const orderSummary = location?.state;
-  console.log(orderSummary);
+  const navigate = useNavigate();
+  const orderSummary = location?.state; 
 
   const handlePayment = async () => {
-    // setLoading(true);
-    toast.warn("Payment Gateway Integration Under Development");
+    try {
+      setLoading(true);
+      if (paymentMethod === "COD") {
+        const orderPlace = await orderPlaceCOD({
+          ...orderSummary,
+          orderId: "FK-ORDER-" + Date.now(),
+        });
+        if (orderPlace == "order Placed") {
+          toast.success(orderPlace);
+          navigate("/");
+        } else toast.warn(orderPlace);
+      } else {
+        toast.warn("Payment Gateway Integration Under Development");
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

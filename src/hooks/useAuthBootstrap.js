@@ -24,7 +24,7 @@ export const useAuthBootstrap = () => {
 
       try {
         // 🔹 Fetch user profile
-        const userRef = doc(db, "Users", firebaseUser.uid);
+        const userRef = doc(db, "users", firebaseUser.uid);
         const userSnap = await getDoc(userRef);
 
         const userData = userSnap.exists()
@@ -35,7 +35,7 @@ export const useAuthBootstrap = () => {
           : null;
 
         // 🔹 Fetch cart
-        const cartRef = collection(db, "Users", firebaseUser.uid, "Cart");
+        const cartRef = collection(db, "carts", firebaseUser.uid, "item");
         const cartSnap = await getDocs(cartRef);
 
         const cartItems = cartSnap.docs.map((d) => ({
